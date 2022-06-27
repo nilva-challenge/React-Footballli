@@ -17,7 +17,7 @@ export const NavLink = ({ href, title, icon, ...rest }: NavLinkProps) => {
 		<Link href={href} {...rest}>
 			<a
 				className={clsx(
-					"flex flex-col items-center justify-center gap-2",
+					"flex flex-col items-center justify-center gap-2 focus:no-underline",
 					isActive ? activeClass : "text-gray-400"
 				)}
 			>

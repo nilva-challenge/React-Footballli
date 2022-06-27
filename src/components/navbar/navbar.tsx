@@ -30,7 +30,7 @@ const navItems = [
 		Icon: TbCompass,
 	},
 	{
-		href: "/",
+		href: "/tournaments",
 		title: "مسابقات",
 		Icon: TbSoccerField,
 	},

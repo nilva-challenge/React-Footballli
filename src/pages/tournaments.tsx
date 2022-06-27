@@ -1,22 +1,22 @@
+import { InfiniteTournaments } from "@/components/infinite-tournaments";
 import { Layout } from "@/components/layout";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const Tournaments: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>ری‌اکت فوتبالی</title>
+				<title>مسابقات</title>
 				<meta name="description" content="Nilva Challenge" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>
-				<div className="text-red-400">
-					برای دیدن مسابقات بر روی لینک آن کلیک کنید
-				</div>
+				<div className="text-red-400">مسابقات</div>
+				<InfiniteTournaments />
 			</Layout>
 		</>
 	);
 };
 
-export default Home;
+export default Tournaments;

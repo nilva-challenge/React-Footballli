@@ -2,21 +2,19 @@ import { Layout } from "@/components/layout";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const Explore: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>ری‌اکت فوتبالی</title>
+				<title>اکتشاف</title>
 				<meta name="description" content="Nilva Challenge" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>
-				<div className="text-red-400">
-					برای دیدن مسابقات بر روی لینک آن کلیک کنید
-				</div>
+				<div className="text-red-400">اکتشاف</div>
 			</Layout>
 		</>
 	);
 };
 
-export default Home;
+export default Explore;
