@@ -7,9 +7,9 @@ interface MainLayoutProps {
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
 	return (
-		<div className="flex flex-col bg-slate-100 h-full">
-			<main className="grow w-full">{children}</main>
-			<aside>
+		<div className="relative bg-slate-100 h-full">
+			<main className="w-full h-full pb-[96px]">{children}</main>
+			<aside className="fixed bottom-0 right-0 left-0">
 				<Navbar />
 			</aside>
 		</div>
