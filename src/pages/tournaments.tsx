@@ -1,9 +1,10 @@
-import { InfiniteTournaments } from "@/components/infinite-tournaments";
-import { Layout } from "@/components/layout";
-import type { NextPage } from "next";
+import { TournamentsLayout } from "@/layouts/tournaments-layout";
+import type { NextPageWithLayout } from "./_app";
 import Head from "next/head";
+import { ReactElement } from "react";
+import { TournamentsList } from "@/components/tournaments-list";
 
-const Tournaments: NextPage = () => {
+const Tournaments: NextPageWithLayout = () => {
 	return (
 		<>
 			<Head>
@@ -11,12 +12,12 @@ const Tournaments: NextPage = () => {
 				<meta name="description" content="Nilva Challenge" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout>
-				<div className="text-red-400">مسابقات</div>
-				<InfiniteTournaments />
-			</Layout>
+			<TournamentsList />
 		</>
 	);
 };
 
+Tournaments.getLayout = function getLayout(page: ReactElement) {
+	return <TournamentsLayout>{page}</TournamentsLayout>;
+};
 export default Tournaments;
