@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { I18nProvider } from "@react-aria/i18n";
@@ -33,7 +32,6 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 			<I18nProvider locale="fa-IR">
 				<QueryClientProvider client={queryClient}>
 					<MainLayout>{getLayout(<Component {...pageProps} />)}</MainLayout>
-					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryClientProvider>
 			</I18nProvider>
 		</SSRProvider>
