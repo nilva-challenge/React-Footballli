@@ -1,0 +1,7 @@
+.svg-icon.svg-icon-nak svg [fill]:not(.permanent):not(g) {
+  transition: fill 0.3s ease;
+  fill: #fa4200 !important;
+}
+.svg-icon.svg-icon-nak svg:hover [fill]:not(.permanent):not(g) {
+  transition: fill 0.3s ease;
+}

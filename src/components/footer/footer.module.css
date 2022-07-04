@@ -1,0 +1,41 @@
+.navi {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navi-item {
+  padding: 0;
+  display: block;
+  list-style: none;
+}
+.navi-link {
+  transition: all 0.15s ease;
+  color: #3f4254;
+  font-size: 1rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .navi-link {
+    display: block;
+    padding: 0rem 1rem;
+  }
+  .navi-link span:nth-child(2) {
+    white-space: nowrap;
+  }
+  .navi {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: unset;
+  }
+}
