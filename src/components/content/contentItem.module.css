@@ -1,0 +1,46 @@
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  min-height: 70px;
+  background-color: transparent;
+  padding: 2rem 2.25rem;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebedf3;
+}
+
+.card-body {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.25rem;
+}
+
+.logo {
+  width: 50%;
+  height: 15%;
+}
+.teams {
+  display: flex;
+  justify-content: space-between;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+.team-away-score {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.team-home-score {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+.teams-score {
+  font-size: 2rem;
+}
