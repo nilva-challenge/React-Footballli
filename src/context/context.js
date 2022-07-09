@@ -8,7 +8,7 @@ const AppContext = React.createContext();
 const AppContextProvider = ({ children }) => {
   //states for handling async data from APIs
   const [isLoading, setIsLoading] = React.useState(false);
-  const [leagues, setLeagues] = React.useState([]);
+  const [leagues, setLeagues] = React.useState(filterSeasons(mockLeagues));
   const [matches, setMatches] = React.useState(mockMatches.data.response);
   const [search, setSearch] = React.useState("england");
   const [error, setError] = React.useState();
