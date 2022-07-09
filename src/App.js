@@ -7,6 +7,8 @@ import moment from "moment";
 import ScrollableTabsButtonPrevent from "./components/ScrollableTabsButtonPrevent";
 import TabsViewer from "./components/TabsViewer";
 import { Box } from "@mui/material";
+import Header from "./components/Header";
+import BottomNavigate from "./components/BottomNavigate";
 
 function App() {
   const dates = [
@@ -36,7 +38,7 @@ function App() {
   // );
   return (
     <div>
-      <Box>hi</Box>
+      <Header />
       {/* <AllTabs
         db={db.response}
         db2={dbAzadegan.response}
@@ -48,7 +50,7 @@ function App() {
         db2={dbAzadegan.response}
         sortedDates={sortedDates}
       />
-
+      <BottomNavigate />
       {/* <ScrollableTabsButtonPrevent /> */}
       {/* <div className="App">
        <header className="App-header">

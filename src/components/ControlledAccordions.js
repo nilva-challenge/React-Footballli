@@ -22,6 +22,11 @@ export default function ControlledAccordions({ allData }) {
             expanded={expanded === data[0].league.name}
             onChange={handleChange(data[0].league.name)}
             key={data[0].fixture.id}
+            sx={{
+              maxHeight: "60vh",
+              overflow: "auto",
+              // overflowYy: "scroll"
+            }}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -41,7 +46,10 @@ export default function ControlledAccordions({ allData }) {
                 </Typography>
               </Box>
             </AccordionSummary>
-            <AccordionDetails key={data[0].fixture.id}>
+            <AccordionDetails
+              key={data[0].fixture.id}
+              // sx={{ maxHeight: "80vh", overflowYy: "a" }}
+            >
               {data.map((ele) => {
                 return ele.fixture.status.short === "FT" ? (
                   <Box
