@@ -1,10 +1,55 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
+import AllTabs from "./components/AllTabs";
+import db from "./DB/db.json";
+import dbAzadegan from "./DB/dbAzadegan.json";
+import moment from "moment";
+import ScrollableTabsButtonPrevent from "./components/ScrollableTabsButtonPrevent";
+import TabsViewer from "./components/TabsViewer";
+import { Box } from "@mui/material";
 
 function App() {
+  const dates = [
+    moment().subtract(1, "days").format("L"),
+    moment().subtract(0, "days").format("L"),
+    moment().subtract(-1, "days").format("L"),
+  ];
+
+  // console.log(dates);
+  db.response.reverse().map((state) => {
+    if (!dates.includes(moment(state.fixture.date).format("L")))
+      dates.push(moment(state.fixture.date).format("L"));
+  });
+  dbAzadegan.response.map((state) => {
+    if (!dates.includes(moment(state.fixture.date).format("L")))
+      dates.push(moment(state.fixture.date).format("L"));
+  });
+
+  const sortedDates = dates.sort((a, b) => moment(a) - moment(b)).reverse();
+  // for checking data
+  console.log(sortedDates);
+  // console.log(
+  //   dbAzadegan.response.map((state) => moment(state.fixture.date).format("L"))
+  // );
+  // console.log(
+  //   db.response.map((state) => moment(state.fixture.date).format("L"))
+  // );
   return (
     <div>
-      Hi
+      <Box>hi</Box>
+      {/* <AllTabs
+        db={db.response}
+        db2={dbAzadegan.response}
+        sortedDates={sortedDates}
+      /> */}
+
+      <TabsViewer
+        db={db.response}
+        db2={dbAzadegan.response}
+        sortedDates={sortedDates}
+      />
+
+      {/* <ScrollableTabsButtonPrevent /> */}
       {/* <div className="App">
        <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
