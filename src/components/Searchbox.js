@@ -36,12 +36,6 @@ const Search = styled.form`
       transform: translateY(2px);
     }
   }
-
-  /* .icon {
-    height: 2rem;
-    width: 2rem;
-    fill: var(--color-grey-dark-3);
-  } */
 `;
 
 export default function Searchbox() {

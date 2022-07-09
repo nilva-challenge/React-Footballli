@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseUrl = "https://v3.football.api-sports.io";
-const API_KEY = "a01e8e36f2a1c0fe63bc268d3219d55b";
+const API_KEY = "b1e5edfeb01ec2fb3ab4223f30151ad1";
 const config = {
   "x-rapidapi-host": "v3.football.api-sports.io",
   "x-rapidapi-key": API_KEY,

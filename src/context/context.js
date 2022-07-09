@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { leaguesApi, matchesApi } from "../services/APIs";
-import { mockLeagues, mockMatches } from "./mock";
+import { mockLeagues } from "./mock";
 import { filterSeasons, getDate } from "../utils";
 
 const AppContext = React.createContext();
@@ -9,14 +9,12 @@ const AppContextProvider = ({ children }) => {
   //states for handling async data from APIs
   const [isLoading, setIsLoading] = React.useState(false);
   const [leagues, setLeagues] = React.useState(filterSeasons(mockLeagues));
-  const [matches, setMatches] = React.useState(mockMatches.data.response);
+  const [matches, setMatches] = React.useState([]);
   const [search, setSearch] = React.useState("england");
   const [error, setError] = React.useState();
 
-  // console.log(matches);
-
   //states for handling sync logics
-  const [dates, setDates] = React.useState();
+  const [dates, setDates] = React.useState(getDate("2021-08-13", "2022-05-22"));
   const [expanded, setExpanded] = React.useState(false);
   const [specificLeague, setSpecificLeague] = React.useState();
   const [specificSeason, setSpecificSeason] = React.useState();
@@ -32,7 +30,6 @@ const AppContextProvider = ({ children }) => {
         data: { response },
       } = await leaguesApi(search);
       //set Leagues
-      console.log(response);
       let items;
       if (response.length > 5) {
         items = response.slice(0, 5);
@@ -61,8 +58,7 @@ const AppContextProvider = ({ children }) => {
         league,
         season,
       });
-      //set Matches
-
+      // filter matches base on times
       setMatches(() => {
         return response.map((data) => {
           const formatDate = new Date(data.fixture.date).toLocaleDateString(
@@ -93,6 +89,7 @@ const AppContextProvider = ({ children }) => {
     setDates(getDate(seasons.start, seasons.end));
   }, []);
 
+  //get matches base on leagues and seasons
   React.useEffect(() => {
     if (expanded) {
       getMatches(specificLeague, specificSeason);

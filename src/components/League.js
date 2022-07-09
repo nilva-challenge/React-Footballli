@@ -6,9 +6,6 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useGlobalContext } from "../context/context";
 
-
-// setFilterDate(dates.locale[sideBarValue]);
-
 export default function League({ ...props }) {
   const { league } = props;
   const {
@@ -18,12 +15,13 @@ export default function League({ ...props }) {
     setSpecificSeason,
     setDateHandler,
     specificDate,
-    setDates,
     matches,
-    isLoading
+    isLoading,
   } = useGlobalContext();
 
   const [date, setDate] = React.useState();
+
+  //when accordion expanded
   const handleChange = (name, seasons, league) => (event, isExpanded) => {
     setExpanded(isExpanded ? name : false);
     setSpecificLeague(league.id);
@@ -31,22 +29,15 @@ export default function League({ ...props }) {
     setDate(seasons);
   };
 
-  React.useEffect(() => {
-    console.log(matches.filter((data) => data.fixture.date === specificDate));
-  }, [matches, specificDate]);
-
+  // set sidebar infinite time line base on the start time and emd time from api
   React.useEffect(() => {
     if (expanded) {
       setDateHandler(date);
-    } else {
-      setDates(null);
     }
-  }, [date, expanded, matches, setDateHandler, setDates, specificDate]);
+  }, [date, expanded, setDateHandler]);
 
-  //set date base on seasons start and end times
-
-  if(isLoading){
-    return <div>Loading...</div>
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -73,46 +64,38 @@ export default function League({ ...props }) {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
-                  {matches &&
-                    matches
-                      .filter((data) => data.fixture.date === specificDate)
-                      .map((data, idx) => {
-                        const { teams, goals } = data;
-                        return (
-                          <div
-                            className="flex mb-10 justify-between bg-slate-50"
-                            key={idx}
-                          >
-                            <div>
-                              <img
-                                src={teams && teams.home.logo}
-                                alt="logo"
-                                className="w-10"
-                              />
-                              <span className="text-sm ">
-                                {teams && teams.home.name}
-                              </span>
-                            </div>
-                            <div>
-                              <span>
-                                {goals && goals.home} : {goals && goals.away}
-                              </span>
-                            </div>
-                            <div>
-                              <img
-                                src={teams && teams.away.logo}
-                                alt="logo"
-                                className="w-10"
-                              />
-                              <span className="text-sm ">
-                                {teams && teams.away.name}
-                              </span>
-                            </div>
+                {matches &&
+                  matches
+                    .filter((data) => data.fixture.date === specificDate)
+                    .map((data, idx) => {
+                      const { teams, goals } = data;
+                      return (
+                        <div
+                          className="flex mb-10 justify-between bg-slate-50"
+                          key={idx}
+                        >
+                          <div className="flex flex-col p-2 items-center justify-center">
+                            <img
+                              src={teams && teams.home.logo}
+                              alt="logo"
+                              className="w-10"
+                            />
                           </div>
-                        );
-                      })}
-                </Typography>
+                          <div className="p-3">
+                            <span>
+                              {goals && goals.home} : {goals && goals.away}
+                            </span>
+                          </div>
+                          <div className="flex flex-col p-2 items-center justify-center">
+                            <img
+                              src={teams && teams.away.logo}
+                              alt="logo"
+                              className="w-10"
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
               </AccordionDetails>
             </Accordion>
           );

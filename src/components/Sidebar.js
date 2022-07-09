@@ -11,6 +11,7 @@ export default function Sidebar() {
     setSideBarValue(newValue);
   };
 
+  //set specific time base on time that user select from side bar
   React.useEffect(() => {
     if (expanded && dates) {
       setSpecificDate(dates[sideBarValue]);

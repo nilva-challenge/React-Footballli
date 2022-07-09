@@ -1,428 +1,139 @@
-
 // matches mock data for handling ui
-export const mockMatches = {
-  data: {
-    get: "fixtures",
-    parameters: {
-      date: "2022-08-06",
-      league: "39",
-      season: "2022",
+export const mockMatches = [
+  {
+    fixture: {
+      id: 720742,
+      referee: "Antonio Mateu",
+      timezone: "UTC",
+      date: "August 14",
+      timestamp: 1628962200,
+      periods: {
+        first: 1628962200,
+        second: 1628965800,
+      },
+      venue: {
+        id: 1484,
+        name: "Iberostar Estadi",
+        city: "Palma de Mallorca",
+      },
+      status: {
+        long: "Match Finished",
+        short: "FT",
+        elapsed: 90,
+      },
     },
-    errors: [],
-    results: 6,
-    paging: {
-      current: 1,
-      total: 1,
+    league: {
+      id: 140,
+      name: "La Liga",
+      country: "Spain",
+      logo: "https://media.api-sports.io/football/leagues/140.png",
+      flag: "https://media.api-sports.io/flags/es.svg",
+      season: 2021,
+      round: "Regular Season - 1",
     },
-    response: [
-      {
-        fixture: {
-          id: 867947,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T11:30:00+00:00",
-          timestamp: 1659785400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 535,
-            name: "Craven Cottage",
-            city: "London",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 36,
-            name: "Fulham",
-            logo: "https://media.api-sports.io/football/teams/36.png",
-            winner: null,
-          },
-          away: {
-            id: 40,
-            name: "Liverpool",
-            logo: "https://media.api-sports.io/football/teams/40.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+    teams: {
+      home: {
+        id: 798,
+        name: "Mallorca",
+        logo: "https://media.api-sports.io/football/teams/798.png",
+        winner: null,
       },
-      {
-        fixture: {
-          id: 867948,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T14:00:00+00:00",
-          timestamp: 1659794400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 504,
-            name: "Vitality Stadium",
-            city: "Bournemouth, Dorset",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 35,
-            name: "Bournemouth",
-            logo: "https://media.api-sports.io/football/teams/35.png",
-            winner: null,
-          },
-          away: {
-            id: 66,
-            name: "Aston Villa",
-            logo: "https://media.api-sports.io/football/teams/66.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+      away: {
+        id: 543,
+        name: "Real Betis",
+        logo: "https://media.api-sports.io/football/teams/543.png",
+        winner: null,
       },
-      {
-        fixture: {
-          id: 867949,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T14:00:00+00:00",
-          timestamp: 1659794400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 546,
-            name: "Elland Road",
-            city: "Leeds, West Yorkshire",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 63,
-            name: "Leeds",
-            logo: "https://media.api-sports.io/football/teams/63.png",
-            winner: null,
-          },
-          away: {
-            id: 39,
-            name: "Wolves",
-            logo: "https://media.api-sports.io/football/teams/39.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+    },
+    goals: {
+      home: 1,
+      away: 1,
+    },
+    score: {
+      halftime: {
+        home: 1,
+        away: 0,
       },
-      {
-        fixture: {
-          id: 867951,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T14:00:00+00:00",
-          timestamp: 1659794400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 562,
-            name: "St. James' Park",
-            city: "Newcastle upon Tyne",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 34,
-            name: "Newcastle",
-            logo: "https://media.api-sports.io/football/teams/34.png",
-            winner: null,
-          },
-          away: {
-            id: 65,
-            name: "Nottingham Forest",
-            logo: "https://media.api-sports.io/football/teams/65.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+      fulltime: {
+        home: 1,
+        away: 1,
       },
-      {
-        fixture: {
-          id: 867952,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T14:00:00+00:00",
-          timestamp: 1659794400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 593,
-            name: "Tottenham Hotspur Stadium",
-            city: "London",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 47,
-            name: "Tottenham",
-            logo: "https://media.api-sports.io/football/teams/47.png",
-            winner: null,
-          },
-          away: {
-            id: 41,
-            name: "Southampton",
-            logo: "https://media.api-sports.io/football/teams/41.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+      extratime: {
+        home: null,
+        away: null,
       },
-      {
-        fixture: {
-          id: 867953,
-          referee: null,
-          timezone: "UTC",
-          date: "2022-08-06T16:30:00+00:00",
-          timestamp: 1659803400,
-          periods: {
-            first: null,
-            second: null,
-          },
-          venue: {
-            id: 8560,
-            name: "Goodison Park",
-            city: "Liverpool",
-          },
-          status: {
-            long: "Not Started",
-            short: "NS",
-            elapsed: null,
-          },
-        },
-        league: {
-          id: 39,
-          name: "Premier League",
-          country: "England",
-          logo: "https://media.api-sports.io/football/leagues/39.png",
-          flag: "https://media.api-sports.io/flags/gb.svg",
-          season: 2022,
-          round: "Regular Season - 1",
-        },
-        teams: {
-          home: {
-            id: 45,
-            name: "Everton",
-            logo: "https://media.api-sports.io/football/teams/45.png",
-            winner: null,
-          },
-          away: {
-            id: 49,
-            name: "Chelsea",
-            logo: "https://media.api-sports.io/football/teams/49.png",
-            winner: null,
-          },
-        },
-        goals: {
-          home: null,
-          away: null,
-        },
-        score: {
-          halftime: {
-            home: null,
-            away: null,
-          },
-          fulltime: {
-            home: null,
-            away: null,
-          },
-          extratime: {
-            home: null,
-            away: null,
-          },
-          penalty: {
-            home: null,
-            away: null,
-          },
-        },
+      penalty: {
+        home: null,
+        away: null,
       },
-    ],
-  }
-};
+    },
+  },
+  {
+    fixture: {
+      id: 720743,
+      referee: "Santiago Jaime",
+      timezone: "UTC",
+      date: "August 14",
+      timestamp: 1628962200,
+      periods: {
+        first: 1628962200,
+        second: 1628965800,
+      },
+      venue: {
+        id: 11915,
+        name: "Estadio Nuevo Mirandilla",
+        city: "Cádiz",
+      },
+      status: {
+        long: "Match Finished",
+        short: "FT",
+        elapsed: 90,
+      },
+    },
+    league: {
+      id: 140,
+      name: "La Liga",
+      country: "Spain",
+      logo: "https://media.api-sports.io/football/leagues/140.png",
+      flag: "https://media.api-sports.io/flags/es.svg",
+      season: 2021,
+      round: "Regular Season - 1",
+    },
+    teams: {
+      home: {
+        id: 724,
+        name: "Cadiz",
+        logo: "https://media.api-sports.io/football/teams/724.png",
+        winner: null,
+      },
+      away: {
+        id: 539,
+        name: "Levante",
+        logo: "https://media.api-sports.io/football/teams/539.png",
+        winner: null,
+      },
+    },
+    goals: {
+      home: 1,
+      away: 1,
+    },
+    score: {
+      halftime: {
+        home: 0,
+        away: 1,
+      },
+      fulltime: {
+        home: 1,
+        away: 1,
+      },
+      extratime: {
+        home: null,
+        away: null,
+      },
+      penalty: {
+        home: null,
+        away: null,
+      },
+    },
+  },
+];
