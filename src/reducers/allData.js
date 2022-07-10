@@ -33,34 +33,3 @@ export const allDatas = (allData = AllData, action) => {
       return allData;
   }
 };
-// export const allData1 = (allData1 = {}, action) => {
-//   switch (action.type) {
-//     case "FETCH_ALL1":
-//       return action.payload;
-
-//     default:
-//       return allData1;
-//   }
-// };
-// export const allData2 = (allData2 = [], action) => {
-//   switch (action.type) {
-//     case "FETCH_ALL2":
-//       return action.payload;
-
-//     default:
-//       return allData2;
-//   }
-// };
-
-//  return {
-//    ...allData,
-//    db2: action.payload,
-//    dates:
-//      //   allData.dates,
-//      action.payload.map((ele) => moment(ele.fixture.date).format("L")),
-//  };
-
-// dates: [
-//   ...allData.dates,
-//   ...action.payload.map((ele) => moment(ele.fixture.date).format("L")),
-// ],

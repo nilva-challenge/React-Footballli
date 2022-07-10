@@ -13,7 +13,6 @@ export default function ControlledAccordions({ allData }) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  // console.log(allData);
   return (
     <div>
       {allData?.map((data) =>
@@ -45,10 +44,7 @@ export default function ControlledAccordions({ allData }) {
                 </Typography>
               </Box>
             </AccordionSummary>
-            <AccordionDetails
-              key={data[0].fixture.id}
-              // sx={{ maxHeight: "80vh", overflowYy: "a" }}
-            >
+            <AccordionDetails key={data[0].fixture.id}>
               {data.map((ele) => {
                 return ele.fixture.status.short === "FT" ? (
                   <Box
@@ -110,10 +106,6 @@ export default function ControlledAccordions({ allData }) {
                   </Box>
                 ) : null;
               })}
-              {/* <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
-            </Typography> */}
             </AccordionDetails>
           </Accordion>
         ) : null

@@ -10,30 +10,9 @@ import { useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 
 import ControlledAccordions from "./ControlledAccordions";
-
-const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-          {/* <Typography>{children}</Typography> */}
-        </Box>
-      )}
-    </div>
-  );
-};
+import TabPanel from "./TabPanel";
 
 export default function TabsViewer() {
-  // const data = useSelector((state) => console.log(state));
   const { db, db2, dates } = useSelector((state) => state.allDatas);
   const [value, setValue] = React.useState(1);
 
@@ -44,12 +23,10 @@ export default function TabsViewer() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-  // console.log(dates);
   const sortedDates = dates
     ? [...new Set(dates)].sort((a, b) => moment(b) - moment(a))
     : null;
 
-  // console.log(sortedDates);
   return (
     <Box sx={{ bgcolor: "background.paper" }}>
       {!sortedDates ? (

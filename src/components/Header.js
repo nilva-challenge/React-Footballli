@@ -7,7 +7,6 @@ const Header = () => {
     <Paper
       sx={{
         display: "flex",
-        // alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
       }}
@@ -16,7 +15,6 @@ const Header = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          //   alignItems: "center",
           flexDirection: "row",
           p: 1,
           m: 1,
