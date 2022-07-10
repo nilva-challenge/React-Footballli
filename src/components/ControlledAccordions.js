@@ -13,7 +13,7 @@ export default function ControlledAccordions({ allData }) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  console.log(allData);
+  // console.log(allData);
   return (
     <div>
       {allData?.map((data) =>
@@ -25,7 +25,6 @@ export default function ControlledAccordions({ allData }) {
             sx={{
               maxHeight: "60vh",
               overflow: "auto",
-              // overflowYy: "scroll"
             }}
           >
             <AccordionSummary

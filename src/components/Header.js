@@ -1,10 +1,10 @@
-import { Box, IconButton, InputBase, Typography } from "@mui/material";
+import { Box, IconButton, InputBase, Paper, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 const Header = () => {
   return (
-    <Box
+    <Paper
       sx={{
         display: "flex",
         // alignItems: "center",
@@ -44,7 +44,7 @@ const Header = () => {
           <SearchIcon />
         </IconButton>
       </Box>
-    </Box>
+    </Paper>
   );
 };
 
