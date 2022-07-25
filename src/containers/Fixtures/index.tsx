@@ -1,18 +1,13 @@
-import { Box, TextField, Typography } from "@mui/material";
-import React from "react";
+import { TextField } from "@mui/material";
 import { FixturesPageContainer } from "./styles";
 import SearchIcon from "@mui/icons-material/Search";
-import Input from "@mui/icons-material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import { Topbar } from "../../components/Topbar";
 
 export function Fixtures() {
   return (
     <FixturesPageContainer>
-      <Box className="fixtures-top-bar">
-        <Typography variant="h6">نتایج زنده</Typography>
-        <AccessTimeOutlinedIcon className="topbar-icon" />
-      </Box>
+      <Topbar />
       <TextField
         InputProps={{
           startAdornment: (
