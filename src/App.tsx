@@ -1,10 +1,10 @@
 import { AppContainer } from "./styles";
-import Loading from "./containers/Loading/index";
+import { Fixtures } from "./containers/Fixtures";
 
 function App() {
   return (
     <AppContainer>
-      <Loading />
+      <Fixtures />
     </AppContainer>
   );
 }
