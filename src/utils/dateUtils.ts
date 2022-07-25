@@ -10,7 +10,7 @@ const days: { [key: string]: string } = {
 // #region global
 
 const formatDayTitle = (date: moment.Moment, title?: string) =>
-  title || date.format("jMMMM jDD");
+  title || date.format("jD jMMMM");
 
 export const createDatesArray = (min = -2, max = 2) => {
   let result = [];
