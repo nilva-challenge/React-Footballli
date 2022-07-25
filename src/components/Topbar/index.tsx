@@ -5,7 +5,7 @@ import { TopbarContainer } from "./styles";
 export function Topbar() {
   return (
     <TopbarContainer>
-      <Typography variant="h6">نتایج زنده</Typography>
+      <Typography variant="h5">نتایج زنده</Typography>
       <AccessTimeOutlinedIcon className="topbar-icon" />
     </TopbarContainer>
   );

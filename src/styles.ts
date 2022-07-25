@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const AppContainer = styled(Container)`
   width: 100%;
-  padding: 16px;
+  height: 100vh;
+  padding: 16px 16px 0;
   direction: rtl;
 `;

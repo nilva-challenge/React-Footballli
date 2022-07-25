@@ -14,7 +14,7 @@ export function SearchInput() {
       }}
       variant="outlined"
       size="small"
-      placeholder="جستجو..."
+      placeholder="جستجو ..."
     />
   );
 }
