@@ -1,7 +1,12 @@
 import { AppContainer } from "./styles";
+import Loading from "./containers/Loading/index";
 
 function App() {
-  return <AppContainer>3</AppContainer>;
+  return (
+    <AppContainer>
+      <Loading />
+    </AppContainer>
+  );
 }
 
 export default App;
