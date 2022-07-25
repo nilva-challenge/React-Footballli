@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Box } from "@mui/material";
 
-export const StyledProgress = styled(CircularProgress)`
+export const ProgressContainer = styled(Box)`
   position: absolute;
   top: 50%;
   left: 50%;
