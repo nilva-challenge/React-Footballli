@@ -6,6 +6,13 @@ export interface BrowseFixturesResponse {
   response: Match[];
 }
 
+export type LeaguesList = LeagueData[];
+
+export interface LeagueData {
+  leagueid: number;
+  matches: Match[];
+}
+
 export interface Match {
   fixture: Fixture;
   league: League;

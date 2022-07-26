@@ -7,6 +7,9 @@ const days: { [key: string]: string } = {
   "1": "فردا",
 };
 
+export const formatToday = () =>
+  moment(new Date().toISOString(), "YYYY/M/D").format("YYYY-MM-DD");
+
 const formatDayTitle = (date: moment.Moment, title?: string) =>
   title || date.format("jD jMMMM");
 

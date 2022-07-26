@@ -3,7 +3,7 @@ import { QueryKeys } from "../../utils/enums";
 import { browseFixturesRequest } from "./api";
 import { BrowseFixturesArgs, BrowseFixturesResponse } from "./types";
 
-export const useBrowseMessages = (
+export const useBrowseFixtures = (
   args: BrowseFixturesArgs,
   options: QueryOptions<BrowseFixturesResponse> = {}
 ) => {
