@@ -3,9 +3,11 @@ import { createDatesArray } from "./../../utils/dateUtils";
 import { Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 
-const datesArray = createDatesArray();
+const datesArray = createDatesArray(-4, 4);
 export default function DateSelector() {
-  const [tab, setTab] = useState(2);
+  const [tab, setTab] = useState(
+    datesArray.findIndex((date) => date.title === "امروز")
+  );
 
   const onTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTab(newValue);
@@ -13,9 +15,15 @@ export default function DateSelector() {
 
   return (
     <DateSelectorWrapper>
-      <Tabs value={tab} onChange={onTabChange} aria-label="basic tabs example">
+      <Tabs
+        variant="scrollable"
+        scrollButtons={false}
+        value={tab}
+        onChange={onTabChange}
+        aria-label="basic tabs example"
+      >
         {datesArray.map((date) => (
-          <Tab label={date.title} />
+          <Tab key={date.title} label={date.title} />
         ))}
       </Tabs>
     </DateSelectorWrapper>
