@@ -3,7 +3,7 @@ import { createDatesArray } from "./../../utils/dateUtils";
 import { Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 
-const datesArray = createDatesArray(-4, 4);
+const datesArray = createDatesArray(-20, 20);
 export default function DateSelector() {
   const [tab, setTab] = useState(
     datesArray.findIndex((date) => date.title === "امروز")
