@@ -11,9 +11,12 @@ import { LeaguesListContainer } from "./styles";
 import { LeaguesListProps } from "./types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import moment from "moment-jalaali";
+import Loading from "../../containers/Loading";
 
-export default function LeaguesList({ list }: LeaguesListProps) {
-  return (
+export default function LeaguesList({ list, isLoading }: LeaguesListProps) {
+  return isLoading ? (
+    <Loading />
+  ) : (
     <LeaguesListContainer>
       {list.map((league) => (
         <Accordion className="league-accordion" defaultExpanded>

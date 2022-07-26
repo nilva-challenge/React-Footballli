@@ -25,7 +25,7 @@ export function Fixtures() {
       <Topbar />
       <SearchInput />
       <DateSelector setDate={setDate} />
-      <LeaguesListComponent list={leaguesList} />
+      <LeaguesListComponent isLoading={isLoading} list={leaguesList} />
     </FixturesPageContainer>
   );
 }
