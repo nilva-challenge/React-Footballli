@@ -9,8 +9,16 @@ export interface BrowseFixturesResponse {
 export type LeaguesList = LeagueData[];
 
 export interface LeagueData {
-  leagueid: number;
-  matches: Match[];
+  league: League;
+  matches: MatchData[];
+}
+
+export interface MatchData {
+  fixture: Fixture;
+  teams: {
+    home: Team;
+    away: Team;
+  };
 }
 
 export interface Match {

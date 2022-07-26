@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 import { formatToday } from "../../utils/dateUtils";
 import { useBrowseFixtures } from "./hooks";
 import { BrowseFixturesResponse, LeaguesList } from "./types";
-import { Match } from "@testing-library/react";
+import LeaguesListComponent from "../../components/LeaguesList";
 
 export function Fixtures() {
   const [date, setDate] = useState(formatToday());
   const [leaguesList, setLeaguesList] = useState<LeaguesList>([]);
   const { data, isLoading } = useBrowseFixtures({ date });
 
+  console.log(leaguesList);
   useEffect(() => {
     if (data) {
       setLeaguesList(filterByLeague(data));
@@ -23,7 +24,8 @@ export function Fixtures() {
     <FixturesPageContainer>
       <Topbar />
       <SearchInput />
-      <DateSelector />
+      <DateSelector setDate={setDate} />
+      <LeaguesListComponent list={leaguesList} />
     </FixturesPageContainer>
   );
 }
@@ -31,21 +33,21 @@ export function Fixtures() {
 function filterByLeague(list: BrowseFixturesResponse) {
   return list.response.reduce((acc, curr) => {
     const leagueIndex = acc.findIndex(
-      (item) => item.leagueid === curr.league.id
+      (item) => item.league.id === curr.league.id
     );
 
     if (leagueIndex > -1) {
-      const newAcc = [...acc];
-
-      newAcc[leagueIndex].matches.push(curr);
-
-      return newAcc;
+      acc[leagueIndex].matches.push({
+        fixture: curr.fixture,
+        teams: curr.teams,
+      });
+      return acc;
     } else {
-      const newAcc = [...acc];
-
-      newAcc.push({ leagueid: curr.league.id, matches: [curr] });
-
-      return newAcc;
+      acc.push({
+        league: curr.league,
+        matches: [{ fixture: curr.fixture, teams: curr.teams }],
+      });
+      return acc;
     }
   }, [] as LeaguesList);
 }
