@@ -7,13 +7,13 @@ import { formatToday } from "../../utils/dateUtils";
 import { useBrowseFixtures } from "./hooks";
 import { BrowseFixturesResponse, LeaguesList } from "./types";
 import LeaguesListComponent from "../../components/LeaguesList";
+import moment from "moment-jalaali";
 
 export function Fixtures() {
   const [date, setDate] = useState(formatToday());
   const [leaguesList, setLeaguesList] = useState<LeaguesList>([]);
   const { data, isLoading } = useBrowseFixtures({ date });
 
-  console.log(leaguesList);
   useEffect(() => {
     if (data) {
       setLeaguesList(filterByLeague(data));
