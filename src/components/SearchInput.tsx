@@ -5,9 +5,8 @@ const SearchInput = () => {
         <input type="text" placeholder="جستجو" className="bg-[#eee] min-w-[90vw] rounded" />
       </div> */}
       <label className="relative flex justify-center">
-        
         <input
-          className="min-w-[90vw] bg-[#eee] placeholder:font-italitc drop-shadow-md rounded-md py-2 pl-3 pr-10 focus:outline-none"
+          className="min-w-[90vw] bg-[#f5f6fb] placeholder:font-italitc drop-shadow-md rounded-md py-2 pl-3 pr-10 focus:outline-none"
           placeholder="جستجو..."
           type="text"
         />
