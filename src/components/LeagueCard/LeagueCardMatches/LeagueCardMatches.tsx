@@ -22,8 +22,6 @@ const LeagueCardMatches = () => {
             <p>سپاهان</p>
           </div>
         </div>
-
-        {/* <p>{moment(item.fixture.date).format("MMM DD, YYYY")}</p> */}
       </div>
     </div>
   );

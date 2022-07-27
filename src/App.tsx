@@ -1,13 +1,14 @@
 import DateSelection from "./components/DateSelection/DateSelection";
+import Navbar from "./components/Navbar/Navbar";
 import LeagueCard from "./components/LeagueCard/LeagueCard";
 import SearchInput from "./components/SearchInput/SearchInput";
-import TopNav from "./components/TopNav/TopNav";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <header>
-        <TopNav />
+        <Header />
         <SearchInput />
         <DateSelection />
       </header>
@@ -15,6 +16,7 @@ function App() {
         <LeagueCard />
         <LeagueCard />
       </main>
+      <Navbar />
     </>
   );
 }
