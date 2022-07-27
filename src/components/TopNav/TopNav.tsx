@@ -1,4 +1,4 @@
-import clockImg from "../assets/images/clock.jpg";
+import clockImg from "../../assets/images/clock.jpg";
 
 const TopNav = () => {
   return (
