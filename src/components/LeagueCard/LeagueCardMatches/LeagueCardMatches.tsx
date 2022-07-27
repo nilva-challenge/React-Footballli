@@ -2,10 +2,18 @@ import clockImg from "../../../assets/images/clock.jpg";
 import esteghlalLogo from "../../../assets/images/esteghlal.png";
 import sepahanLogo from "../../../assets/images/sepahan.png";
 
-const LeagueCardMatches = () => {
+interface Props {
+  isOpen: boolean;
+}
+
+const LeagueCardMatches = (props: Props) => {
   return (
     <div>
-      <div className="rounded-b-md mt-[2px] bg-white py-4 flex justify-between items-center px-4 text-xs md:text-base">
+      <div
+        className={`${
+          props.isOpen ? "flex justify-between items-center" : "hidden"
+        }  rounded-b-md mt-[2px] bg-white py-4 flex justify-between items-center px-4 text-xs md:text-base`}
+      >
         <div className="md:flex hidden">
           <img src={clockImg} className="max-w-[24px]" alt="" />
           <p className="mx-2">League</p>

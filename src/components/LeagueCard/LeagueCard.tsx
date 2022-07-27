@@ -4,7 +4,10 @@ import leagueLogo from "../../assets/images/PersianGulfProLeague.png";
 import LeagueCardMatches from "./LeagueCardMatches/LeagueCardMatches";
 
 const LeagueCard = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropDownClickedHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -18,12 +21,13 @@ const LeagueCard = () => {
         <img
           src={arrowDown}
           className={`w-3 h-4 ml-4 ${
-            isOpen ? "" : "rotate-180"
-          } ease-in duration-1000`}
+            isOpen ? "rotate-180" : ""
+          } ease-in duration-150`}
+          onClick={dropDownClickedHandler}
         />
       </div>
-      <LeagueCardMatches />
-      <LeagueCardMatches />
+      <LeagueCardMatches isOpen={isOpen} />
+      <LeagueCardMatches isOpen={isOpen} />
     </>
   );
 };
