@@ -1,0 +1,31 @@
+.navDate::-webkit-scrollbar {
+    display: none;
+
+}
+
+.navDate {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    white-space: nowrap;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.navLink {
+    display: flex;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: slategrey;
+    height: 1.5rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+.active {
+    color: black;
+    font-weight: bold;
+}
