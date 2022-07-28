@@ -2,22 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  direction: rtl;
+}
+
 @font-face {
   font-family: "IranSans";
   src: url("./assets/fonts/Iranian\ Sans.ttf");
 }
 
 body {
-  direction: rtl;
-  margin: 0;
-  font-family: -apple-system, "IranSans",BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "IranSans";
 }
