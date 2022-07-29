@@ -4,6 +4,17 @@ const Information: React.FC = () => {
             <h1 className="text-blue-400 font-bold text-2xl mb-5">
                 React Footballi Challenge
             </h1>
+            <h2 className="text-base mb-5">
+                ⚠️If you get <strong>API rate limit exceded</strong> error,
+                Change the API Key in .env file.⚠️ More info on{' '}
+                <a
+                    className="link link-accent"
+                    href="https://github.com/AliFarajzade/React-Footballli#readme"
+                    target="_blank"
+                >
+                    README.md
+                </a>
+            </h2>
             <div className="flex items-center flex-wrap justify-center gap-5 mb-20">
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png?20210506173343"
@@ -102,3 +113,4 @@ const Information: React.FC = () => {
 }
 
 export default Information
+
