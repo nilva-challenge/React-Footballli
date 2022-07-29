@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import arrowDown from "../../assets/images/down-arrow.svg";
 import Match from "../../models/Match.model";
 import LeagueCardMatches from "./LeagueCardMatches/LeagueCardMatches";
@@ -8,7 +8,7 @@ interface IProps {
   matches: Match[];
 }
 
-const LeagueCard = (props: IProps) => {
+const LeagueCard: FC<IProps>= (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropDownClickedHandler = () => {
     setIsOpen(!isOpen);

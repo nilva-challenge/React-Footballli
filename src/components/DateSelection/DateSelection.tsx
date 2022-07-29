@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import dates, { differenceInDays } from "../../utils/DateMaker";
 import { DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { useDate } from "../../hooks/UseDate";
 
-const DateSelection = () => {
+const DateSelection: FC = () => {
   // const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
-  const {date, setDate} = useDate();
+  const { date, setDate } = useDate();
   const dateRef = useRef<null | HTMLLIElement>(null);
   useEffect(() => {
     if (dateRef.current) {

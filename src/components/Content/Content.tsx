@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useDate } from "../../hooks/UseDate";
 import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
 // @ts-ignore
 import { groupBy } from "lodash";
 
-const Content = () => {
+const Content: FC = () => {
   const { date, setDate } = useDate();
 
   // const { status, data } = useQuery(["characters"], () =>
@@ -15,17 +15,17 @@ const Content = () => {
   //   )
   // );
 
-  const { isLoading, error, data } = useQuery(["fixtures", date], () =>
-    fetch(`https://v3.football.api-sports.io/fixtures?date=${date}`, {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "70b752e2897a07944ad7f8c1f1af3ce3",
-      },
-    }).then((res) => {
-      return res.json();
-    })
-  );
+  // const { isLoading, error, data } = useQuery(["fixtures", date], () =>
+  //   fetch(`https://v3.football.api-sports.io/fixtures?date=${date}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "x-rapidapi-host": "v3.football.api-sports.io",
+  //       "x-rapidapi-key": "49d02c77b5706e7a570cfa7c63e6d2a4",
+  //     },
+  //   }).then((res) => {
+  //     return res.json();
+  //   })
+  // );
 
   const groupedMatch = groupBy(data?.response, "league.name");
   console.log("Grouped Matches are:", Object.keys(groupedMatch));

@@ -1,4 +1,6 @@
-const SearchInput = () => {
+import { FC } from "react";
+
+const SearchInput: FC = () => {
   return (
     <div>
       <label

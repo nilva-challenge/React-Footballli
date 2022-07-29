@@ -1,12 +1,13 @@
+import { FC } from "react";
 import clockImg from "../../../assets/images/clock.jpg";
 import Match from "../../../models/Match.model";
 
-interface Props {
+interface IProps {
   isOpen: boolean;
   match: Match;
 }
 
-const LeagueCardMatches = (props: Props) => {
+const LeagueCardMatches: FC<IProps> = (props) => {
   return (
     <div>
       <div

@@ -4,6 +4,7 @@ import { IoFootballOutline } from "react-icons/io5";
 import { GiLaurelsTrophy } from "react-icons/gi";
 import { BiUser } from "react-icons/bi";
 import { IconType } from "react-icons";
+import { FC } from "react";
 
 interface NavItemType {
   icon: IconType;
@@ -33,7 +34,7 @@ const navItems: NavItemType[] = [
   },
 ];
 
-const Navbar = () => {
+const Navbar: FC = () => {
   return (
     <div className="bg-white  bg-lightMode-secondary text-darkMode-primary fixed bottom-0 flex justify-between w-full py-3 border-t">
       {navItems.reverse().map((navItem) => {
