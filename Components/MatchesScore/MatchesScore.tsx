@@ -27,15 +27,21 @@ const MatchesScore: FC<MatchesScoreProps> = ({
       </div>
 
       <div className="h-96 overflow-y-scroll pb-4 bg-gray-200">
-        {leagues.map((league: string) => {
-          return (
-            <SingleLeagueContainer
-              leagueName={league}
-              key={league}
-              fixtures={fixtures}
-            />
-          );
-        })}
+        {fixtures.length < 1 && (
+          <div className="h-64  text-center w-full flex justify-center items-center">
+            SomeThing went wrong or your search result is empty
+          </div>
+        )}
+        {fixtures.length > 0 &&
+          leagues.map((league: string) => {
+            return (
+              <SingleLeagueContainer
+                leagueName={league}
+                key={league}
+                fixtures={fixtures}
+              />
+            );
+          })}
       </div>
     </div>
   );

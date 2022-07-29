@@ -25,7 +25,10 @@ const Matches = () => {
         "x-rapidapi-key": "bab104d7215beb3aa15b4edce909daa3",
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response, "resp");
+        return response.json();
+      })
       .then((data) => {
         const allFixtures = data.response;
         setFilteredFixtures(allFixtures);
