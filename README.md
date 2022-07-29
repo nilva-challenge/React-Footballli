@@ -1,5 +1,7 @@
 ## How to set up:
 
+> :warning: If you get **API rate limit exceded** error: Add your own API Key .env file (Step 2) )!
+
 ### 1) Make sure you have node >=18.0.0 installed.
 
 ### 2) Create a `.env` and add following variables (not necessary, I provided a key in "api-key.helper.ts"):
