@@ -3,13 +3,21 @@ import { MatchesScoreProps } from "./index.d";
 import ResultSearch from "./MatchesScoreComponents/ResultSearch";
 import SingleLeagueContainer from "./MatchesScoreComponents/SingleLeagueContainer";
 
-const MatchesScore: FC<MatchesScoreProps> = ({ fixtures, leagues }) => {
+const MatchesScore: FC<MatchesScoreProps> = ({
+  fixtures,
+  leagues,
+  onSearchHandler,
+  searchField,
+}) => {
   return (
     <div>
       <div>
-        <div className="text-xl font-bold text-right p-4">Live Results</div>
-        <div className="mx-4 mb-4 bg-gray-300">
-          <ResultSearch />
+        <div className="text-xl font-bold text-right p-4">نتایج زنده</div>
+        <div className="mx-4 mb-4 bg-gray-100">
+          <ResultSearch
+            searchValue={onSearchHandler}
+            searchField={searchField}
+          />
         </div>
         <div>tabs</div>
       </div>

@@ -14,7 +14,7 @@ const SingleLeagueContainer: FC<SingleLeagueProps> = ({
       (item: any) => item.league.name === leagueName
     );
     setLeagueMatches(filteredLeague);
-  }, []);
+  }, [fixtures]);
 
   return (
     <div className="mx-4 my-4  bg-white rounded-lg py-1 ">
