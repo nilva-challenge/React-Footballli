@@ -1,6 +1,4 @@
 import clockImg from "../../../assets/images/clock.jpg";
-import esteghlalLogo from "../../../assets/images/esteghlal.png";
-import sepahanLogo from "../../../assets/images/sepahan.png";
 import Match from "../../../models/Match.model";
 
 interface Props {
@@ -17,8 +15,12 @@ const LeagueCardMatches = (props: Props) => {
         }  rounded-b-md mt-[2px] bg-white py-4 flex justify-between items-center px-4 text-xs md:text-base`}
       >
         <div className="md:flex hidden">
-          <img src={clockImg} className="max-w-[24px]" alt="" />
-          <p className="mx-2">League</p>
+          <img
+            src={props.match.league.flag}
+            className="max-w-[24px]"
+            alt="country flag league"
+          />
+          <p className="mx-2">{props.match.league.name}</p>
         </div>
 
         <div className="flex flex-1 justify-center">
@@ -27,7 +29,7 @@ const LeagueCardMatches = (props: Props) => {
             <img
               src={props.match.teams.home.logo}
               className="w-8 h-8 mr-1"
-              alt=""
+              alt="home team logo"
             />
           </div>
           <p className="mt-2">
@@ -40,7 +42,7 @@ const LeagueCardMatches = (props: Props) => {
             <img
               src={props.match.teams.away.logo}
               className="w-8 h-8 ml-2"
-              alt=""
+              alt="away team logo"
             />
             <p>{props.match.teams.away.name}</p>
           </div>

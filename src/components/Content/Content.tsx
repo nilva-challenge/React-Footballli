@@ -20,7 +20,7 @@ const Content = () => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "fb4debf164225cac508768e4f814a70e",
+        "x-rapidapi-key": "70b752e2897a07944ad7f8c1f1af3ce3",
       },
     }).then((res) => {
       return res.json();
@@ -37,7 +37,7 @@ const Content = () => {
       {isLoading && !data ? (
         <span>Loading...</span>
       ) : (
-        <main className="bg-[#f5f6fb] h-[80vh] pt-1 px-4">
+        <main className="bg-[#f5f6fb] pt-1 px-4">
           {Object.keys(groupedMatch).map((item) => (
             <LeagueCard title={item} matches={groupedMatch[item]} key={item} />
           ))}

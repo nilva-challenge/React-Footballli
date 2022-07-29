@@ -24,7 +24,6 @@ const LeagueCard = (props: IProps) => {
           />
           <h3 className="text-[#4060c7] text-sm font-bold mr-2">
             {props.title}
-            {/* لیگ برتر خلیج فارس */}
           </h3>
         </div>
         <img
