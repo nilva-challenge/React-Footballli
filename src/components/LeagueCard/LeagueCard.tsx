@@ -1,9 +1,14 @@
 import { useState } from "react";
 import arrowDown from "../../assets/images/down-arrow.svg";
-import leagueLogo from "../../assets/images/PersianGulfProLeague.png";
+import Match from "../../models/Match.model";
 import LeagueCardMatches from "./LeagueCardMatches/LeagueCardMatches";
 
-const LeagueCard = () => {
+interface IProps {
+  title: string;
+  matches: Match[];
+}
+
+const LeagueCard = (props: IProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropDownClickedHandler = () => {
     setIsOpen(!isOpen);
@@ -13,9 +18,13 @@ const LeagueCard = () => {
     <>
       <div className="mt-4 bg-white flex justify-between items-center py-3 px-2 rounded-t-md">
         <div className="flex">
-          <img src={leagueLogo} className="w-4 h-4 bg-black rounded-lg" />
+          <img
+            src={props.matches[0].league.logo}
+            className="w-4 h-4 bg-black rounded-lg"
+          />
           <h3 className="text-[#4060c7] text-sm font-bold mr-2">
-            لیگ برتر خلیج فارس
+            {props.title}
+            {/* لیگ برتر خلیج فارس */}
           </h3>
         </div>
         <img
@@ -26,8 +35,16 @@ const LeagueCard = () => {
           onClick={dropDownClickedHandler}
         />
       </div>
-      <LeagueCardMatches isOpen={isOpen} />
-      <LeagueCardMatches isOpen={isOpen} />
+      {props.matches
+        .sort((a, b) => (b.fixture.status.short === "FT" ? 1 : 0))
+        .map((match) => (
+          <LeagueCardMatches
+            isOpen={isOpen}
+            match={match}
+            key={match.fixture.id}
+          />
+        ))}
+      {/* <LeagueCardMatches isOpen={isOpen} /> */}
     </>
   );
 };

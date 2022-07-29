@@ -1,9 +1,11 @@
 import clockImg from "../../../assets/images/clock.jpg";
 import esteghlalLogo from "../../../assets/images/esteghlal.png";
 import sepahanLogo from "../../../assets/images/sepahan.png";
+import Match from "../../../models/Match.model";
 
 interface Props {
   isOpen: boolean;
+  match: Match;
 }
 
 const LeagueCardMatches = (props: Props) => {
@@ -21,13 +23,26 @@ const LeagueCardMatches = (props: Props) => {
 
         <div className="flex flex-1 justify-center">
           <div className="flex-1 justify-end flex items-center ml-2">
-            <p>استقلال</p>
-            <img src={esteghlalLogo} className="w-8 h-8 mr-1" alt="" />
+            <p>{props.match.teams.home.name}</p>
+            <img
+              src={props.match.teams.home.logo}
+              className="w-8 h-8 mr-1"
+              alt=""
+            />
           </div>
-          <p className="mt-2">{"34" + " : " + "12"}</p>
+          <p className="mt-2">
+            {props.match.fixture.status.short === "FT"
+              ? props.match.goals.home + " - " + props.match.goals.away
+              : "-"}
+            {/* {"34" + " : " + "12"} */}
+          </p>
           <div className="flex-1 flex  items-center mr-2">
-            <img src={sepahanLogo} className="w-8 h-8 ml-2" alt="" />
-            <p>سپاهان</p>
+            <img
+              src={props.match.teams.away.logo}
+              className="w-8 h-8 ml-2"
+              alt=""
+            />
+            <p>{props.match.teams.away.name}</p>
           </div>
         </div>
       </div>

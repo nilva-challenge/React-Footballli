@@ -1,27 +1,48 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDate } from "../../hooks/UseDate";
 import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
+// @ts-ignore
+import { groupBy } from "lodash";
 
 const Content = () => {
-  // const [date, setDate] = useState("");
+  const { date, setDate } = useDate();
 
-  // const { isLoading, error, data } = useQuery(['repoData',date], () =>
-  //   fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+  // const { status, data } = useQuery(["characters"], () =>
+  //   fetch("https://rickandmortyapi.com/api/character/").then((res) =>
   //     res.json()
-  //   ),{
-  //     // set data
-  //   }
-  // )
+  //   )
+  // );
+
+  const { isLoading, error, data } = useQuery(["fixtures", date], () =>
+    fetch(`https://v3.football.api-sports.io/fixtures?date=${date}`, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "fb4debf164225cac508768e4f814a70e",
+      },
+    }).then((res) => {
+      return res.json();
+    })
+  );
+
+  const groupedMatch = groupBy(data?.response, "league.name");
+  console.log("Grouped Matches are:", Object.keys(groupedMatch));
 
   return (
     <>
       <DateSelection />
 
-      <main className="bg-[#f5f6fb] h-[80vh] pt-1 px-4">
-        <LeagueCard />
-        <LeagueCard />
-      </main>
+      {isLoading && !data ? (
+        <span>Loading...</span>
+      ) : (
+        <main className="bg-[#f5f6fb] h-[80vh] pt-1 px-4">
+          {Object.keys(groupedMatch).map((item) => (
+            <LeagueCard title={item} matches={groupedMatch[item]} key={item} />
+          ))}
+        </main>
+      )}
     </>
   );
 };
