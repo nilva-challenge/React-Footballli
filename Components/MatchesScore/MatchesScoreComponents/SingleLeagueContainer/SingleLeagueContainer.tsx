@@ -9,6 +9,8 @@ const SingleLeagueContainer: FC<SingleLeagueProps> = ({
 }) => {
   const [leagueMatches, setLeagueMatches] = useState([]);
   const [showResults, setShowResults] = useState(false);
+
+  //to not render filtered leagues
   useEffect(() => {
     const filteredLeague = fixtures.filter(
       (item: any) => item.league.name === leagueName
@@ -38,7 +40,12 @@ const SingleLeagueContainer: FC<SingleLeagueProps> = ({
           {leagueMatches.map((item: any) => {
             const { teams, score, fixture } = item;
             return (
-              <SingleMatchResult score={score} teams={teams} key={fixture.id} />
+              <SingleMatchResult
+                score={score}
+                teams={teams}
+                fixture={fixture}
+                key={fixture.id}
+              />
             );
           })}
         </div>

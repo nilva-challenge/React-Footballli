@@ -3,4 +3,5 @@ export type MatchesScoreProps = {
   leagues: string[];
   onSearchHandler: any;
   searchField: any;
+  activeDateTabHandler: any;
 };

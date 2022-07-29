@@ -1,7 +1,12 @@
 import React, { FC } from "react";
 import { SingleMatchResultProps } from "./index.d";
 
-const SingleMatchResult: FC<SingleMatchResultProps> = ({ teams, score }) => {
+const SingleMatchResult: FC<SingleMatchResultProps> = ({
+  teams,
+  score,
+  fixture,
+}) => {
+  console.log(fixture, "fixture");
   return (
     <div className="flex  justify-center items-center p-1 my-1 border-t-2 border-gray-100">
       <div className="flex items-center justify-end gap-1  flex-1 ">

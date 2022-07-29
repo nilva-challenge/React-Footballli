@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import MatchesScore from "../Components/MatchesScore";
+import { getSpecificDate } from "../utils/dateUtils";
 
 const Matches = () => {
   //getting all available fixtures for a specific date
   const [allFixturesData, setAllfixturesData] = useState([]);
   const [allUniqueLeagues, setAllUniqueLeagues] = useState([]);
+
+  //get yesterdays fixtures as initial props
+  const [activeTab, setActiveTab] = useState(getSpecificDate(-1));
 
   //filtering data after search
   const [filteredLeagues, setFilteredLeagues] = useState([]);
@@ -14,7 +18,7 @@ const Matches = () => {
 
   //setting initial state after first page load
   useEffect(() => {
-    fetch("https://v3.football.api-sports.io/fixtures?date=2022-07-29", {
+    fetch(`https://v3.football.api-sports.io/fixtures?date=${activeTab}`, {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
@@ -40,7 +44,7 @@ const Matches = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [activeTab]);
 
   //filtering fixtures and leagues based on search
   useEffect(() => {
@@ -74,6 +78,7 @@ const Matches = () => {
   return (
     <MatchesScore
       searchField={searchField}
+      activeDateTabHandler={(e: string) => setActiveTab(e)}
       fixtures={filteredFixtures}
       leagues={filteredLeagues}
       onSearchHandler={(e: string) => setSearchField(e)}
