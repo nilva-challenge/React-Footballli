@@ -4,7 +4,7 @@ import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
 
 const Content = () => {
-  const [date, setDate] = useState("");
+  // const [date, setDate] = useState("");
 
   // const { isLoading, error, data } = useQuery(['repoData',date], () =>
   //   fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
