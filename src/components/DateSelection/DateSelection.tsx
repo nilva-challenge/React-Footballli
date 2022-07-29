@@ -13,9 +13,8 @@ const DateSelection = () => {
     if (dateRef.current) {
       dateRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "nearest",
         inline: "center",
-
       });
     }
   }, []);

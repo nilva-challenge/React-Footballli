@@ -1,6 +1,6 @@
 import clockImg from "../../assets/images/clock.jpg";
 
-const TopNav = () => {
+const Header = () => {
   return (
     <div className="flex justify-between p-4 pl-2">
       <h1 className="mt-[3px] text-xl font-extrabold font-iransans">
@@ -11,4 +11,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default Header;
