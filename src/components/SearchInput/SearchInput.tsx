@@ -1,6 +1,5 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { useData } from "../../hooks/UseData";
-import { DataContext } from "../context/DataContext";
 
 const SearchInput: FC = () => {
   const { setFilteredData, mainData, searchValue, setSearchValue } = useData();
@@ -24,6 +23,7 @@ const SearchInput: FC = () => {
       ) {
         return item;
       }
+      return null;  
     });
 
     setFilteredData(filteredData ?? []);

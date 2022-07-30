@@ -14,15 +14,6 @@ const LeagueCardMatches: FC<IProps> = (props) => {
           props.isOpen ? "flex justify-between items-center" : "hidden"
         }  rounded-b-md mt-[2px] bg-white py-4 flex justify-between items-center px-4 text-xs md:text-base`}
       >
-        <div className="md:flex hidden">
-          <img
-            src={props.match.league.flag}
-            className="max-w-[24px]"
-            alt="country flag league"
-          />
-          <p className="mx-2">{props.match.league.name}</p>
-        </div>
-
         <div className="flex flex-1 justify-center">
           <div className="flex-1 justify-end flex items-center ml-2">
             <p>{props.match.teams.home.name}</p>

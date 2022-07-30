@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { FC, useContext, useEffect, useState } from "react";
+import { FC } from "react";
 import { useDate } from "../../hooks/UseDate";
 import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
@@ -32,6 +32,10 @@ const Content: FC = () => {
   );
 
   const groupedMatch = groupBy(filteredData, "league.name");
+
+  if (error) {
+    return <span>Something wrong is happening</span>;
+  }
 
   return (
     <>
