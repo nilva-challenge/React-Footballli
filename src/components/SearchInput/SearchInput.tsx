@@ -1,9 +1,9 @@
 import { FC, useContext } from "react";
-import { DataContext } from "../../App";
+import { useData } from "../../hooks/UseData";
+import { DataContext } from "../context/DataContext";
 
 const SearchInput: FC = () => {
-  const { setFilteredData, mainData, searchValue, setSearchValue } =
-    useContext(DataContext);
+  const { setFilteredData, mainData, searchValue, setSearchValue } = useData();
 
   const searchInputChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>

@@ -5,12 +5,11 @@ import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
 // @ts-ignore
 import { groupBy } from "lodash";
-import { DataContext } from "../../App";
+import { useData } from "../../hooks/UseData";
 
 const Content: FC = () => {
   const { date } = useDate();
-  const { setFilteredData, setMainData, filteredData } =
-    useContext(DataContext);
+  const { setFilteredData, setMainData, filteredData } = useData();
 
   const { isLoading, error, data } = useQuery(
     ["fixtures", date],
@@ -32,9 +31,7 @@ const Content: FC = () => {
     }
   );
 
-  console.log("data is:", data);
   const groupedMatch = groupBy(filteredData, "league.name");
-  // console.log("Grouped Matches are:", groupedMatch);
 
   return (
     <>
