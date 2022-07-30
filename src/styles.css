@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.horizontal-scroll {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0px;
+}
+.horizontal-scroll::-webkit-scrollbar-track {
+    display: none;
+    width: 0px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    display: none;
+    width: 0px;
+}
