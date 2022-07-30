@@ -38,11 +38,14 @@ const Navbar: FC = () => {
   return (
     <div className="bg-white  bg-lightMode-secondary text-darkMode-primary fixed bottom-0 flex justify-between w-full py-3 border-t">
       {navItems.reverse().map((navItem) => {
+        console.log("Nav Items are: ", navItems.reverse());
         let Icon = navItem.icon;
         return (
           <div
             key={navItem.name}
-            className="flex flex-col items-center flex-1 cursor-pointer text-[#acb1be] hover:text-[#5b9a3f]"
+            className={`flex flex-col items-center flex-1 cursor-pointer text-[#acb1be] ${
+              navItem.name === "مسابقات" ? "text-[#5b9a3f]" : ""
+            }`}
           >
             <Icon className="w-6 h-6" />
             <p className=" mt-2 text-xs font-bold">{navItem.name}</p>
