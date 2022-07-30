@@ -7,6 +7,14 @@ interface IProps {
 }
 
 const LeagueCardMatches: FC<IProps> = (props) => {
+  const hour = props.match.fixture.date
+    .toLocaleString("fa-IR")
+    .split("T")[1]
+    .split(":")[0];
+  const minute = props.match.fixture.date
+    .toLocaleString("fa-IR")
+    .split("T")[1]
+    .split(":")[1];
   return (
     <div>
       <div
@@ -26,8 +34,7 @@ const LeagueCardMatches: FC<IProps> = (props) => {
           <p className="mt-2">
             {props.match.fixture.status.short === "FT"
               ? props.match.goals.home + " - " + props.match.goals.away
-              : "-"}
-            {/* {"34" + " : " + "12"} */}
+              : hour + ":" + minute}
           </p>
           <div className="flex-1 flex  items-center mr-2">
             <img

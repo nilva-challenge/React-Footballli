@@ -18,7 +18,7 @@ const Content: FC = () => {
         method: "GET",
         headers: {
           "x-rapidapi-host": "v3.football.api-sports.io",
-          "x-rapidapi-key": "fb4debf164225cac508768e4f814a70e",
+          "x-rapidapi-key": "8f0a97231b9bafc384557d7eb4f95f71",
         },
       }).then((res) => {
         return res.json();
@@ -32,6 +32,10 @@ const Content: FC = () => {
   );
 
   const groupedMatch = groupBy(filteredData, "league.name");
+
+  console.log("error is", error);
+  console.log("is loading", isLoading);
+  console.log("data is", data);
 
   if (error) {
     return <span>Something wrong is happening</span>;
