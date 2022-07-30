@@ -3,4 +3,4 @@
 // You can supply your own keys in .env file.
 export const API_KEY =
     (import.meta.env.VITE_API_KEY as string | undefined) ??
-    '98593f01ca01359fd9619b0220509875'
+    'da01d512d0bcaf0fc4273307d9282720'
