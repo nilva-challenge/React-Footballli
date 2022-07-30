@@ -1,5 +1,4 @@
 import { FC } from "react";
-import clockImg from "../../../assets/images/clock.jpg";
 import Match from "../../../models/Match.model";
 
 interface IProps {

@@ -1,12 +1,14 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useContext, useEffect, useRef, useState } from "react";
 import dates, { differenceInDays } from "../../utils/DateMaker";
 import { DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { useDate } from "../../hooks/UseDate";
+import { DataContext } from "../../App";
 
 const DateSelection: FC = () => {
   // const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const { setSearchValue } = useContext(DataContext);
   const { date, setDate } = useDate();
   const dateRef = useRef<null | HTMLLIElement>(null);
   useEffect(() => {
@@ -41,6 +43,7 @@ const DateSelection: FC = () => {
             className="flex-shrink-0 cursor-pointer overflow-hidden"
             onClick={() => {
               setDate(item.split("T")[0]);
+              setSearchValue("");
             }}
           >
             {differenceInDays(new Date(item), new Date()) === 0

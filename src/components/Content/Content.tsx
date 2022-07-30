@@ -1,34 +1,40 @@
 import { useQuery } from "@tanstack/react-query";
-import { FC, useEffect, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { useDate } from "../../hooks/UseDate";
 import DateSelection from "../DateSelection/DateSelection";
 import LeagueCard from "../LeagueCard/LeagueCard";
 // @ts-ignore
 import { groupBy } from "lodash";
+import { DataContext } from "../../App";
 
 const Content: FC = () => {
   const { date, setDate } = useDate();
+  const { setFilteredData, setMainData, filteredData } =
+    useContext(DataContext);
 
-  // const { status, data } = useQuery(["characters"], () =>
-  //   fetch("https://rickandmortyapi.com/api/character/").then((res) =>
-  //     res.json()
-  //   )
-  // );
+  const { isLoading, error, data } = useQuery(
+    ["fixtures", date],
+    () =>
+      fetch(`https://v3.football.api-sports.io/fixtures?date=${date}`, {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "v3.football.api-sports.io",
+          "x-rapidapi-key": "fb4debf164225cac508768e4f814a70e",
+        },
+      }).then((res) => {
+        return res.json();
+      }),
+    {
+      onSuccess: (data) => {
+        setMainData(data.response);
+        setFilteredData(data.response);
+      },
+    }
+  );
 
-  // const { isLoading, error, data } = useQuery(["fixtures", date], () =>
-  //   fetch(`https://v3.football.api-sports.io/fixtures?date=${date}`, {
-  //     method: "GET",
-  //     headers: {
-  //       "x-rapidapi-host": "v3.football.api-sports.io",
-  //       "x-rapidapi-key": "49d02c77b5706e7a570cfa7c63e6d2a4",
-  //     },
-  //   }).then((res) => {
-  //     return res.json();
-  //   })
-  // );
-
-  const groupedMatch = groupBy(data?.response, "league.name");
-  console.log("Grouped Matches are:", Object.keys(groupedMatch));
+  console.log("data is:", data);
+  const groupedMatch = groupBy(filteredData, "league.name");
+  // console.log("Grouped Matches are:", groupedMatch);
 
   return (
     <>

@@ -1,6 +1,44 @@
-import { FC } from "react";
+// @ts-ignore
+import { groupBy } from "lodash";
+import { FC, useContext } from "react";
+import { DataContext } from "../../App";
 
 const SearchInput: FC = () => {
+  const { setFilteredData, mainData, searchValue,setSearchValue } = useContext(DataContext);
+
+  const searchInputChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    event.preventDefault();
+    setSearchValue(event.target.value);
+    let filteredData = mainData.filter((item) => {
+      if (
+        item.league.name
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase()) ||
+        item.teams.home.name
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase()) ||
+        item.teams.away.name
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase())
+      ) {
+        return item;
+      }
+    });
+
+    setFilteredData(filteredData ?? []);
+
+    // let searchedObj: any = {};
+    // const groupedMatch = groupBy(filteredData, "league.name");
+    // Object.entries(groupedMatch).forEach((item) => {
+    //   if (item[0].includes(event.target.value)) {
+    //     searchedObj[item[0]] = item[1];
+    //   }
+    // });
+    // console.log("Searched object is:", searchedObj);
+  };
+
   return (
     <div>
       <label
@@ -25,6 +63,8 @@ const SearchInput: FC = () => {
           placeholder="جستجو..."
           type="text"
           id="search"
+          onChange={searchInputChangeHandler}
+          value={searchValue}
         />
       </label>
     </div>
