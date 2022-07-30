@@ -8,7 +8,7 @@ import { groupBy } from "lodash";
 import { DataContext } from "../../App";
 
 const Content: FC = () => {
-  const { date, setDate } = useDate();
+  const { date } = useDate();
   const { setFilteredData, setMainData, filteredData } =
     useContext(DataContext);
 

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DateContext } from "../App";
+import { DateContext } from "../components/context/dateContext";
 
 export const useDate = () => {
   const context = useContext(DateContext);

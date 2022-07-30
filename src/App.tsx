@@ -3,13 +3,9 @@ import { Content } from "./components/Content/Content";
 import { createContext, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Match from "./models/Match.model";
+import DateContextProvider from "./components/context/dateContext";
 
 const queryClient = new QueryClient();
-
-interface ContextType {
-  date: string;
-  setDate: (date: string) => void;
-}
 
 interface DataContextType {
   searchValue: string;
@@ -29,13 +25,7 @@ export const DataContext = createContext<DataContextType>({
   setFilteredData: () => {},
 });
 
-export const DateContext = createContext<ContextType>({
-  date: "",
-  setDate: () => {},
-});
-
 function App() {
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [mainData, setMainData] = useState<Match[]>([]);
   const [filteredData, setFilteredData] = useState<Match[]>([]);
   const [searchValue, setSearchValue] = useState("");
@@ -53,11 +43,11 @@ function App() {
             setSearchValue,
           }}
         >
-          <DateContext.Provider value={{ date, setDate }}>
+          <DateContextProvider>
             <Layout>
               <Content />
             </Layout>
-          </DateContext.Provider>
+          </DateContextProvider>
         </DataContext.Provider>
       </QueryClientProvider>
     </>
