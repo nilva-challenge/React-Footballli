@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  direction: rtl;
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/Iranian\ Sans.ttf");
+}
+
+body {
+  font-family: "IranSans";
+}
