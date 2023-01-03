@@ -9,8 +9,7 @@ We are going to develop a react based web application to get live scores of foot
 UI for live score page
 </p>
 
-**Note**: For data, use [this api documentation](https://www.api-football.com/documentation-v3). You should create an account in panel & get the free api-key to use. The fixtures part in this documentation provides necessary data for this task, also note that this api has a daily limit.
-
+**Note**: For data, use [this api](https://core-sport-api.zarebin.ir/api/football/fixtures/?date=2023-01-03).
 
 ## Expectations
 
