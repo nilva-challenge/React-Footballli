@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const SearchBar = () => {
   return (
-    <div className="w-full flex items-center justify-between py-5">
-      <div className="bg-gray-50 w-full flex rounded-lg">
+    <div className="w-full flex items-center justify-between pt-5 px-4">
+      <div className="bg-gray-100 w-full flex rounded-lg">
         <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
           <Search />
         </IconButton>

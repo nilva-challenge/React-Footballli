@@ -5,36 +5,77 @@ import {
   PermIdentityOutlined,
   SportsSoccerOutlined,
 } from "@mui/icons-material";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
+import { green, grey } from "@mui/material/colors";
 import { useState } from "react";
 
-const BottomMenu = () => {
-  const [value, setValue] = useState(0);
+type BottomMenuProps = {
+  page: string;
+  setPage: (page: string) => void;
+};
+const BottomMenu = ({ page, setPage }: BottomMenuProps) => {
+  // const [value, setValue] = useState(0);
   return (
-    <div className="flex w-full overflow-hidden">
+    <Paper
+      sx={{ position: "fixed", bottom: 0, left: 0, right: 0, padding:"4px 0" }}
+      elevation={3}
+    >
       <BottomNavigation
         showLabels
-        value={value}
+        value={page}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setPage(newValue);
+        }}
+        sx={{
+          justifyContent: "space-around",
+          padding: "8px",
+          "& .Mui-selected": {
+            color: green[600] + '!important',
+          },
+          "& .MuiBottomNavigationAction-root":{
+            color: grey[400]
+          }
         }}
       >
         <BottomNavigationAction
           label="پروفایل"
+          value={"/"}
           icon={<PermIdentityOutlined />}
+          sx={{
+            minWidth: "60px",
+            maxWidth: "60px",
+            width: "auto",
+            "& .MuiBottomNavigationAction-label": {
+              marginTop: "4px !important",
+            },
+          }}
         />
-        <BottomNavigationAction label="لیگ ها" icon={<EmojiEventsOutlined />} />
+        <BottomNavigationAction
+          sx={{ minWidth: "60px", maxWidth: "60px", width: "auto" }}
+          label="لیگ ها"
+          value={"/leagues"}
+          icon={<EmojiEventsOutlined />}
+        />
         <BottomNavigationAction
           label="فوتبان"
+          value={"/footban"}
           icon={<SportsSoccerOutlined />}
+          sx={{ minWidth: "60px", maxWidth: "60px", width: "auto" }}
         />
-        <BottomNavigationAction label="اکتشاف" icon={<ExploreOutlined />} />
+        <BottomNavigationAction
+          label="اکتشاف"
+          value={"/discover"}
+          icon={<ExploreOutlined />}
+          sx={{ minWidth: "60px", maxWidth: "60px", width: "auto" }}
+        />
         <BottomNavigationAction
           label="مسابقات"
+          value={"/matchesList"}
           icon={<BorderOuterOutlined />}
+          sx={{ minWidth: "60px", maxWidth: "60px", width: "auto" }}
         />
       </BottomNavigation>
-    </div>
+    </Paper>
   );
 };
 export default BottomMenu;

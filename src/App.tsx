@@ -1,42 +1,47 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { TypedUseSelectorHook, useDispatch } from "react-redux";
-import { scores } from "./app/redux/football/actions";
-import { AppDispatch, RootState } from "./app/redux/store";
 import BottomMenu from "./components/BottomMenu";
 import RTL from "./app/RTL/RTL";
 import MobileContainer from "./components/MobileContainer";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import DateTabs from "./components/DateTabs";
-import { getTime } from "./app/service/datetime";
-import ScoresList from "./components/ScoresList";
-import { useSelector } from "react-redux";
+
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
+import MatchesList from "./pages/matchesList";
+import { scores } from "./app/redux/football/actions";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./app/redux/store";
 
 function App() {
   const Dispatch = useDispatch<AppDispatch>();
-  const scoresState = useSelector((state: any) => state.football.scores);
-  const [date, setDate] = useState<string>(getTime());
-  const callApi = () => {
-    Dispatch(scores(date));
-  };
-
-  useEffect(() => {
-    callApi();
-  }, [date]);
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/"
+        element={<MobileContainer />}
+        // loader={rootLoader}
+        // action={rootAction}
+        errorElement={<MobileContainer/>  }
+      >
+        <Route errorElement={<p>404</p>}>
+          <Route
+            path="matchesList"
+            element={<MatchesList />}
+            // loader={contactLoader}
+            // action={contactAction}
+          />
+        </Route>
+      </Route>
+    )
+  );
   return (
     <div className="App">
       <RTL>
-        <MobileContainer>
-          <div>
-            <Header />
-            <SearchBar />
-            <DateTabs value={date} setValue={setDate} />
-            <ScoresList scores={scoresState} />
-          </div>
-          <BottomMenu />
-        </MobileContainer>
+        <RouterProvider router={router} />
       </RTL>
     </div>
   );
