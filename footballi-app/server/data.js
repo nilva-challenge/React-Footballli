@@ -5,13 +5,17 @@ import foolad from "../public/images/teams/foolad.png";
 import sepahan from "../public/images/teams/sepahan.png";
 import chelsea from "../public/images/teams/chelsea.png";
 import liverpool from "../public/images/teams/Liverpool.png";
+import dortmund from "../public/images/teams/dortmund.png";
+import bayern from "../public/images/teams/bayern.png";
 import premier_league from "../public/images/flag/premier-league.jpg";
 import iran_league from "../public/images/flag/iran-league.jpg";
+import bundesliga_league from "../public/images/flag/bundesliga-league.png";
 
 const base_url = "http://localhost:3000/live";
 
 export const persianDate = [
   {
+    name: "yesterday",
     title: "دیروز",
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -20,7 +24,7 @@ export const persianDate = [
     leagues: [
       {
         League_title: "لیگ برتر خلیج فارس",
-
+        League_logo: iran_league,
         games: [
           {
             team1_logo: persepolis,
@@ -36,6 +40,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "today",
     title: "امروز",
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -83,6 +88,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "tomorrow",
     title: "فردا",
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -90,13 +96,15 @@ export const persianDate = [
     id: 3,
     leagues: [
       {
-        League_title: "لیگ برتر خلیج فارس",
+        League_title: "لیگ آلمان",
+        League_logo: bundesliga_league,
         games: [
           {
-            team1_logo: persepolis,
-            team1_name: "پرسپولیس",
-            team2_logo: esteghlal,
-            team2_name: "استقلال",
+            team1_logo: bayern,
+            team1_name: "بایرن مونیخ",
+            team2_logo: dortmund,
+            team2_name: "دورتموند",
+            time: "22:45",
             id: 16,
           },
         ],
@@ -105,6 +113,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "2days",
     title: `${GetPersianDate().sunmonth} ${GetPersianDate().daysun + 2}`,
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -113,12 +122,14 @@ export const persianDate = [
     leagues: [
       {
         League_title: "لیگ برتر خلیج فارس",
+        League_logo: iran_league,
         games: [
           {
             team1_logo: persepolis,
             team1_name: "پرسپولیس",
             team2_logo: esteghlal,
             team2_name: "استقلال",
+            time: "19:30",
             id: 17,
           },
         ],
@@ -127,6 +138,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "3days",
     title: `${GetPersianDate().sunmonth} ${GetPersianDate().daysun + 3}`,
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -135,12 +147,14 @@ export const persianDate = [
     leagues: [
       {
         League_title: "لیگ برتر خلیج فارس",
+        League_logo: iran_league,
         games: [
           {
             team1_logo: persepolis,
             team1_name: "پرسپولیس",
             team2_logo: esteghlal,
             team2_name: "استقلال",
+            time: "17:00",
             id: 18,
           },
         ],
@@ -148,6 +162,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "4days",
     title: `${GetPersianDate().sunmonth} ${GetPersianDate().daysun + 4}`,
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -156,12 +171,14 @@ export const persianDate = [
     leagues: [
       {
         League_title: "لیگ برتر خلیج فارس",
+        League_logo: iran_league,
         games: [
           {
             team1_logo: persepolis,
             team1_name: "پرسپولیس",
             team2_logo: esteghlal,
             team2_name: "استقلال",
+            time: "10:30",
             id: 19,
           },
         ],
@@ -170,6 +187,7 @@ export const persianDate = [
     ],
   },
   {
+    name: "5days",
     title: `${GetPersianDate().sunmonth} ${GetPersianDate().daysun + 5}`,
     date: `${base_url}/${GetPersianDate().sunyear}-${
       GetPersianDate().monthday
@@ -178,6 +196,7 @@ export const persianDate = [
     leagues: [
       {
         League_title: "لیگ برتر خلیج فارس",
+        League_logo: iran_league,
         games: [
           {
             team1_logo: persepolis,

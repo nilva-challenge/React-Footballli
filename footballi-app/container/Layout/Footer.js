@@ -12,20 +12,20 @@ function Footer() {
         <FireIcon className="w-6 text-green-600" />
         <span>مسابقات</span>
       </div>
-      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer">
+      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer hover:text-green-600">
         <BellAlertIcon className="w-6" />
         <span>اکتشافات</span>
       </div>
-      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer">
+      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer hover:text-green-600">
         <CubeTransparentIcon className="w-6" />
         <span>فوتبال</span>
       </div>
 
-      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer">
+      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer hover:text-green-600">
         <TrophyIcon className="w-6" />
         <span>لیگ ها</span>
       </div>
-      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer">
+      <div className="flex flex-col items-center text-sm gap-y-1 cursor-pointer hover:text-green-600">
         <UserIcon className="w-6" />
         <span>پروفایل</span>
       </div>
