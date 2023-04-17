@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box, Divider, Avatar } from "@mui/material";
 import { FixtureItem } from "../../../../types";
 import CompetitionInnerItem from "./CompetitionInnerItem";
@@ -61,4 +62,4 @@ const CompetitionItem = (props: props) => {
     </Box>
   );
 };
-export default CompetitionItem;
+export default memo(CompetitionItem);

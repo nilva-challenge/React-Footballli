@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box } from "@mui/material";
 import { useAppSelector } from "../../Redux/hooks";
 import { rootStore } from "../../Redux/store";
@@ -52,4 +53,4 @@ const FooterItem: React.FC<props> = ({ elem }) => {
     </Box>
   );
 };
-export default FooterItem;
+export default memo(FooterItem);

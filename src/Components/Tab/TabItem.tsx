@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box } from "@mui/material";
 import { useAppDispatch } from "./../../Redux/hooks";
 import { selectDate } from "../../Redux/actions/tabsActions";
@@ -36,4 +37,4 @@ const TabItem = ({ date, index }: props) => {
     </Box>
   );
 };
-export default TabItem;
+export default memo(TabItem);

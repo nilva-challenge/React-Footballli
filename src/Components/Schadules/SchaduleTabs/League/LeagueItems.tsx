@@ -2,6 +2,7 @@ import { Box, Avatar } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../../../../Redux/hooks";
 import { rootStore } from "../../../../Redux/store";
 import { selectALeague } from "../../../../Redux/actions/tabsActions";
+import { useCallback, memo } from "react";
 interface props {
   item: {
     leagueName: string;
@@ -15,9 +16,10 @@ const LeagueItems = ({ item }: props) => {
     (state: rootStore) => state.tabsReducer
   );
 
-  const leagueItemOnclick = () => {
+  const leagueItemOnclick = useCallback(() => {
     dispatch(selectALeague(leagueName));
-  };
+  }, []);
+
   return (
     <Box
       sx={{
@@ -50,4 +52,4 @@ const LeagueItems = ({ item }: props) => {
     </Box>
   );
 };
-export default LeagueItems;
+export default memo(LeagueItems);

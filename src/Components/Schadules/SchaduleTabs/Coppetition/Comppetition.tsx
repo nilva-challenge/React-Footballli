@@ -8,7 +8,6 @@ const Comppetition = () => {
   const { filteredCompetitionData } = useAppSelector(
     (state: rootStore) => state.fetchDataReducer
   );
-  console.log({ filteredCompetitionData });
 
   return (
     <Box

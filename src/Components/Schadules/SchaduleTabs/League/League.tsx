@@ -7,7 +7,6 @@ const Leauge = () => {
   const { filteredLeagueData } = useAppSelector(
     (state: rootStore) => state.fetchDataReducer
   );
-  console.log({ filteredLeagueData });
 
   return (
     <Box

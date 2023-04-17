@@ -1,15 +1,19 @@
-import { useDeferredValue, useState } from "react";
+import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { AiOutlineSearch } from "react-icons/ai";
 import { filterdData } from "../../Redux/actions/fetchActions";
 import { useAppDispatch } from "../../Redux/hooks";
+import useDebounce from "../../Helpers/useDebounce";
 
 const SearchInput = () => {
   const dispatch = useAppDispatch();
-  // const [inputValue, setInputValue] = useState("");
-  // const deferredvalue = useDeferredValue(inputValue);
-  // console.log({ inputValue });
+  const [inputValue, setInputValue] = useState("");
+  const debouncedValue = useDebounce(inputValue, 500);
+
+  useEffect(() => {
+    dispatch(filterdData(inputValue));
+  }, [debouncedValue]);
 
   return (
     <TextField
@@ -38,7 +42,7 @@ const SearchInput = () => {
           height: "45px",
         },
       }}
-      onChange={(e) => dispatch(filterdData(e.target.value))}
+      onChange={(e) => setInputValue(e.target.value)}
     />
   );
 };
