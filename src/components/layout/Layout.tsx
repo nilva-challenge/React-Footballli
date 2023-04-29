@@ -2,16 +2,14 @@ import { Layout as AntLayout } from "antd";
 import Header from "./Header";
 import Footer from "./Footer";
 import { ReactNode } from "react";
-
-const{ Content : AntContent } = AntLayout;
-
- 
+import Content from "./Content";
+  
 const Layout = ( {children}:{children: ReactNode}) => {
     return (
         <AntLayout>
 
             <Header />
-            <AntContent > {children} </AntContent> 
+            <Content > {children} </Content> 
             <Footer />
         
         </AntLayout>
