@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import { uniqueId } from "lodash";
 import {UserOutlined} from '@ant-design/icons';
 import { TFooterItems } from "../../types/TFooterItems";
 
@@ -10,19 +11,19 @@ const footerItems:TFooterItems=[
     icon:<UserOutlined />,
 },
     {
-    title:'پروفایل',
+    title:'لیگ‌ها',
     icon:<UserOutlined />,
 },
     {
-    title:'پروفایل',
+    title:'فوتبال',
     icon:<UserOutlined />,
 },
     {
-    title:'پروفایل',
+    title:'اکتشاف',
     icon:<UserOutlined />,
 },
     {
-    title:'پروفایل',
+    title:'مسابقات',
     icon:<UserOutlined />,
 },
 ]
@@ -30,7 +31,7 @@ const Footer  = () => {
 
     function footerMaker(footerItems:TFooterItems){
         return (
-            footerItems.map(item => <div className="footer-item">{item.icon}<span>{item.title}</span></div>)
+            footerItems.map(item => <div className="footer-item" key={uniqueId()}>{item.icon}<span>{item.title}</span></div>)
         )
     }
     

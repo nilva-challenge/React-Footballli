@@ -12,12 +12,15 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.4.6",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
+    "react-date-object": "^2.1.7",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.194",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
