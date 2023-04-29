@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react' 
+import './assets/styles/index.scss'
 import { DatePicker } from '../node_modules/antd/es/index'
 import Layout from './components/layout/Layout'
 
@@ -13,11 +11,9 @@ function App() {
     <Layout>
  
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href="https://vitejs.dev" target="_blank"> 
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://react.dev" target="_blank"> 
         </a>
       </div>
       <h1>Vite + React</h1>
