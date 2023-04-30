@@ -32,8 +32,7 @@ const MatchPage = () => {
       };
     })
 }
-const y= makeTabs()
-debugger
+ 
     return (
    
       <Tabs
