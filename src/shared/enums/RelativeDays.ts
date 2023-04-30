@@ -2,8 +2,10 @@ export const RelativeDays={
    
     yesterday:{id:-1,label:'دیروز'},
      
-    today:{id:0,
-    label:'امروز'},
+    today:{
+      id:0,
+      label:'امروز'
+    },
   
     tomorrow:{
       id:1,
