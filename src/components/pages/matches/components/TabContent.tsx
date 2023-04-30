@@ -1,17 +1,15 @@
  
 
 import { Collapse, Space } from 'antd';
-import { useGetFixturesQuery } from '../../../../api';
+// import { useGetFixturesQuery } from '../../../../api';
 
 const { Panel } = Collapse;
 
 
-type Props = {
-    
-};
+ 
 
-export const TabContent = (props: Props) => {
-    const fixtures = useGetFixturesQuery('2023-01-04');
+export const TabContent = ( ) => {
+    // const fixtures = useGetFixturesQuery('2023-01-04');
 
  
     return ( 

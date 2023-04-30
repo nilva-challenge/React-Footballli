@@ -10,9 +10,7 @@ const date = new DateObject(new Date());
 console.log(date.subtract(-1, "day").format() ); 
 
  
-function onTabclick(key: string){
-
-}
+// function onTabclick(key: string){}
 
 const MatchPage = () => {
   const {tabs,numberOfprevDays} = useAppSelector((state) => state.matches);
@@ -42,7 +40,7 @@ const MatchPage = () => {
           className='tabs'
           direction="rtl"
           items={makeTabs()}
-          onTabClick={onTabclick}
+          // onTabClick={onTabclick}
           destroyInactiveTabPane
            
           /> 

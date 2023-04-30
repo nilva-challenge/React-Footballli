@@ -7,13 +7,9 @@ import persian_fa from 'react-date-object/locales/persian_fa';
 import { useIntersection } from '../../../../shared/hooks/useIntersection';
 import { addPrecedingTabs, addPrevTabs } from '../../../../state/reducer';
 import { useAppDispatch } from '../../../../state/reduxHooks';
+import { TabLabelProps } from '../../../../types/TabLabelProps';
 
-type TabLabelProps = {
-    id:number
-    isFirst:boolean
-    isLast:boolean
-    
-};
+
 
 export const TabLabel = ({id,isFirst ,isLast}: TabLabelProps) => {
     
