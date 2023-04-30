@@ -1,12 +1,12 @@
  
 import { useEffect, useRef } from 'react';
-import { RelativeDays } from '../../../shared/enums/RelativeDays';
+import { RelativeDays } from '../../../../shared/enums/RelativeDays';
 import DateObject from 'react-date-object';
 import persian from 'react-date-object/calendars/persian';
 import persian_fa from 'react-date-object/locales/persian_fa';
-import { useIntersection } from '../../../shared/hooks/useIntersection';
-import { addPrecedingTabs, addPrevTabs } from '../../../state/reducer';
-import { useAppDispatch } from '../../../state/reduxHooks';
+import { useIntersection } from '../../../../shared/hooks/useIntersection';
+import { addPrecedingTabs, addPrevTabs } from '../../../../state/reducer';
+import { useAppDispatch } from '../../../../state/reduxHooks';
 
 type TabLabelProps = {
     id:number
