@@ -1,8 +1,5 @@
 import { useState,useEffect, RefObject } from "react";
 
- 
- 
-
 export const useIntersection = (intersectingRef:  RefObject<HTMLElement>) => {
  
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -13,8 +10,6 @@ export const useIntersection = (intersectingRef:  RefObject<HTMLElement>) => {
       setIsIntersecting(entry.isIntersecting);
     });
      
-    // console.log(isIntersecting);
-
     observer.observe(intersectingRef.current as HTMLElement);
     return () => observer.disconnect();
   }, []);
