@@ -1,0 +1,20 @@
+
+
+.tabs {
+
+    .ant-tabs-tabpane{ display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    direction: ltr;}
+    
+    .ant-collapse-header-text{
+        direction: rtl;
+         
+    }
+     
+    .tabContent .ant-space-vertical .ant-space {
+        width: 100%;
+      }
+    
+}
+ 
