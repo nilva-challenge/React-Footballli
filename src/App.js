@@ -1,28 +1,17 @@
 import { TextField } from "@mui/material";
-import LiveScoreTitle from "./Components/Index/LiveScoreTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import LiveScoreTitle from "./Components/Index/LiveScoreTitle";
+import TimeDisplay from "./Components/Index/TimeDisplay";
 
 function App() {
-  const currentDate = new Date();
-  let explicitMonthCoercion = currentDate.getMonth() + 1;
-  explicitMonthCoercion = "0" + explicitMonthCoercion;
-  console.log("english Date", explicitMonthCoercion);
-  console.log(
-    "Persian Date",
-    currentDate.toLocaleDateString("fa-IR", {
-      month: "long",
-      day: "numeric",
-    })
-  );
-  console.log(
-    "englishsdsd Date",
-    currentDate.toLocaleDateString("en-US", {
-      month: "long",
-    })
-  );
+  const now = new Date();
+  const later = new Date(2023, 4, 30);
+  const daysOfYear = [];
+  for (now; now <= later; now.setDate(now.getDate() + 1)) {
+    daysOfYear.push(new Date(now));
+  }
   return (
     <>
       <div>
@@ -32,19 +21,14 @@ function App() {
         </div>
         <Swiper
           slidesPerView={6}
-          modules={[Pagination]}
           className="mySwiper"
           style={{ padding: "1rem" }}
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+          {daysOfYear?.map((dateTime, key) => (
+            <SwiperSlide key={key}>
+              <TimeDisplay dateTime={dateTime} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>
