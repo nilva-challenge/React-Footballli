@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { api } from '../api'
+import matchesReducer from './reducer'
  
 
 export const store = configureStore({
   reducer: {
-    
+    matches: matchesReducer,
     [api.reducerPath]: api.reducer,
   },
  

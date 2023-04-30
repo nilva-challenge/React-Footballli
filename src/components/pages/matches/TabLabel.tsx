@@ -37,7 +37,7 @@ export const TabLabel = ({id,isFirstOrLast}: TabLabelProps) => {
       });
 
     return (
-        <div ref={ref}>
+        <div className='tabLabel' ref={ref}>
             {nameLabels(id)}
         </div>
     );

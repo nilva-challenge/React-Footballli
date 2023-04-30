@@ -1,0 +1,1 @@
+export const makeEmptyArrs=(num:number):null[]=> new Array(num).fill(null)

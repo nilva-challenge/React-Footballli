@@ -32,10 +32,10 @@ const tabsId=[ -1,0,1,2 ]
   // }
 
   function initTabs(){
-    return new Array(20).fill(null).map((_, i,arr) => {
+    return new Array(10).fill(null).map((_, i,arr) => {
 
       let isFirstOrLast=(arr.length - 1 === i || i===0)
-      const id = i - 1;
+      const id = i - 5;
 
       return {
         label: <TabLabel id={id} isFirstOrLast={isFirstOrLast}/>, 
@@ -55,14 +55,11 @@ const tabsId=[ -1,0,1,2 ]
 function addDays(){}
 const MatchPage = () => {
 
-
-
     return (
     
-
       <Tabs
         
-        defaultActiveKey="0"
+          defaultActiveKey="0"
           tabPosition='top'
           className='tabs'
           direction="rtl"
