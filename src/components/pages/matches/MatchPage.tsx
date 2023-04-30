@@ -5,6 +5,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import { RelativeDays } from "../../../shared/enums/RelativeDays";
 import { useRef } from "react";
 import { TabLabel } from "./TabLabel";
+import { useAppSelector } from "../../../state/reduxHooks";
 
 
 const date = new DateObject(new Date());
@@ -31,20 +32,7 @@ const tabsId=[ -1,0,1,2 ]
      
   // }
 
-  function initTabs(){
-    return new Array(10).fill(null).map((_, i,arr) => {
-
-      let isFirstOrLast=(arr.length - 1 === i || i===0)
-      const id = i - 5;
-
-      return {
-        label: <TabLabel id={id} isFirstOrLast={isFirstOrLast}/>, 
-        key: String(id),
-        children: `Content of tab ${id} `,
-      };
-    })
-}
-
+ 
 // function TabObj(label, key, children ) {
 //   this.firstName = label;
 //   this.lastName = key;
@@ -54,9 +42,25 @@ const tabsId=[ -1,0,1,2 ]
 
 function addDays(){}
 const MatchPage = () => {
+  const {tabs,numberOfprevDays} = useAppSelector((state) => state.matches);
+  
+  function initTabs(){
+    return tabs.map((_, i,arr) => {
+
+      let isFirst =( i === 0)
+      let isLast =(arr.length - 1 === i )
+      const id = i - numberOfprevDays;
+
+      return {
+        label: <TabLabel id={id} isFirst ={isFirst} isLast={isLast}/>, 
+        key: String(id),
+        children: `Content of tab ${id} `,
+      };
+    })
+}
 
     return (
-    
+   
       <Tabs
         
           defaultActiveKey="0"

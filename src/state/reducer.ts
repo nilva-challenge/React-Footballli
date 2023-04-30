@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { makeEmptyArrs } from "../shared/utils";
  
 
-interface publicState {
+interface State {
     tabs: null[] ;
     numberOfprevDays:number;
 }
  
-const initialState: publicState = {
+const initialState: State = {
   tabs: makeEmptyArrs(10),
   numberOfprevDays:5
 };
@@ -18,13 +18,17 @@ export const matchesSlice = createSlice({
   initialState,
   reducers: {
     addPrevTabs(state ) {
-        state.numberOfprevDays+=5
-        state.tabs = state.tabs.concat(makeEmptyArrs(5))
-    },
+     
+    state.numberOfprevDays+=5
+    state.tabs = state.tabs.concat(makeEmptyArrs(5))
+    console.log( 'addPrevTabs');
+},
 
-    addPrecedingTabs(state ) {
-
+    addPrecedingTabs(state ) {  
+         
+        
         state.tabs = state.tabs.concat(makeEmptyArrs(5))
+        console.log( 'addPrecedingTabs');
        
     },
   },
@@ -32,7 +36,5 @@ export const matchesSlice = createSlice({
 
 export const { addPrevTabs,addPrecedingTabs } = matchesSlice.actions;
 
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.public.value;
 
 export default matchesSlice.reducer;

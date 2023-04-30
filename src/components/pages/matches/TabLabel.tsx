@@ -5,14 +5,19 @@ import DateObject from 'react-date-object';
 import persian from 'react-date-object/calendars/persian';
 import persian_fa from 'react-date-object/locales/persian_fa';
 import { useIntersection } from '../../../shared/hooks/useIntersection';
+import { addPrecedingTabs, addPrevTabs } from '../../../state/reducer';
+import { useAppDispatch } from '../../../state/reduxHooks';
 
 type TabLabelProps = {
     id:number
-    isFirstOrLast:boolean
+    isFirst:boolean
+    isLast:boolean
+    
 };
 
-export const TabLabel = ({id,isFirstOrLast}: TabLabelProps) => {
-
+export const TabLabel = ({id,isFirst ,isLast}: TabLabelProps) => {
+    
+  const dispatch = useAppDispatch()
     function nameLabels(id:number){
 
         if (RelativeDays.yesterday.id <=id && id <= RelativeDays.afterTomorrow.id){ 
@@ -30,14 +35,21 @@ export const TabLabel = ({id,isFirstOrLast}: TabLabelProps) => {
       }
       
       const ref =  useRef<HTMLDivElement>(null);
-      const isIntersecting=useIntersection(ref)
+      const isIntersecting = useIntersection(ref)
 
       useEffect(() => {
-        isFirstOrLast && console.log('TabLabel isIntersecting',isIntersecting,id );
+
+      (  isFirst || isLast) && console.log('TabLabel isIntersecting',isIntersecting,id );
+       
+     
+        if (isIntersecting&&isFirst) dispatch(addPrevTabs())
+        if (isIntersecting&&isLast) dispatch(addPrecedingTabs())
+
       });
 
     return (
-        <div className='tabLabel' ref={ref}>
+      <div className='tabLabel' ref={ref}>
+          
             {nameLabels(id)}
         </div>
     );
