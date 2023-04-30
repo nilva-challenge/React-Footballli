@@ -1,0 +1,27 @@
+.header{
+    background-color: white;
+    padding:0 1rem;
+    height: 8rem;
+    background-color: aqua;
+
+   &-top{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 1rem;
+
+   }
+
+   &-search input{
+
+    direction: rtl;
+
+   }
+    .icon{
+
+        align-self: self-end;
+        width: 3rem;
+
+    }
+}
