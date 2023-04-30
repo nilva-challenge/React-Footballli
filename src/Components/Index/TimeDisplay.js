@@ -1,7 +1,7 @@
 const TimeDisplay = ({ dateTime }) => {
   return (
     <span>
-      {dateTime.toLocaleDateString("en-US", {
+      {dateTime.toLocaleDateString("fa-IR", {
         month: "long",
         day: "numeric",
       })}
