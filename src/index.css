@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Iranian Sans", sans-serif;
+  direction: rtl;
+}
+.react-tabs__tab-list::-webkit-scrollbar { 
+  width: 0;
+  height: 0;
+  display: none;
+}
+.react-tabs__tab-list {
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+  grid: 1rem;
+  border: 1px solid transparent;
+}
+.react-tabs__tab{
+  white-space: nowrap;
+  color: rgb(107 114 128);
+}
+.react-tabs__tab--selected {
+  color: #000;
+  border: none;
+  border-bottom: 4px solid #40a044;
+  background: transparent;
+  font-size: 17px;
+}
+.react-tabs__tab:focus:after{
+  background: transparent;
+}
