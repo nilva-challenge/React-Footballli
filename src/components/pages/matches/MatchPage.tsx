@@ -44,7 +44,7 @@ const MatchPage = () => {
           destroyInactiveTabPane
            
           /> 
-  
+      
     );
 }
  
