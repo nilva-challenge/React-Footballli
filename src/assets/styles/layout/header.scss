@@ -1,8 +1,7 @@
 .header{
     background-color: white;
     padding:0 1rem;
-    height: 8rem;
-    background-color: aqua;
+    height: 8rem; 
 
    &-top{
 
@@ -13,11 +12,14 @@
 
    }
 
-   &-search input{
+   &-search {
 
-    direction: rtl;
-
+    input{direction: rtl;
+    background-color: rgb(245 245 245);
+    border-radius: 0;
    }
+   button{background-color: rgb(245 245 245);}
+}
     .icon{
 
         align-self: self-end;

@@ -38,7 +38,7 @@ const Footer  = () => {
     return ( 
     <AntFooter className="footer" >
 
-    {footerMaker(footerItems)}
+        {footerMaker(footerItems)}
         
     </AntFooter>
      );
