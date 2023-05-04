@@ -17,10 +17,10 @@ export const TabContent = ( {id}:{id:number}) => {
         return date.add(id,'day').format().replaceAll('/','-')
     }
     console.log(makeDate(id))
-    const  { data, error, isLoading } = useGetFixturesQuery(makeDate(id));
-    console.log(data, error, isLoading )
+    const  { data, } = useGetFixturesQuery(makeDate(id));
+   
 
-debugger
+ 
  
     return ( 
         <div className="tabContent">
