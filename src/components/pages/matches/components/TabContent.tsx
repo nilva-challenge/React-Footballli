@@ -1,38 +1,52 @@
  
 
-import { Collapse, Space } from 'antd';
-// import { useGetFixturesQuery } from '../../../../api';
+import { Avatar, Col, Collapse, List, Row, Space } from 'antd';
+import { useGetFixturesQuery } from '../../../../api';
+import DateObject from 'react-date-object';
 
 const { Panel } = Collapse;
 
 
  
 
-export const TabContent = ( ) => {
-    // const fixtures = useGetFixturesQuery('2023-01-04');
+export const TabContent = ( {id}:{id:number}) => {
 
+    function makeDate(id:number){
+        const date = new DateObject(new Date());
+        
+        return date.add(id,'day').format().replaceAll('/','-')
+    }
+    console.log(makeDate(id))
+    const  { data, error, isLoading } = useGetFixturesQuery(makeDate(id));
+    console.log(data, error, isLoading )
+
+debugger
  
     return ( 
-    <div className="tabContent">
+        <div className="tabContent">
 
         <Space  direction="vertical" size='large'>
-            <Collapse  destroyInactivePanel={false}  defaultActiveKey={['1']}>
-                <Panel header='لیگ برتر' key="1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatibus quia animi iusto saepe, fugit consequuntur id excepturi vel dicta culpa maiores reiciendis sapiente cum, nam aut doloribus tempore asperiores!</p>
+         { data?.map(league=>
+         <Collapse  bordered destroyInactivePanel={false}   >
+                <Panel  header={<><Avatar src={league.logo} /> <span>{league.name}</span></>} key={league.id}>
+                <List
+                itemLayout="horizontal"
+                dataSource={league.fixtures}
+                renderItem={(item) => (
+                <List.Item>
+                    <Row className='row' justify='center'>
+                        <Col className='col left-team-text'  span={8}><span>{item.away.name}</span></Col> 
+                        <Col className='col avatar'span={3}><Avatar src={item.away.logo} /></Col> 
+                        <Col className='col result'span={3}>{item.away_goals}:{item.home_goals}</Col> 
+                        <Col className='col avatar'span={3}><Avatar src={item.home.logo} /></Col>
+                        <Col className='col right-team-text'span={7}><span>{item.home.name}</span></Col>
+                    </Row>
+                </List.Item>
+    )}
+  />
                 </Panel>
-            </Collapse>
+            </Collapse>)}
 
-            <Collapse destroyInactivePanel={false}  defaultActiveKey={['1']}>
-                <Panel header='لیگ جزیره' key="1">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatibus quia animi iusto saepe, fugit consequuntur id excepturi vel dicta culpa maiores reiciendis sapiente cum, nam aut doloribus tempore asperiores!</p>
-                </Panel>
-            </Collapse>
-
-            <Collapse destroyInactivePanel={false} >
-                <Panel header='لیگ جزیره' key="1">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatibus quia animi iusto saepe, fugit consequuntur id excepturi vel dicta culpa maiores reiciendis sapiente cum, nam aut doloribus tempore asperiores!</p>
-                </Panel>
-            </Collapse>
         </Space>
 
     </div>

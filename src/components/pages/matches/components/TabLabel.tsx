@@ -14,6 +14,7 @@ import { TabLabelProps } from '../../../../types/TabLabelProps';
 export const TabLabel = ({id,isFirst ,isLast}: TabLabelProps) => {
     
   const dispatch = useAppDispatch()
+  
     function nameLabels(id:number){
 
         if (RelativeDays.yesterday.id <=id && id <= RelativeDays.afterTomorrow.id){ 

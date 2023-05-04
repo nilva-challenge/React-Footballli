@@ -1,17 +1,8 @@
 import { Tabs } from "antd";
-import DateObject from "react-date-object"; 
 import { TabLabel } from "./components/TabLabel";
 import { useAppSelector } from "../../../state/reduxHooks";
 import { TabContent } from "./components/TabContent";
-
-
-const date = new DateObject(new Date());
-
-console.log(date.subtract(-1, "day").format() ); 
-
  
-// function onTabclick(key: string){}
-
 const MatchPage = () => {
   const {tabs,numberOfprevDays} = useAppSelector((state) => state.matches);
   
@@ -25,7 +16,7 @@ const MatchPage = () => {
       return {
         label: <TabLabel id={id} isFirst ={isFirst} isLast={isLast}/>, 
         key: String(id),
-        children: <TabContent />,
+        children: <TabContent id={id} />,
    
       };
     })
