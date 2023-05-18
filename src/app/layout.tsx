@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 import "@/assets/styles/globals.css"
 import Header from "@/components/widgets/header"
 import localFont from '@next/font/local'
+import Footer from "@/components/widgets/footer";
 const customFont = localFont({
   src: [
   
@@ -27,18 +28,18 @@ interface IProps{
 
 const RootLayout = ({children}:IProps) => {
   return (
-  <html lang="fa" dir="rtl" className={`motion-safe:scroll-smooth ${customFont.variable}  font-vazir`}>
+  <html lang="fa" dir="rtl" className={`motion-safe:scroll-smooth ${customFont.variable}  font-vazir `}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-mainbg tracking-tight text-gray3">
+      <body className="bg-mainbg  text-gray3 tracking-wide">
      
         <Header/>
         
           <main>{children}</main>
        
-       {/* <Footer/> */}
+       <Footer/>
       </body>
     </html>
   )
