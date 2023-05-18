@@ -10,11 +10,11 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <BottomNavigation showLabels className={styles.navigator}>
-        <BottomNavigationAction label="مسابقات" icon={<SportsScore/>} onClick={() => router.push(MATCHES)}/>
-        <BottomNavigationAction label="اکتشاف" icon={<Search/>} onClick={() => router.push(EXPLORER)}/>
-        <BottomNavigationAction label="فوتبال" icon={<SportsFootball/>} onClick={() => router.push(FOOTBALL)}/>
-        <BottomNavigationAction label="لیگ ها" icon={<EmojiEvents/>} onClick={() => router.push(LEAGUE)}/>
         <BottomNavigationAction label="پروفایل" icon={<Person/>} onClick={() => router.push(PROFILE)}/>
+        <BottomNavigationAction label="لیگ ها" icon={<EmojiEvents/>} onClick={() => router.push(LEAGUE)}/>
+        <BottomNavigationAction label="فوتبال" icon={<SportsFootball/>} onClick={() => router.push(FOOTBALL)}/>
+        <BottomNavigationAction label="اکتشاف" icon={<Search/>} onClick={() => router.push(EXPLORER)}/>
+        <BottomNavigationAction label="مسابقات" icon={<SportsScore/>} onClick={() => router.push(MATCHES)}/>
       </BottomNavigation>
     </div>
   );
