@@ -29,10 +29,12 @@
   &_team {
     display: flex;
     column-gap: .5rem;
-
+    flex: 4;
   }
 
   &_result {
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    flex: 1;
+    text-align: center;
   }
 }
