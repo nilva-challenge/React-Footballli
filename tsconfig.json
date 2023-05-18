@@ -25,6 +25,9 @@
       "@layout/*": [
         "layout/*"
       ],
+      "@styles/*": [
+        "styles/*"
+      ],
       "@constants/*": [
         "constants/*"
       ]
