@@ -1,9 +1,11 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+
   ],
   theme: {
     extend: {
@@ -16,7 +18,14 @@ module.exports = {
       gray3:"#8C8C8D",
       dark:"#030303",
       white:"#FFFFFF"
+    },
+    backgroundImage:{
+   
     }
+    },
+    fontFamily: {
+      vazir: ['var(--font-vazir)'],
+      yekan:['var(--font-yekan)']
     },
   },
   plugins: [],
