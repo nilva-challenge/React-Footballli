@@ -1,20 +1,38 @@
 import React, { useState, useEffect } from "react";
 
-import apiService from "utils/api";
+// api services
+import apiService from "services/api";
+
+// utils
+import getToday from "utils/getToday";
+
+// context
+import { useStateSelectedDate } from "contexts/SelectedDateContext";
+
+// components
+import Loader from "components/Loader";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const {getLiveScores}: {getLiveScores: Function} = apiService;
+  const { getLiveScores }: { getLiveScores: Function } = apiService;
+
+  // context methods
+  const {selectedDate, onChangeSelectedDate} = useStateSelectedDate();
+
 
   useEffect(() => {
-    getLiveScores("2023-01-25").then((res: any) => {
-        console.log('fuuuckckckckc', res)
-    })
-    }, []);
+    getLiveScores(getToday()).then((res: any) => {
+
+    });
+
+    // onChangeSelectedDate('new dddaatteee')
+  }, []);
 
   return (
     <div>
-      <h1>Home</h1>
+      <h1>محمد لطفی</h1>
+
+      <Loader />
     </div>
   );
 };
