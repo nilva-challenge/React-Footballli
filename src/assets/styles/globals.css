@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
-
+@layer utilities{
+    /* using the ::-webkit-scrollbar pseudo selector */
+.hideScrollbar::-webkit-scrollbar{
+    display: none;
+}
 }

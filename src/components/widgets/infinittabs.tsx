@@ -1,44 +1,33 @@
 'use client';
-import React from 'react'
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-const InfintiTabs = () => {
-  return (
-    <div className='bg-white py-4 pr-4'>
-  <Swiper
-        spaceBetween={2}
-        slidesPerView={5}
-      >
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> دیروز </span>
-        </SwiperSlide >
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> امروز</span>
-        </SwiperSlide >
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> قردا</span>
-        </SwiperSlide >
-        
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> جمهع</span>
-        </SwiperSlide >
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> 31 خرداد </span>
-        </SwiperSlide >
-        <SwiperSlide >
-            <span className="text-gray1 text-xl font-medium hover:text-primary"> 31 خرداد </span>
-        </SwiperSlide >
-    
-    
+import Link from 'next/link';
+import { memo, useEffect, useMemo, useRef, useState} from "react";
+import { getDatesInRange } from "@/utils/getDaysRange";
+import { formatDate } from "@/utils/formatDate";
+import DateTab from './dateTab';
+const InfintiTabs = memo(function InfintiTabs (){
+  const todayRef = useRef<HTMLSpanElement>(null);
+  const [activeTab, setActiveTab] = useState<number>(10);
+  const d1 = new Date('2023-05-1');
+  const d2 = new Date('2023-05-30');
+const dateRang=useMemo(() => {
+  return getDatesInRange(d1, d2)
+}, [d1,d2]);
 
-       
-      </Swiper>
-    </div>
-  )
-}
+useEffect(() => {
+  todayRef.current?.scrollIntoView()
+}, [])
+
+    
+      return (
+        <div className='bg-white py-4 pr-4 flex overflow-x-auto hideScrollbar'>
+        {dateRang.map((day,index)=>{
+              return <DateTab key={index} activeTab={activeTab} setActiveTab={setActiveTab} day={day} index={index} dateRang={dateRang}   ref={todayRef}/>
+   
+            })}
+ 
+        </div>
+      )
+    }
+)
 
 export default InfintiTabs
