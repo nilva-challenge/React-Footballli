@@ -8,7 +8,7 @@ const League = ({leagueData}:{leagueData:ILeague}) => {
   const [openLeage, setOpenLeage] = useState<boolean>(true);
  
   return (
-    <div className="rounded-xl overflow-hidden mt-4">
+    <div className="rounded-xl overflow-hidden mt-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
       <header onClick={()=>setOpenLeage(prev=>!prev)} className="flex justify-between p-3 bg-white">
         <div className="flex gap-1 items-center ">
           <Image
