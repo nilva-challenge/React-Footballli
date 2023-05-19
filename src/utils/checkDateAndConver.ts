@@ -3,6 +3,7 @@ import { formatDate } from "./formatDate";
 const today = new Date();
 export const yesterday = new Date(Date.now() - 864e5);
 const tomarrow = new Date(Date.now() + 864e5);
+console.log(formatDate(tomarrow,"en-UK"));
 
 
 function checkFriday(date: Date) {
@@ -12,11 +13,13 @@ function checkFriday(date: Date) {
   return false;
 }
 export function checkDateAndConvert(date: Date) {
-  const dayTitle =  date.getDate() === tomarrow.getDate()
+
+  
+  const dayTitle = formatDate(date,"en-UK") === formatDate(tomarrow,"en-UK") 
     ? "فردا"
-    : date.getDate() === today.getDate()
+    : formatDate(date,"en-UK") === formatDate(today,"en-UK")
     ? "امروز"
-    : date.getDate() === yesterday.getDate()
+    : formatDate(date,"en-UK") === formatDate(yesterday,"en-UK")
     ? "دیروز"
     : checkFriday(date)
     ? "جمعه"

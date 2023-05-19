@@ -19,8 +19,8 @@ const Footer = () => {
           TabIcon={
             <PersonIcon
               isActive={activeTab === "profile" ? true : false}
-              width={"40px"}
-              height={"40px"}
+              width={"35px"}
+              height={"35px"}
             />
           }
           url="profile"
@@ -32,8 +32,8 @@ const Footer = () => {
           TabIcon={
             <LeagueIcon
               isActive={activeTab === "league" ? true : false}
-              width={"40px"}
-              height={"40px"}
+              width={"35px"}
+              height={"35px"}
             />
           }
           url="league"
@@ -46,8 +46,8 @@ const Footer = () => {
           TabIcon={
             <BallIcon
               isActive={activeTab === "footban" ? true : false}
-              width={"40px"}
-              height={"40px"}
+              width={"35px"}
+              height={"35px"}
             />
           }
           url="footban"
@@ -59,8 +59,8 @@ const Footer = () => {
           TabIcon={
             <CompassIcon
               isActive={activeTab === "exploration" ? true : false}
-              width={"40px"}
-              height={"40px"}
+              width={"35px"}
+              height={"35px"}
             />
           }
           url="exploration"
@@ -72,7 +72,7 @@ const Footer = () => {
           TabIcon={
             <FootballBitchIcon
               isActive={activeTab === "competitions" ? true : false}
-              width={"40px"}
+              width={"35px"}
               height={"90px"}
             />
           }

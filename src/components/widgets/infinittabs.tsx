@@ -7,14 +7,15 @@ import DateTab from './dateTab';
 const InfintiTabs = memo(function InfintiTabs (){
   const todayRef = useRef<HTMLSpanElement>(null);
   const [activeTab, setActiveTab] = useState<number>(10);
-  const d1 = new Date('2023-05-1');
+  const d1 = new Date('2023-04-1');
   const d2 = new Date('2023-05-30');
 const dateRang=useMemo(() => {
   return getDatesInRange(d1, d2)
 }, [d1,d2]);
-
+const currentIndex= dateRang.indexOf(formatDate(new Date(), "en-UK"))
 useEffect(() => {
-  todayRef.current?.scrollIntoView()
+  setActiveTab(currentIndex);
+  todayRef.current?.scrollIntoView();
 }, [])
 
     

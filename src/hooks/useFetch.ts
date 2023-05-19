@@ -4,8 +4,8 @@ import { IParams } from "@/shared/types";
 import { ILeague } from "@/shared/types.d";
 
 const useFetch = (url:string,params:IParams) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [data, setData] = useState<ILeague[]>([]);
   const fetchData = async () => {
     setIsLoading(true);
