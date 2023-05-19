@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa364c6e-ec2f-4fb9-b0cb-505c1253f743" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/constants/responses.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/matches/MatchDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/matches/MatchDetail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/matches/Matches.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/matches/Matches.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/matches/MatchesContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/matches/MatchesContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/matches/MatchesHead.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/matches/MatchesHead.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/matches/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/matches/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/webservices.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/webservices.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/utiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/utiles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +81,7 @@
       <updated>1684342167042</updated>
       <workItem from="1684342168106" duration="3197000" />
       <workItem from="1684388535075" duration="4321000" />
+      <workItem from="1684485396972" duration="9811000" />
     </task>
     <servers />
   </component>

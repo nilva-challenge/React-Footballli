@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from "@components/matches/styles.module.scss";
 import {Box, Input, Tab, Tabs} from "@mui/material";
 import {Settings} from "@mui/icons-material";
+import {getDate} from "../../libs/utiles";
 
-const MatchesHead = () => {
+type Props = {
+  handleDay: (day: string) => void
+}
+const MatchesHead = ({handleDay}: Props) => {
+  const arr = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+  const [current, setCurrent] = useState<string>(getDate);
+  const handleDate = (item: number) => {
+    setCurrent(getDate(item))
+    handleDay(getDate(item))
+  }
   return (
     <div className={styles.header}>
       <Box className={styles.header_box}>
@@ -15,13 +25,14 @@ const MatchesHead = () => {
       </Box>
       <Box>
         <Tabs variant={"scrollable"}>
-          <Tab label={"yesterday"}/>
-          <Tab label={"today"}/>
-          <Tab label={"tomorrow"}/>
-          <Tab label={"tomorrow"}/>
-          <Tab label={"today"}/>
-          <Tab label={"tomorrow"}/>
-          <Tab label={"tomorrow"}/>
+          {arr.map(item => (
+            <Tab
+              key={item}
+              label={getDate(item)}
+              onClick={() => handleDate(item)}
+              className={getDate(item) == current ? styles.active : styles.normal}
+            />
+          ))}
         </Tabs>
       </Box>
     </div>
