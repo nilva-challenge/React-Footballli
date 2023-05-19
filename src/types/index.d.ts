@@ -1,0 +1,1 @@
+export {leagueTypeResponse} from './leagueTypeResponse';

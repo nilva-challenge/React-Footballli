@@ -1,0 +1,8 @@
+{
+  "short_name": "MLotfi",
+  "name": "Mohammad Lotfi Project",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
