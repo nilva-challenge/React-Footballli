@@ -11,10 +11,8 @@ const {isLoading, error, data, refetchData }=useFetch("football/fixtures/",{
   date:date?date:formatDate(new Date(),'en-uk')
 })
 
-  console.log(data);
-
   return (
-<section className='p-4'>
+<section className='px-4'>
   {data.map((league)=><League key={league.id} leagueData={league}/>)}
 
 </section>

@@ -2,19 +2,19 @@
 import {
   BallIcon,
   CompassIcon,
-  FootballBitchcon,
+  FootballBitchIcon,
   LeagueIcon,
   PersonIcon,
 } from "@/constants/svgIcons";
-import Link from "next/link";
 import { useState } from "react";
 import FooterTab from "../common/footetab";
 
 const Footer = () => {
   const [activeTab, setActiveTab] = useState<string>("competitions");
   return (
-    <footer className="bg-white border-t border-gray1 p-4 rounded-b-[10px]">
-      <div className="flex items-center gap-9">
+    <footer className="bg-white overflow-hidden
+     border-t border-gray1 p-4 m-auto rounded-b-[10px]">
+      <div className="flex items-center justify-center gap-7 m-auto ">
         <FooterTab
           TabIcon={
             <PersonIcon
@@ -70,10 +70,10 @@ const Footer = () => {
         />
         <FooterTab
           TabIcon={
-            <FootballBitchcon
+            <FootballBitchIcon
               isActive={activeTab === "competitions" ? true : false}
               width={"40px"}
-              height={"40px"}
+              height={"90px"}
             />
           }
           url="competitions"

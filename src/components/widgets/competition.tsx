@@ -4,9 +4,9 @@ import React from "react";
 
 const Competetion = ({ competetion }: { competetion: Fixture }) => {
   return (
-    <div className="flex items-center justify-center gap-4 bg-white mt-1 py-4">
+    <div className="flex items-center justify-center gap-4 bg-white mt-[2px] py-4 ">
       {/* ///home team */}
-      <div className="flex items-center gap-1">
+      <div className="flex items-center justify-end gap-1 w-2/5">
         <span className="text-gray3 text-base font-medium">
           {competetion.home.name}
         </span>
@@ -17,9 +17,9 @@ const Competetion = ({ competetion }: { competetion: Fixture }) => {
           alt={competetion.home.name}
         />
       </div>
-      <span className="text-primary font-bold text-base">12:33</span>
+      <div className=" w-1/5  flex justify-center"><span className="text-primary font-bold text-base">12:33</span></div>
       {/* ////away team */}
-      <div className="flex items-center gap-1 ">
+      <div className="flex items-center gap-1 w-2/5">
         <Image
           src={competetion.away.logo}
           width={30}

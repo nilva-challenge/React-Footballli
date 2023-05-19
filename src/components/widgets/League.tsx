@@ -8,8 +8,8 @@ const League = ({leagueData}:{leagueData:ILeague}) => {
   const [openLeage, setOpenLeage] = useState<boolean>(true);
  
   return (
-    <div className="rounded-xl mt-6">
-      <header className="flex justify-between p-3 bg-white">
+    <div className="rounded-xl overflow-hidden mt-4">
+      <header onClick={()=>setOpenLeage(prev=>!prev)} className="flex justify-between p-3 bg-white">
         <div className="flex gap-1 items-center ">
           <Image
             alt="leagename"
@@ -26,10 +26,13 @@ const League = ({leagueData}:{leagueData:ILeague}) => {
           <ChevronLeftIcon width="22px" height="22px" />
         </span>
       </header>
-      <section className={`${openLeage?"block" : "hidden"}  mt-1`}>
+      <section className={`${openLeage?"block" : "hidden"}   mt-1`}>
        
         {leagueData.fixtures.map((compet)=><Competetion key={compet.id} competetion={compet}/>)}
       </section>
+      <div className="bg-white h-4 mt-[2px]">
+
+      </div>
     </div>
   );
 };

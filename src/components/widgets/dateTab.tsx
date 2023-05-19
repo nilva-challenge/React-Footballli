@@ -26,7 +26,7 @@ const DateTab = forwardRef<HTMLSpanElement, IProps>(function DateTab(
         }
         className="text-gray1 text-base
       font-bold hover:text-dark
-       focus:text-dark min-w-max block border border-x-red-500"
+       focus:text-dark min-w-max block"
       >
         {" "}
         {checkDateAndConvert(new Date(day))}{" "}
