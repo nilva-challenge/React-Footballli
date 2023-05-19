@@ -1,0 +1,6 @@
+export const HOME = "/"
+export const MATCHES = "/matches"
+export const EXPLORER = "/explorer"
+export const FOOTBALL = "/football"
+export const LEAGUE = "/league"
+export const PROFILE = "/profile"
