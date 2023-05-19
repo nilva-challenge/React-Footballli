@@ -1,0 +1,13 @@
+.tabLayout {
+  li {
+    margin: 0 1.25rem;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    color: #b2bab3;
+  }
+
+  li + li {
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+  }
+}

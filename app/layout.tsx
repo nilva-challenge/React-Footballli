@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html className='w-full h-full' lang='fa_IR' dir='rtl'>
-      <body className='w-full h-full bg-white'>{children}</body>
+      <body className='w-full h-full'>{children}</body>
     </html>
   );
 }

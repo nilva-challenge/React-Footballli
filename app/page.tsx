@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "app/components/Header/Header";
-import SearchBar from "./components/SearchBar/SearchBar";
+import Header from "@/app/components/Header/Header";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <SearchBar />
     </div>
   );
 };
