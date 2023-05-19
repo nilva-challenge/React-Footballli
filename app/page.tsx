@@ -1,12 +1,7 @@
 import React from "react";
-import Header from "@/app/components/Header/Header";
 
 const Home = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div className='w-full h-fulloverflow-scroll'></div>;
 };
 
 export default Home;

@@ -11,7 +11,7 @@ interface TabLayoutProps {
 
 const TabLayout = ({ items, onClick, selectedItem }: TabLayoutProps) => {
   return (
-    <ul className='flex flex-row py2 h-12 tabLayout'>
+    <ul className='flex flex-row py2 h-12 tabLayout bg-white shadow-sm'>
       {items.map((item) => (
         <TabItem
           key={item.id}
