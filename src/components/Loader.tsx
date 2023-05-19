@@ -1,29 +1,30 @@
-import * as React from 'react';
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+import Button from "@mui/material/Button";
 
-const Loader = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleOpen = () => {
-    setOpen(true);
-  };
+interface Props {
+  loading: boolean;
+}
+
+const Loader: React.FC<Props> = ({ loading }) => {
+  const open = loading;
 
   return (
     <div>
-      <Button onClick={handleOpen}>Show backdrop</Button>
       <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={open}
-        onClick={handleClose}
+        style={{
+          flexDirection: "column",
+          gap: "1.5rem",
+        }}
       >
         <CircularProgress color="inherit" />
+        <div>لطفا منتظر بمانید</div>
       </Backdrop>
     </div>
   );
-}
+};
 
 export default Loader;
