@@ -1,13 +1,31 @@
-.tabLayout {
-  li {
-    margin: 0 1.25rem;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
-    color: #b2bab3;
+.tab-container {
+  overflow-x: auto;
+  background-color: #fff;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  li + li {
-    margin-right: 1.25rem;
-    margin-left: 1.25rem;
+  .tabLayout {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: max-content;
+
+    li {
+      margin: 0 1.25rem;
+      padding-right: 0.25rem;
+      padding-left: 0.25rem;
+      color: #b2bab3;
+      flex-shrink: 0;
+
+      // &:last-child {
+      //   margin-right: 1.25rem;
+      // }
+    }
   }
 }

@@ -5,10 +5,6 @@ import "./style.scss";
 import { persianNumber } from "@/app/utils/PersianNumber";
 
 const Fixture = ({ info }: { info: IFixture }) => {
-  {
-    console.log("info", info);
-  }
-
   return (
     <div className='border-b border-b-gray-300 grid-cols-3 grid-flow-col py-3 fixtureContainer'>
       <Team info={{ ...info.home, home: true }} />
