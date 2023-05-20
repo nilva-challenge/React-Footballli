@@ -7,8 +7,8 @@ import DateTab from './dateTab';
 const InfintiTabs = memo(function InfintiTabs (){
   const todayRef = useRef<HTMLSpanElement>(null);
   const [activeTab, setActiveTab] = useState<number>(10);
-  const d1 = new Date('2023-04-1');
-  const d2 = new Date('2023-05-30');
+  const d1 = new Date('2022-01-1');
+  const d2 = new Date('2024-06-30');
 const dateRang=useMemo(() => {
   return getDatesInRange(d1, d2)
 }, [d1,d2]);
