@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("/public/assets/fonts/IranSans.css");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,11 +18,8 @@
 }
 
 body {
+  font-family: IRANSans, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  word-spacing: -2px;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #f5f6fb;
 }
