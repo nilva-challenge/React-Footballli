@@ -7,12 +7,14 @@ import League from "../components/League/League";
 import { ILeague } from "../Types/ILeague";
 
 const API =
-  "https://core-sport-api.zarebin.ir/api/football/fixtures/?date=2023-01-03";
+  "https://core-sport-api.zarebin.ir/api/football/fixtures/?date=2023-05-20";
 
 const fetcher = (date: string) => fetch(API).then((res) => res.json());
 
 const Matchs = () => {
-  const { data, error, isLoading } = useSWR(API, fetcher);
+  const { data, error, isLoading } = useSWR(API, fetcher, {
+    refreshInterval: 15000,
+  });
 
   const [selectedItem, setSelectedItem] = useState<ITabItem>({
     id: 2,
@@ -27,17 +29,17 @@ const Matchs = () => {
   const handleTabItemClick = (item: ITabItem): void => {
     setSelectedItem(item);
   };
-  console.log(data?.all);
+
   return isLoading && !data ? (
     <div>Loading...</div>
   ) : (
-    <div className='w-full h-full'>
+    <div className='mb-20 mt-24'>
       <TabLayout
         items={items}
         onClick={handleTabItemClick}
         selectedItem={selectedItem}
       />
-      <div className='w-full h-full overflow-scroll px-5 py-3 gap-6 flex flex-col'>
+      <div className='flex flex-col gap-4 py-5 px-5 overflow-scroll mb-20 mt-12'>
         {data?.all.map((league: ILeague) => (
           <League info={league} key={league.id} />
         ))}

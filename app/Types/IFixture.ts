@@ -3,9 +3,10 @@ import { ITeam } from "./ITeam";
 export interface IFixture {
   id: string;
   away: ITeam;
-  awayGoals: number;
+  away_goals: number;
   home: ITeam;
-  homeGoals: number;
-  startTime: string;
+  home_goals: number;
+  start_time: string;
   status: string;
+  elapsed: number;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { IFixture } from "@/app/Types/IFixture";
 import { ILeague } from "@/app/Types/ILeague";
 import Image from "next/image";
+import Fixture from "../Fixture/Fixture";
 
 const League = ({ info }: { info: ILeague }) => {
   return (
@@ -18,7 +19,7 @@ const League = ({ info }: { info: ILeague }) => {
       </div>
       <div className='px-4 py-2'>
         {info.fixtures.map((fixture) => (
-          <div key={fixture.id}>{fixture.id}</div>
+          <Fixture key={fixture.id} info={fixture} />
         ))}
       </div>
     </div>

@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className='w-full h-full' lang='fa_IR' dir='rtl'>
-      <body className='w-full h-full flex flex-col shrink-0'>
+    <html className='w-full h-full relative ' lang='fa_IR' dir='rtl'>
+      <body className='w-full h-full flex flex-col'>
         <Header />
         {children}
         <BottomNavigation />
