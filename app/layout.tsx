@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html className='w-full h-full' lang='fa_IR' dir='rtl'>
-      <body className='w-full h-full flex flex-col '>
+      <body className='w-full h-full flex flex-col shrink-0'>
         <Header />
         {children}
         <BottomNavigation />

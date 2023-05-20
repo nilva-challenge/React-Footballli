@@ -1,6 +1,6 @@
 import React from "react";
 import TabItem from "./TabsItem/TabItem";
-import { ITabItem } from "../../Interfaces/ITabItem";
+import { ITabItem } from "../../Types/ITabItem";
 import "./style.scss";
 
 interface TabLayoutProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ITabItem } from "app/Interfaces/ITabItem";
+import { ITabItem } from "@/app/Types/ITabItem";
 import classes from "./style.module.scss";
 
 interface TabItemProps {
