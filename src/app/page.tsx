@@ -8,9 +8,7 @@ import { useSearchParams } from "next/navigation";
 export default function Home() {
   const searchParams = useSearchParams();
   const date = searchParams.get("date");
-  const { isLoading, error, data} = useFetch(
-    "football/fixtures/",
-    {
+  const { isLoading, error, data} = useFetch("football/fixtures/",{
       date: date ? date : formatDate(new Date(),"en-uk"),
     }
   );

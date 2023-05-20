@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <h1 className="text-dark font-bold  text-3xl">نتایج زنده</h1>
           <div className="w-12 h-12 relative">
-            <Image alt="live-score" src={Logo} fill />
+            <Image alt="live-score" src={Logo} fill/>
           </div>
         </div>
         <SearchInput placeholder="جستجو..." />

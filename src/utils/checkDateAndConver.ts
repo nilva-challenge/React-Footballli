@@ -3,7 +3,7 @@ import { formatDate } from "./formatDate";
 const today = new Date();
 export const yesterday = new Date(Date.now() - 864e5);
 const tomarrow = new Date(Date.now() + 864e5);
-console.log(formatDate(tomarrow,"en-UK"));
+
 
 
 function checkFriday(date: Date) {

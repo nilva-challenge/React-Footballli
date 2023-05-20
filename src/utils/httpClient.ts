@@ -1,6 +1,6 @@
 import { IParams } from "@/shared/types";
 import axios from "axios";
-const BASE_URL=process.env.NEXT_PUBLIC_BASE_URL
+const BASE_URL="https://core-sport-api.zarebin.ir/api/";
 const instance = axios.create({
   baseURL: BASE_URL,
 });
