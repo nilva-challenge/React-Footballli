@@ -1,0 +1,36 @@
+{
+  "name": "react-footballli",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.29.7",
+    "@types/node": "20.2.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "lodash": "^4.17.21",
+    "next": "13.4.2",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.1.5",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@tabler/icons-react": "^2.19.0",
+    "@tanstack/react-query-devtools": "^4.29.7",
+    "@types/lodash": "^4.14.194",
+    "react-icons": "^4.8.0",
+    "sass": "^1.62.1"
+  }
+}
