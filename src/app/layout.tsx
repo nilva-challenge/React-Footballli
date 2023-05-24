@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react"
 import "@/assets/styles/globals.css"
 import Header from "@/components/widgets/header"
@@ -5,7 +6,6 @@ import localFont from '@next/font/local'
 import Footer from "@/components/widgets/footer";
 const customFont = localFont({
   src: [
-  
     {
       path: '../assets/fonts/Vazirmatn-RD-Regular.woff2',
       weight: '400'
@@ -17,7 +17,6 @@ const yekanFont=localFont({
 src:[
   {
     path: '../assets/fonts/YekanBakh-VF.ttf',
-    weight: '500'
   },
 ],
 variable: '--font-yekan'
@@ -26,9 +25,9 @@ interface IProps{
   children:ReactNode
 }
 
-const RootLayout = ({children}:IProps) => {
+const RootLayout =async ({children}:IProps) => {
   return (
-  <html lang="fa" dir="rtl" className={`motion-safe:scroll-smooth ${customFont.variable}  font-vazir `}>
+  <html lang="fa" dir="rtl" className={`motion-safe:scroll-smooth ${yekanFont.variable}  ${customFont.variable} font-vazir `}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

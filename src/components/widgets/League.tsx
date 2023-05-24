@@ -1,6 +1,6 @@
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import Logo from "@/assets/images/livescore.png";
 import { ChevronLeftIcon } from "@/constants/svgIcons";
 import { ILeague } from "@/shared/types.d";
 import Competetion from "./competition";

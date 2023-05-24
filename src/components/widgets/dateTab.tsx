@@ -16,7 +16,7 @@ const DateTab = forwardRef<HTMLSpanElement, IProps>(function DateTab(
 
 
   return (
-    <Link href={`/?date=${day}`} className="mx-6">
+    <Link href={`/competitions/${day}`} className="mx-6">
       <span
       onClick={()=>setActiveTab(index)}
         ref={
