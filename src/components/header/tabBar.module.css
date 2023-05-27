@@ -1,0 +1,29 @@
+.container {
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-end;
+    white-space: nowrap;
+    direction: rtl;
+    height: 60px;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+  }
+
+.btn {
+    margin-top: 2rem;
+    border: none;
+    background-color: #fff;
+    color: #ccc;
+    width: 80px;
+    transition: all .2s ease;
+}
+
+.btn:hover{
+    color: #000;
+    border-bottom: 2px solid green;
+}
+
+
