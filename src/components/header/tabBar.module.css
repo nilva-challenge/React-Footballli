@@ -1,0 +1,22 @@
+.container {
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-end;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.btn {
+    margin-top: 1rem;
+    border: none;
+    background-color: #fff;
+    color: #ccc;
+    width: 80px;
+}
+
+.btn:active{
+    color: #000;
+}
+
+

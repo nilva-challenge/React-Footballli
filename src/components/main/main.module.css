@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+.accordion {
+    /* direction: rtl; */
+    width: 100%;
+    text-align: right;
+}
+
+.accordionTitle {
+    color: blue;
+    display: flex;
+    direction: rtl;
+    gap: .5rem;
+    align-items: center;
+}
+
+.accordionTitle p {
+    margin: 0 !important;
+}
+
+.accordionTitle img {
+    width: 30px;
+    height: 30px;
+}
+
+.accordionDescriptionContainer {
+    display: flex;
+    gap: .3rem;
+    direction: rtl;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.accordionDescriptionContainer img {
+    width: 30px;
+    height: 30px;
+}
+
+.accordionDescriptionContainer p {
+    width: 40px;
+    margin: .2rem;
+}

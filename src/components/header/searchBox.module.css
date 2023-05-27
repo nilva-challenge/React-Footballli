@@ -1,0 +1,10 @@
+.searchContainer {
+    width: 90%;
+    direction: rtl;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.searchInput{
+    background-color: #e6e6e6;
+}

@@ -1,0 +1,15 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
+}
