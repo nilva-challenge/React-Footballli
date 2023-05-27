@@ -5,18 +5,25 @@
     justify-content: flex-end;
     white-space: nowrap;
     direction: rtl;
+    height: 60px;
 }
 
+.container::-webkit-scrollbar {
+    display: none;
+  }
+
 .btn {
-    margin-top: 1rem;
+    margin-top: 2rem;
     border: none;
     background-color: #fff;
     color: #ccc;
     width: 80px;
+    transition: all .2s ease;
 }
 
-.btn:active{
+.btn:hover{
     color: #000;
+    border-bottom: 2px solid green;
 }
 
 

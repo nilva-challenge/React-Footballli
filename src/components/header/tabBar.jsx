@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import { Button } from "antd";
-import styles from "./tabBar.module.css"
+import styles from "./tabBar.module.css";
+import moment from "jalali-moment";
+import { DateContext } from "../../App";
 
 const TabBar = () => {
+
+    const {date ,setDate} = useContext(DateContext)
+
+    moment.locale('fa', { useGregorianParser: true });  
 
     Date.prototype.addDays = function(days) {
         var date = new Date(this.valueOf());
@@ -25,15 +31,18 @@ const TabBar = () => {
     }
 
     const dates = getDates(yesterday ,thirtyDaysLater)
-    // console.log(dates);
+
+    const selectDayHandler = (date) => {
+        setDate(date)
+    }
 
     return ( 
         <div className={styles.container}>
             {
                 dates.map((date ,index) => {
                     return(
-                        <button className={styles.btn} >
-                            {index === 0 ? "دیروز"  : index === 1 ? "امروز" : index === 2 ? 'فردا' : new Date(date).toISOString().split("T")[0].replaceAll("-","/") }
+                        <button key={index} className={styles.btn} onClick={() => selectDayHandler(new Date(date).toISOString().split("T")[0])} >
+                            {index === 0 ? "دیروز"  : index === 1 ? "امروز" : index === 2 ? 'فردا' :  moment(new Date(date).toISOString().split("T")[0]).format("YYYY/MM/DD")  }
                         </button>
                     )
                 })

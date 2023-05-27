@@ -1,5 +1,5 @@
 import React ,{useContext} from "react";
-import { GamesContext } from "../../App";
+import { GamesContext, SearchContext } from "../../App";
 import { Collapse ,Divider } from "antd";
 import moment from "jalali-moment"
 
@@ -18,11 +18,14 @@ moment.locale('fa', { useGregorianParser: true });
     }
 
     const data = useContext(GamesContext)
+    const {search ,setSearch} = useContext(SearchContext)
+
+    const filterData = data?.all?.filter((item) => item?.name.includes(search))
 
     return ( 
         <div className={styles.container}>
             {
-                data?.all?.map((item) => {
+                filterData?.map((item) => {
                     return(
                         <Collapse key={item.api_id} className={styles.accordion}>
                             <Panel  header={
@@ -34,7 +37,7 @@ moment.locale('fa', { useGregorianParser: true });
                                 {
                                     item?.fixtures?.map(game => {
                                         return(
-                                            <div className={styles.accordionDescriptionContainer} >
+                                            <div key={game?.api_id} className={styles.accordionDescriptionContainer} >
                                                 <p> {game?.away?.name} </p>
                                                 <img src={game?.away?.logo} alt="away team logo" />
                                                 <p> {getTehranTime(moment(game?.start_time).format().split("T")[1].split("+")[0].split(":")[0] ,moment(game?.start_time).format().split("T")[1].split("+")[0].split(":")[1])} </p>

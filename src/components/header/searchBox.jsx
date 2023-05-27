@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Input } from "antd";
 import styles from "./searchBox.module.css"
-const SearchBox = ({search ,setSearch}) => {
+import { SearchContext } from "../../App";
+
+const SearchBox = () => {
+
+    const {search ,setSearch} = useContext(SearchContext)
 
     const changeHandler = (e) => {
         setSearch(e.target.value)
     }
 
+
+
     return ( 
         <div className={styles.searchContainer} >
-            <Input onChange={changeHandler} value={search} className={styles.searchInput} placeholder="جستجو" />
+            <Input onChange={changeHandler} value={search} className={styles.searchInput} placeholder="جستجو بر اساس لیگ" />
         </div>
      );
 }

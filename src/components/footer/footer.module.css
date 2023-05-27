@@ -1,0 +1,30 @@
+.footerContainer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    /* padding: .3rem; */
+
+}
+
+.footerContainer button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    border: none;
+    background-color: #fff;
+    padding: .2rem;
+    color: #ccc;
+    transition: all .2s ease;
+}
+
+.footerContainer button:hover {
+    color: green;
+}
+
+.footerContainer p {
+    margin: 10px;
+}

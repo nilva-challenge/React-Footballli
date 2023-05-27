@@ -12,10 +12,10 @@ const Header = () => {
 
     return ( 
         <div className={styles.mainContainer} >
-            <Space className={styles.headerContainer} >
-                <ClockCircleOutlined size={"large"} />
+            <div className={styles.headerContainer} >
+                <ClockCircleOutlined style={{ fontSize: '150%'}} />
                 <h3> نتایج زنده </h3>
-            </Space>
+            </div>
             <SearchBox search = {search} setSearch={setSearch} />
             <TabBar  />
         </div>

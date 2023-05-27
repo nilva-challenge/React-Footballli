@@ -5,11 +5,13 @@
     gap: 1;
     align-items: center;
     padding: 0 8px;
+    background-color: #fff;
 }
 
 .headerContainer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 8px;
+    padding: 0 16px;
+    align-items: center;
 }
