@@ -1,0 +1,23 @@
+.competitions {
+  background-color: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .clock-icon {
+    width: 48px;
+    height: 48px;
+    transform: rotate(225deg);
+  }
+}

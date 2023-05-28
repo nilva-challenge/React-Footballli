@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo } from "react";
+import { FC, ReactNode, useMemo, memo } from "react";
 import Menu from "../../components/menu/Menu";
 import menuItem from "../../data/error-map.json";
 import { MenuItem } from "models/menu/menuItem";
@@ -19,4 +19,4 @@ const MenuLayout: FC<MenulayoutInterface> = ({ children }) => {
   );
 };
 
-export default MenuLayout;
+export default memo(MenuLayout);
