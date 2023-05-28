@@ -1,0 +1,32 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px;
+  background-color: #fff;
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .figure-icon {
+      width: 30px;
+      height: 50px;
+    }
+    .menu-title {
+      font-weight: 400;
+      font-size: 1.2rem;
+      opacity: .7;
+    }
+  }
+
+  .active-menu-tab {
+    color: rgb(31, 130, 31);
+    font-weight: 600!important;
+  }
+}

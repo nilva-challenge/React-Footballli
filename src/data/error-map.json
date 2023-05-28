@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "tabTitle": "پروفایل",
+    "icon": "user",
+    "path": "/"
+  },
+  {
+    "id": "2",
+    "tabTitle": "لیگ ها",
+    "icon": "cup",
+    "path": "/leagues"
+  },
+  {
+    "id": "3",
+    "tabTitle": "فوتبان",
+    "icon": "soccer_ball",
+    "path": "/settings"
+  },
+  {
+    "id": "4",
+    "tabTitle": "اکتشاف",
+    "icon": "safari",
+    "path": "/exploration"
+  },
+  {
+    "id": "5",
+    "tabTitle": "مسابقات",
+    "icon": "football_pitch",
+    "path": "competitions"
+  }
+]
