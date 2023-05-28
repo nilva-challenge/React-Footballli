@@ -1,8 +1,6 @@
 import { FC, memo } from "react";
 import { MenuItem } from "models/menu/menuItem";
-import { useNavigate } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { activeMenu, updateSelectMenuTab } from "../../store/menu_tab";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface MenuInterface {
   items: MenuItem[];
@@ -10,13 +8,11 @@ interface MenuInterface {
 
 const Menu: FC<MenuInterface> = ({ items }) => {
   const navigate = useNavigate();
-  const selectedTab = useAppSelector(activeMenu);
-  const dispatch = useAppDispatch();
+  const location = useLocation();
   const handleRedirect = (path: string) => {
-    dispatch(updateSelectMenuTab(path));
     navigate(path);
   };
-
+console.log(location)
   return (
     <div className="menu">
       {items.map((item) => (
@@ -30,7 +26,7 @@ const Menu: FC<MenuInterface> = ({ items }) => {
           </figure>
           <span
             className={`menu-title ${
-              item.path === selectedTab ? "active-menu-tab" : ""
+               location.pathname.includes(item.path) ? "active-menu-tab" : ""
             }`}
           >
             {item.tabTitle}

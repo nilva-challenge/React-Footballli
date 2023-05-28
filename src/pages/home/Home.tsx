@@ -1,5 +1,12 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+
 const Home = () => {
-  return <div> this is Home 555</div>;
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/competitions");
+  }, []);
+  return <div> Home Page</div>;
 };
 
 export { Home };

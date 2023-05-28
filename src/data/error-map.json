@@ -3,7 +3,7 @@
     "id": "1",
     "tabTitle": "پروفایل",
     "icon": "user",
-    "path": "/"
+    "path": "/profile"
   },
   {
     "id": "2",
@@ -27,6 +27,6 @@
     "id": "5",
     "tabTitle": "مسابقات",
     "icon": "football_pitch",
-    "path": "competitions"
+    "path": "/competitions"
   }
 ]

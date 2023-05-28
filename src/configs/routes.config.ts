@@ -1,7 +1,8 @@
 export const PATHS = {
-    HOME: '/',
-    LEAGUES: '/leagues',
-    SETTINGS: '/settings',
-    EXPLORATION: '/exploration',
-    COMPETITIONS: '/competitions:date',
-}
+  HOME: "/",
+  PROFILE: "/profile",
+  LEAGUES: "/leagues",
+  SETTINGS: "/settings",
+  EXPLORATION: "/exploration",
+  COMPETITIONS: "/competitions/:date",
+};
