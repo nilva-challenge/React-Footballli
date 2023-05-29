@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useParams } from "react-router-dom";
 import ImageLoader from "../../commonComponents/ImageLoader";
 import SearchBox from "../../commonComponents/SearchBox";
 import TabDragable from "../../commonComponents/TabDragable";
@@ -36,6 +37,8 @@ const testData = [
 ];
 
 const Competitions: FC = () => {
+  const param = useParams();
+
   return (
     <>
       <div className="competitions">
@@ -53,7 +56,7 @@ const Competitions: FC = () => {
           items={testData}
         />
       </div>
-      <CardDropdown />
+      <CardDropdown param={param.date} />
     </>
   );
 };
