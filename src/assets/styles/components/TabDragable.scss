@@ -1,0 +1,31 @@
+.tab-dragable {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 0 8px;
+
+  span {
+    position: relative;
+    font-size: 2rem;
+    flex: none;
+    color: #c1c1c1;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .active-tab {
+    color: #000;
+  }
+
+  .active-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 140%;
+    background-color: var(--primary);
+    height: 4px;
+    display: block;
+    border-radius: 8px 8px 0 0;
+  }
+}

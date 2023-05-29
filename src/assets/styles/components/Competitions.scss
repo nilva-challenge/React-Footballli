@@ -1,9 +1,9 @@
 .competitions {
   background-color: #fff;
-  padding: 8px;
+  padding: 8px 8px 0 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 
   .title {
     display: flex;
@@ -19,5 +19,9 @@
     width: 48px;
     height: 48px;
     transform: rotate(225deg);
+  }
+
+  .compettions-tab {
+    margin-top: 8px;
   }
 }

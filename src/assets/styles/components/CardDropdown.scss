@@ -1,0 +1,76 @@
+.card-dropdown {
+  padding: 14px 8px;
+  margin: 16px 8px;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 8px;
+
+  .dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      line-height: 0;
+      color: var(--secondary);
+    }
+
+    .title-image {
+      width: 30px;
+      height: 30px;
+    }
+
+    .header-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .dropdown-body {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    flex-direction: column;
+    margin: 8px 0;
+    overflow-x: hidden;
+    transition: all ease-in-out 0.3s;
+
+    .fixture-team {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fixture-logo {
+      width: 35px;
+      height: auto;
+    }
+
+    .body-text {
+      font-size: 1.6rem;
+    }
+
+    .dropdown-fixture {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border-bottom: 1px solid #e5e4e4;
+      padding: 16px 0;
+      width: 150%;
+    }
+  }
+
+  .hidden {
+    height: 0;
+    display: none;
+  }
+}
