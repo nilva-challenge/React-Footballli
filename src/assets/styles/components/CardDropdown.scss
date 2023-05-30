@@ -67,6 +67,14 @@
       padding: 16px 0;
       width: 150%;
     }
+
+    .dropdown-fixture:first-child {
+      border-top: 1px solid #c1c1c1;
+      margin-top: 8px;
+    }
+    .dropdown-fixture:last-child {
+      border-bottom: none;
+    }
   }
 
   .hidden {

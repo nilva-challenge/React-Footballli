@@ -10,12 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-indiana-drag-scroll": "^3.0.3-alpha",
-    "react-redux": "^8.0.5",
+    "react-lazy-load-image-component": "^1.5.6",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "swr": "^2.1.5"
@@ -29,7 +27,6 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "redux-logger": "^3.0.6",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }

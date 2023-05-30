@@ -1,26 +1,42 @@
-import { FC, memo, useState } from "react";
-import useSWR from "swr";
+import { FC, memo, useState, useEffect } from "react";
+import useSWR, { useSWRConfig } from "swr";
 import ImageLoader from "../commonComponents/ImageLoader";
 import callApi from "../helpers/callApi";
 import { FootbaliModel } from "../models/footballi-api/footballi_model";
 import { AxiosRequestConfig } from "axios";
 import Loading from "./Loading";
 import Notfound from "./Notfound";
+import useDebounce from "../hooks/useDebounce";
 
 interface CardDropDownInterface {
   param: string | undefined;
+  filtered?: string;
 }
 
 interface AxiosResponseSWR {
   data: FootbaliModel;
   status: number;
 }
-const CardDropDown: FC<CardDropDownInterface> = ({ param }) => {
-  const { data, error, isLoading } = useSWR(`footbali_data`, () => {
+const CardDropDown: FC<CardDropDownInterface> = ({ param, filtered='' }) => {
+  const debouncedValue = useDebounce<string>(filtered, 100)
+  const { cache } = useSWRConfig();
+  const { data:res, error, isLoading, mutate } = useSWR(`footbali_data`, () => {
     return callApi().get<AxiosRequestConfig, AxiosResponseSWR>(
       `?date=${param}`
     );
   });
+
+  let data = res?.data?.all
+
+  data = data?.filter((item) => {
+    if(!debouncedValue) return data
+    return item.name.toLowerCase().indexOf(debouncedValue.toLowerCase()) !== -1;
+  });
+
+  useEffect(() => {
+    mutate();
+    return () => cache.delete("footbali_data");
+  }, [param]);
 
   const [hidden, setHidden] = useState<string[]>([]);
   const setClock = (date: string): string => {
@@ -32,8 +48,8 @@ const CardDropDown: FC<CardDropDownInterface> = ({ param }) => {
   if (isLoading) return <Loading />;
   return (
     <>
-      {!!data?.data?.all.length ? (
-        data?.data?.all?.map((item) => (
+      {!!data?.length ? (
+        data?.map((item) => (
           <div className="card-dropdown" key={item.id}>
             <div
               className="dropdown-header"

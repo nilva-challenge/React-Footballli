@@ -7,7 +7,7 @@ const AppRoute = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="*" element={<Page.NotFound />} /> */}
+        <Route path="*" element={<pages.NotfoundPage />} />
         <Route
           path={PATHS.HOME}
           element={

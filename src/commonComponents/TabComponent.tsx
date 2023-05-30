@@ -1,11 +1,12 @@
 import { FC, memo } from "react";
-import { ScrollContainer } from "react-indiana-drag-scroll";
 
 interface TabDragableInterface {
   items: any[];
   onClickItem: (item: any) => void;
   scrollContainerClassName?: string;
   itemClassName?: string;
+  param?: string | number;
+  loadMore?: () => void;
 }
 
 const TabDragable: FC<TabDragableInterface> = ({
@@ -13,24 +14,27 @@ const TabDragable: FC<TabDragableInterface> = ({
   onClickItem,
   scrollContainerClassName,
   itemClassName,
+  param,
+  loadMore,
 }) => {
   return (
-    <ScrollContainer
+    <div
       className={`tab-dragable ${scrollContainerClassName ?? ""}`}
     >
       {items &&
         items.map((item: any) => (
           <span
             key={item.id}
-            onClick={() => onClickItem(item.item)}
+            onClick={() => onClickItem(item.date)}
             className={` ${itemClassName ?? ""} ${
-              item.id === "5" ? "active-tab" : ""
+              param === item.date ? "active-tab" : ""
             }`}
           >
-            {item.item}
+            {item.name}
           </span>
         ))}
-    </ScrollContainer>
+      {loadMore && <span onClick={() => loadMore()}> مشاهده بیشتر </span>}
+    </div>
   );
 };
 

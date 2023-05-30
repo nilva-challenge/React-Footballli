@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface ImageLoaderInterface {
   src: string;
@@ -13,7 +14,14 @@ const ImageLoader: FC<ImageLoaderInterface> = ({
 }) => {
   return (
     <figure className={`${figureClassName ?? ""}`}>
-      <img className={`${imgClassName ?? ""}`} src={src} alt={src} />
+      <LazyLoadImage
+        className={`${imgClassName ?? ""}`}
+        alt={src}
+        height="100%"
+        src={src} // use normal <img> attributes as props
+        width="100%"
+        effect="blur"
+      />
     </figure>
   );
 };

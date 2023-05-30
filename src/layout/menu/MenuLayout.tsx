@@ -1,6 +1,6 @@
 import { FC, ReactNode, useMemo, memo } from "react";
 import Menu from "../../components/menu/Menu";
-import menuItem from "../../data/error-map.json";
+import menuItem from "../../data/menu-items.json";
 import { MenuItem } from "models/menu/menuItem";
 
 interface MenulayoutInterface {
