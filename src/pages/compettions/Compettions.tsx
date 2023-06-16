@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ImageLoader from "../../commonComponents/ImageLoader";
 import SearchBox from "../../commonComponents/SearchBox";
@@ -6,10 +6,12 @@ import TabDragable from "../../commonComponents/TabComponent";
 import CardDropdown from "../../commonComponents/CardDropdown";
 import { dateGeneration, getPersisanDate } from "../../utils/helpers";
 import { dateTab } from "../../models/dateTab";
+import useDebounce from "./../../hooks/useDebounce";
 
 const Competitions: FC = () => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState("");
+  const debouncedValue = useDebounce<string>(filter, 100);
   const param = useParams();
   const navigate = useNavigate();
   const dates: dateTab[] = [];
@@ -27,11 +29,19 @@ const Competitions: FC = () => {
           ? "فردا"
           : getPersisanDate(new Date(dateGeneration(new Date(), i))),
     });
-  }
-
-  const handleNavigate = (date: string) => {
-    navigate({ pathname: `/competitions/${date}` });
   };
+
+  const handleSearchboxChange = useCallback((value: string) => {
+    setFilter(value);
+  }, []);
+
+  const handleLoadmore = useCallback(() => {
+    setPage((prev) => prev + 1);
+  }, []);
+
+  const handleNavigate = useCallback((date: string) => {
+    navigate({ pathname: `/competitions/${date}` });
+  }, []);
 
   return (
     <>
@@ -43,18 +53,18 @@ const Competitions: FC = () => {
             src="/public/svg/clock.svg"
           />
         </div>
-        <SearchBox onChange={(value) => setFilter(value)} />
+        <SearchBox onChange={(value) => handleSearchboxChange(value)} />
         <TabDragable
           scrollContainerClassName="compettions-tab"
           onClickItem={(date) => handleNavigate(date)}
           items={dates}
           param={param.date}
-          loadMore={() => setPage((prev) => prev + 1)}
+          loadMore={() => handleLoadmore()}
         />
       </div>
-      <CardDropdown filtered={filter} param={param.date} />
+      <CardDropdown filtered={debouncedValue} param={param.date} />
     </>
   );
 };
 
-export { Competitions };
+export default Competitions;

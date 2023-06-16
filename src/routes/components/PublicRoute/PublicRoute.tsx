@@ -6,7 +6,7 @@ interface publicTargetPage {
   hasLayout: boolean;
 }
 
-const TargetPage = ({ Component, hasLayout = true }: publicTargetPage): any => {
+const TargetPage = ({ Component, hasLayout = true }: publicTargetPage) => {
   return hasLayout ? (
     <MenuLayout>
       <Component />

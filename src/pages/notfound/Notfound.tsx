@@ -4,4 +4,4 @@ const NotfoundPage = () => {
   return <Notfound />;
 };
 
-export { NotfoundPage };
+export default NotfoundPage;

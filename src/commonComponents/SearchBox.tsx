@@ -5,7 +5,6 @@ interface SearchBoxProps {
   onChange: (item: string) => void;
   type?: string;
   placeholder?: string;
-  description?: string;
   disabled?: boolean;
   value?: any;
   parentClassName?: string;

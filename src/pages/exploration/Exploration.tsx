@@ -2,4 +2,4 @@ const Explorations = () => {
   return <div> Explorations Page</div>;
 };
 
-export { Explorations };
+export default Explorations ;

@@ -6,7 +6,6 @@ import { FootbaliModel } from "../models/footballi-api/footballi_model";
 import { AxiosRequestConfig } from "axios";
 import Loading from "./Loading";
 import Notfound from "./Notfound";
-import useDebounce from "../hooks/useDebounce";
 
 interface CardDropDownInterface {
   param: string | undefined;
@@ -18,7 +17,6 @@ interface AxiosResponseSWR {
   status: number;
 }
 const CardDropDown: FC<CardDropDownInterface> = ({ param, filtered='' }) => {
-  const debouncedValue = useDebounce<string>(filtered, 100)
   const { cache } = useSWRConfig();
   const { data:res, error, isLoading, mutate } = useSWR(`footbali_data`, () => {
     return callApi().get<AxiosRequestConfig, AxiosResponseSWR>(
@@ -29,8 +27,8 @@ const CardDropDown: FC<CardDropDownInterface> = ({ param, filtered='' }) => {
   let data = res?.data?.all
 
   data = data?.filter((item) => {
-    if(!debouncedValue) return data
-    return item.name.toLowerCase().indexOf(debouncedValue.toLowerCase()) !== -1;
+    if(!filtered) return data
+    return item.name.toLowerCase().indexOf(filtered.toLowerCase()) !== -1;
   });
 
   useEffect(() => {
