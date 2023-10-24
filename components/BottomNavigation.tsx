@@ -10,7 +10,7 @@ const BottomNavigation = () => {
           width={24}
           height={24}
         />
-        <div className="text-sm font-medium">پروفایل</div>
+        <div className="text-sm font-medium text-gray-500">پروفایل</div>
       </div>
       <div className="flex flex-col items-center gap-y-2">
         <Image
@@ -19,7 +19,7 @@ const BottomNavigation = () => {
           width={24}
           height={24}
         />
-        <div className="text-sm font-medium">لیگ‌ها</div>
+        <div className="text-sm font-medium text-gray-500">لیگ‌ها</div>
       </div>
       <div className="flex flex-col items-center gap-y-2">
         <Image
@@ -28,7 +28,7 @@ const BottomNavigation = () => {
           width={24}
           height={24}
         />
-        <div className="text-sm font-medium">فوتبان</div>
+        <div className="text-sm font-medium text-gray-500">فوتبان</div>
       </div>
       <div className="flex flex-col items-center gap-y-2">
         <Image
@@ -37,7 +37,7 @@ const BottomNavigation = () => {
           width={24}
           height={24}
         />
-        <div className="text-sm font-medium">اکتشاف</div>
+        <div className="text-sm font-medium text-gray-500">اکتشاف</div>
       </div>
       <div className="flex flex-col items-center gap-y-2">
         <Image
@@ -46,7 +46,7 @@ const BottomNavigation = () => {
           width={24}
           height={24}
         />
-        <div className="text-sm font-medium">مسابقات</div>
+        <div className="text-sm font-medium text-gray-500">مسابقات</div>
       </div>
     </div>
   );

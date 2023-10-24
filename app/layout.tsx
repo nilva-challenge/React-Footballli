@@ -2,6 +2,12 @@ import { BottomNavigation } from '@/components';
 import { Providers } from '@/utils';
 import { ReactNode } from 'react';
 import './globals.css';
+import localFont from 'next/font/local';
+
+const dana = localFont({
+  src: '../public/assets/fonts/DanaVF.ttf',
+  display: 'swap',
+});
 
 type Props = {
   children: ReactNode;
@@ -9,8 +15,8 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html lang="en">
-      <body>
+    <html lang="fa" dir="rtl">
+      <body className={dana.className}>
         <Providers>
           {children}
           <BottomNavigation />
