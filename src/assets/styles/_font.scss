@@ -1,0 +1,19 @@
+$font-url: '../../assets/fonts';
+$font-IRSans: 'IRSans';
+
+@font-face {
+  font-family: '#{$font-IRSans}-Regular';
+  src: url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Regular.woff2') format('woff2'),
+  //src: url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Regular.ttf') format('truetype'),
+  //url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Regular.woff') format('woff');
+  //src: url("../fonts/IRSans/IRSans-Regular.woff2  ") format("woff2");
+}
+
+@font-face {
+ font-family: '#{$font-IRSans}-Bold';
+ src: url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Bold.eot') format('eot');
+ src: url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Bold.ttf') format('truetype'),
+ url('#{$font-url}/#{$font-IRSans}/#{$font-IRSans}-Bold.woff') format('woff');
+}
+
+

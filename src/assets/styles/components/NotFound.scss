@@ -1,0 +1,18 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 50vh;
+
+  span {
+    color: #2d2d2d;
+    font-size: 1.6rem;
+  }
+
+  .notfound-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
