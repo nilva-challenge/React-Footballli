@@ -1,11 +1,24 @@
 'use client';
 
-import { All } from '@/types';
+import { All, Fixture } from '@/types';
 import Image from 'next/image';
 import { useState } from 'react';
 
 type Props = {
   data: All;
+};
+
+const handleShowPropData = (fixture: Fixture) => {
+  if (fixture.status === 'NS') {
+    return new Date(fixture.start_time)
+      .toLocaleDateString('fa', {
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+      .split(',')[1];
+  } else {
+    return `${fixture.home_goals.toLocaleString('fa')} - ${fixture.away_goals.toLocaleString('fa')}`;
+  }
 };
 
 // TODO: Add animation for the accordion
@@ -55,14 +68,7 @@ const LeagueCard = ({ data }: Props) => {
                     height={45}
                   />
                   <div className="justify-self-center">
-                    {
-                      new Date(fixture.start_time)
-                        .toLocaleDateString('fa', {
-                          hour: '2-digit',
-                          minute: '2-digit',
-                        })
-                        .split(',')[1]
-                    }
+                    {handleShowPropData(fixture)}
                   </div>
                   <Image
                     src={fixture.away.logo}

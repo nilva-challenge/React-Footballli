@@ -38,4 +38,4 @@ export type Away = {
   is_favorite: null;
 };
 
-export type Status = 'FT' | 'AET';
+export type Status = 'FT' | 'AET' | 'NS';

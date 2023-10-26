@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 
 const range = 8;
 
+// TODO: remove scrollbar ui
+
 const dateRanges = () => {
   const dates = [];
 
