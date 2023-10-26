@@ -1,9 +1,11 @@
-import { Button } from "@mantine/core";
+import { FooterTab, LiveScoreBody, LiveScoreHeader } from "./components";
 
 const App = () => {
   return (
     <div>
-      <Button>Hello</Button>
+      <LiveScoreHeader />
+      <LiveScoreBody />
+      <FooterTab />
     </div>
   );
 };
