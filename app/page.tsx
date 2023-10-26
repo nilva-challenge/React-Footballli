@@ -5,7 +5,7 @@
 
 import useGetFixtures from '@/apis/hooks/useGetFixtures';
 import Image from 'next/image';
-import { DatesBar, Search } from '@/components';
+import { DatesBar, LeagueCard, Search } from '@/components';
 
 const Page = () => {
   const { data, isLoading } = useGetFixtures(
@@ -26,6 +26,10 @@ const Page = () => {
         </div>
         <Search />
         <DatesBar />
+      </div>
+
+      <div className="p-4 flex flex-col gap-y-4 mb-28">
+        {data?.all.map((item) => <LeagueCard key={item.id} data={item} />)}
       </div>
     </>
   );
