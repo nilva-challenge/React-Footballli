@@ -6,14 +6,14 @@ import { MdOutlineExplore } from "react-icons/md";
 import { PiSoccerBall, PiTrophyBold } from "react-icons/pi";
 
 const footerItems = [
-  { icon: TbSoccerField, label: "مسابقات" },
-  { icon: MdOutlineExplore, label: "اکتشاف" },
-  { icon: PiSoccerBall, label: "فوتبال" },
-  { icon: PiTrophyBold, label: "لیگ ها" },
   { icon: BsPerson, label: "پروفایل" },
+  { icon: PiTrophyBold, label: "لیگ ها" },
+  { icon: PiSoccerBall, label: "فوتبال" },
+  { icon: MdOutlineExplore, label: "اکتشاف" },
+  { icon: TbSoccerField, label: "مسابقات" },
 ];
 const FooterTab = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(footerItems.length - 1);
 
   const items = footerItems.map((item, index) => (
     <NavLink
