@@ -21,7 +21,7 @@ export type Fixture = {
   api_id: string;
   status: Status;
   elapsed: number;
-  start_time: Date;
+  start_time: string;
   home_goals: number;
   away_goals: number;
   home_penalty_goals: null;
