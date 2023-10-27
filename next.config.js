@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['sport-cdn.zarebin.ir'],
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

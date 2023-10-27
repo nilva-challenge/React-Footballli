@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 const range = 8;
 
 // TODO: remove scrollbar ui
+// FIXME: When theres is date param, after refreshing the bar scroll to the today element!
+// TODO: handle infinite scroll
 
 const dateRanges = () => {
   const dates = [];
@@ -46,7 +48,7 @@ const DatesBar = () => {
   const dateRef = useRef<HTMLDivElement>(null);
 
   const handleClickDate = (date: Date, index: number) => {
-    router.push('?test=test');
+    router.push(`?date=${date.toISOString().split('T')[0]}`);
 
     let _dates = [...dates.map((date) => ({ ...date, isActive: false }))];
 

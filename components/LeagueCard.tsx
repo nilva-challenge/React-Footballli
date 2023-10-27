@@ -17,7 +17,9 @@ const handleShowPropData = (fixture: Fixture) => {
       })
       .split(',')[1];
   } else {
-    return `${fixture.home_goals.toLocaleString('fa')} - ${fixture.away_goals.toLocaleString('fa')}`;
+    return `${fixture.home_goals.toLocaleString(
+      'fa',
+    )} - ${fixture.away_goals.toLocaleString('fa')}`;
   }
 };
 
@@ -61,21 +63,11 @@ const LeagueCard = ({ data }: Props) => {
                   <div className="truncate whitespace-nowrap w-20 text-left justify-self-end">
                     {fixture.home.name}
                   </div>
-                  <Image
-                    src={fixture.home.logo}
-                    alt=""
-                    width={45}
-                    height={45}
-                  />
+                  <img src={fixture.home.logo} alt="" width={45} height={45} />
                   <div className="justify-self-center">
                     {handleShowPropData(fixture)}
                   </div>
-                  <Image
-                    src={fixture.away.logo}
-                    alt=""
-                    width={45}
-                    height={45}
-                  />
+                  <img src={fixture.away.logo} alt="" width={45} height={45} />
                   <div className="truncate whitespace-nowrap w-20">
                     {fixture.away.name}
                   </div>
