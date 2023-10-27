@@ -1,0 +1,19 @@
+.fixture {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-top: 2px solid #f5f6fb;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.fixture:hover {
+    background-color: #f7f7f7;
+}
+
+.fixture>span {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,29 @@
+.league-card {
+    border-radius: 0.5rem;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    box-shadow: 0 0 6px -4px #4463C9;
+}
+
+.league-card:hover {
+    box-shadow: 0 0 6px -2px #4463C9;
+}
+
+.league-header {
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem;
+    min-height: 50px;
+    background-color: #fafafa;
+    color: #4463C9;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.league-header>div {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}

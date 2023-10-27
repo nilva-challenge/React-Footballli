@@ -1,0 +1,34 @@
+:root {
+  background-color: #fff;
+  display: grid;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('Vazir.ttf') format('truetype'),
+    url('Vazir.woff') format('woff'),
+    url('Vazir.woff2') format('woff2');
+}
+
+body {
+  font-family: Vazir;
+  font-size: 14px;
+  max-width: 420px;
+  min-width: 320px;
+  min-height: 100svh;
+  background-color: #f5f6fb;
+  padding: 0.5rem 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.unavailable {
+  color: crimson
+}
