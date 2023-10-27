@@ -3,7 +3,7 @@
 
 import { All, Fixture } from '@/types';
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 type Props = {
   data: All;
@@ -76,10 +76,9 @@ const LeagueCard = ({ data, search }: Props) => {
                       fixture.away.name.includes(search),
                   )
                   .map((fixture, index) => (
-                    <>
+                    <React.Fragment key={fixture.id}>
                       {index !== 0 && <hr className="" />}
                       <div
-                        key={fixture.id}
                         style={{
                           display: 'grid',
                           gridTemplateColumns: '1fr 45px 50px 45px 1fr',
@@ -108,7 +107,7 @@ const LeagueCard = ({ data, search }: Props) => {
                           {fixture.away.name}
                         </div>
                       </div>
-                    </>
+                    </React.Fragment>
                   ))}
               </div>
             </>
