@@ -1,0 +1,33 @@
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-time {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+}
+
+.result-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    width: 100%;
+}
+
+.result-container>div {
+    font-weight: bold;
+    text-align: center;
+}
+
+.additional-info {
+    color: #999
+}
+
+.unknown {
+    color: crimson;
+    text-align: center;
+}

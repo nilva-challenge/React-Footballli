@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0
+}
+
+.navbar-button {
+    font-family: 'Vazir';
+    border: none;
+    min-width: fit-content;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgb(231, 236, 245);
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.selected {
+    background-color: rgb(153, 180, 230);
+}
+
+.navbar::-webkit-scrollbar {
+    height: 5px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: indigo;
+    border-radius: 4px;
+}
