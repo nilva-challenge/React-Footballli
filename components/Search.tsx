@@ -1,12 +1,19 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-const Search = () => {
+type Props = {
+  search: string;
+  setSearch: (search: string) => void;
+};
+
+const Search = ({ search, setSearch }: Props) => {
   return (
     <div className="bg-gray-200 relative rounded-lg overflow-hidden mt-4">
       <input
         type="text"
         className="w-full h-full p-3 pr-12 bg-inherit outline-none"
         placeholder="جستجو..."
+        value={search}
+        onChange={({ target }) => setSearch(target.value)}
       />
       <Image
         src="/assets/icons/search.svg"

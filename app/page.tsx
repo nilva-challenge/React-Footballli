@@ -16,6 +16,7 @@ const Page = () => {
     params.get('date') || new Date().toISOString().split('T')[0],
   );
   const { data, isLoading } = useGetFixtures(date);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     setDate(params.get('date') as string);
@@ -33,12 +34,14 @@ const Page = () => {
             height={24}
           />
         </div>
-        <Search />
+        <Search search={search} setSearch={setSearch} />
         <DatesBar />
       </div>
 
       <div className="p-4 flex flex-col gap-y-4 mb-28">
-        {data?.all.map((item) => <LeagueCard key={item.id} data={item} />)}
+        {data?.all.map((item) => (
+          <LeagueCard key={item.id} data={item} search={search} />
+        ))}
       </div>
     </>
   );
