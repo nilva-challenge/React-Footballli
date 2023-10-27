@@ -1,7 +1,6 @@
 'use client';
 
 // TODO: Make it SSR
-// TODO: Add skeleton
 
 import useGetFixtures from '@/apis/hooks/useGetFixtures';
 import Image from 'next/image';
@@ -37,6 +36,15 @@ const Page = () => {
         <Search search={search} setSearch={setSearch} />
         <DatesBar />
       </div>
+
+      {isLoading && (
+        <div className="p-4">
+          <div className="bg-gray-300 h-9 animate-pulse rounded-lg mb-3"></div>
+          <div className="bg-gray-300 h-36 animate-pulse rounded-lg mb-5"></div>
+          <div className="bg-gray-300 h-9 animate-pulse rounded-lg mb-3"></div>
+          <div className="bg-gray-300 h-36 animate-pulse rounded-lg"></div>
+        </div>
+      )}
 
       <div className="p-4 flex flex-col gap-y-4 mb-28">
         {data?.all.map((item) => (
