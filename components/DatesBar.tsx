@@ -2,23 +2,24 @@
 
 import { DateUtils } from '@/utils';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, createRef, useEffect, useRef, useState } from 'react';
 
 const range = 8;
 
 // TODO: remove scrollbar scroll bar
-// FIXME: When theres is date param, after refreshing the bar scroll to the today element!
 // TODO: handle infinite scroll
 // TODO: Create hook for dates bar
 
-const dateRanges = () => {
+const dateRanges = (currentDate: string) => {
   const dates = [];
 
   for (let i = -range; i < range; i++) {
     const today = new Date();
+    const value = new Date(today.setDate(today.getDate() + i));
+
     dates.push({
-      isActive: i === 0,
-      value: new Date(today.setDate(today.getDate() + i)),
+      isActive: value.toISOString().split('T')[0] === currentDate,
+      value,
     });
   }
 
@@ -43,10 +44,14 @@ const handleDate = (date: Date) => {
   return _date.toLocaleDateString('fa', { day: 'numeric', month: 'short' });
 };
 
-const DatesBar = () => {
-  const [dates, setDates] = useState(dateRanges);
+type Props = {
+  date: string;
+};
+
+const DatesBar = ({ date }: Props) => {
+  const [dates, setDates] = useState(() => dateRanges(date));
   const router = useRouter();
-  const dateRef = useRef<HTMLDivElement>(null);
+  const [dateRefs, setDateRefs] = useState<RefObject<HTMLDivElement>[]>([]);
   const datesBarRef = useRef<HTMLDivElement>(null);
   const [trackScrollLeft, setTrackScrollLeft] = useState<number>();
   const handleClickDate = (date: Date, index: number) => {
@@ -62,10 +67,22 @@ const DatesBar = () => {
   };
 
   useEffect(() => {
-    if (dateRef.current) {
-      dateRef.current.scrollIntoView({ inline: 'center' });
+    setDateRefs((refs) =>
+      Array(dates.length)
+        .fill('')
+        .map((_, i) => dateRefs[i] || createRef()),
+    );
+  }, []);
+
+  useEffect(() => {
+    const index = dates.findIndex(
+      (date) => date.value.getDate() === new Date().getDate(),
+    );
+
+    if (dateRefs[index] && dateRefs[index].current) {
+      dateRefs[index].current?.scrollIntoView({ inline: 'center' });
     }
-  }, [dateRef]);
+  }, [dateRefs]);
 
   useEffect(() => {
     if (datesBarRef.current) {
@@ -77,8 +94,7 @@ const DatesBar = () => {
 
   useEffect(() => {
     if (datesBarRef.current) {
-      const { scrollWidth, clientWidth, scrollLeft } =
-        datesBarRef.current;
+      const { scrollWidth, clientWidth, scrollLeft } = datesBarRef.current;
 
       if (
         scrollLeft === -(scrollWidth - clientWidth) ||
@@ -113,7 +129,7 @@ const DatesBar = () => {
           key={index}
           className="relative"
           onClick={() => handleClickDate(date.value, index)}
-          {...(date.isActive && { ref: dateRef })}
+          ref={dateRefs[index]}
         >
           <div className="text-gray-400 mb-3 whitespace-nowrap">
             {handleDate(date.value)}

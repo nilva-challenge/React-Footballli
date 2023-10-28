@@ -6,10 +6,9 @@ import useGetFixtures from '@/apis/hooks/useGetFixtures';
 import Image from 'next/image';
 import { DatesBar, LeagueCard, Search } from '@/components';
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 const Page = () => {
-  const router = useRouter();
   const params = useSearchParams();
   const [date, setDate] = useState(
     params.get('date') || new Date().toISOString().split('T')[0],
@@ -18,7 +17,7 @@ const Page = () => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    setDate(params.get('date') as string);
+    params.get('date') && setDate(params.get('date') as string);
   }, [params]);
 
   return (
@@ -34,7 +33,7 @@ const Page = () => {
           />
         </div>
         <Search search={search} setSearch={setSearch} />
-        <DatesBar />
+        <DatesBar date={date} />
       </div>
 
       {isLoading && (
