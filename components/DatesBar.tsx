@@ -6,9 +6,10 @@ import { useEffect, useRef, useState } from 'react';
 
 const range = 8;
 
-// TODO: remove scrollbar ui
+// TODO: remove scrollbar scroll bar
 // FIXME: When theres is date param, after refreshing the bar scroll to the today element!
 // TODO: handle infinite scroll
+// TODO: Create hook for dates bar
 
 const dateRanges = () => {
   const dates = [];
@@ -46,7 +47,8 @@ const DatesBar = () => {
   const [dates, setDates] = useState(dateRanges);
   const router = useRouter();
   const dateRef = useRef<HTMLDivElement>(null);
-
+  const datesBarRef = useRef<HTMLDivElement>(null);
+  const [trackScrollLeft, setTrackScrollLeft] = useState<number>();
   const handleClickDate = (date: Date, index: number) => {
     router.push(`?date=${date.toISOString().split('T')[0]}`);
 
@@ -65,8 +67,47 @@ const DatesBar = () => {
     }
   }, [dateRef]);
 
+  useEffect(() => {
+    if (datesBarRef.current) {
+      datesBarRef.current.addEventListener('scroll', () => {
+        setTrackScrollLeft(datesBarRef.current?.scrollLeft);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (datesBarRef.current) {
+      const { scrollWidth, clientWidth, scrollLeft } =
+        datesBarRef.current;
+
+      if (
+        scrollLeft === -(scrollWidth - clientWidth) ||
+        scrollLeft === -(scrollWidth - clientWidth - 1)
+      ) {
+        const _dates = [];
+
+        for (let i = 1; i <= range; i++) {
+          const lastDate = new Date(
+            JSON.stringify(dates[dates.length - 1].value.toDateString()),
+          );
+
+          _dates.push({
+            isActive: false,
+            value: new Date(lastDate.setDate(lastDate.getDate() + i)),
+          });
+        }
+
+        setDates([...dates, ..._dates]);
+      }
+      if (scrollLeft === 0 || scrollLeft === 1) {
+        // TODO: Handle infinite items
+        console.log('start of the dates bar hit!');
+      }
+    }
+  }, [datesBarRef, trackScrollLeft]);
+
   return (
-    <div className="flex gap-x-7 overflow-x-auto mt-4">
+    <div className="flex gap-x-7 overflow-x-auto mt-4" ref={datesBarRef}>
       {dates.map((date, index) => (
         <div
           key={index}
