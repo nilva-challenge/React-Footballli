@@ -3,6 +3,7 @@ import { useState } from "react";
 import { sampleData } from "../sampleData";
 import { MatchAccordion, MatchBox } from ".";
 import moment from "jalali-moment";
+import apiCall from "../services/axios/instance";
 
 const tabItems = [
   { title: "دیروز", data: sampleData.all },
@@ -14,7 +15,12 @@ const tabItems = [
 
 const DaysTab = () => {
   const [activeTab, setActiveTab] = useState<string | null>("امروز");
+  const date = "2023-01-03";
+  const data = async (date: string) => {
+    return apiCall.get(`/fixtures/?date=${date}`);
+  };
 
+  console.log(data(date));
   return (
     <>
       <Tabs
