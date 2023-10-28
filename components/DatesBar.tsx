@@ -6,9 +6,9 @@ import { RefObject, createRef, useEffect, useRef, useState } from 'react';
 
 const range = 8;
 
-// TODO: remove scrollbar scroll bar
-// TODO: handle infinite scroll
-// TODO: Create hook for dates bar
+// TODO: remove scrollbar through css
+// TODO: handle infinite scroll for when use hit the start of the dates bar
+// TODO: Create some hooks for dates bar
 
 const dateRanges = (currentDate: string) => {
   const dates = [];
@@ -54,6 +54,7 @@ const DatesBar = ({ date }: Props) => {
   const [dateRefs, setDateRefs] = useState<RefObject<HTMLDivElement>[]>([]);
   const datesBarRef = useRef<HTMLDivElement>(null);
   const [trackScrollLeft, setTrackScrollLeft] = useState<number>();
+
   const handleClickDate = (date: Date, index: number) => {
     router.push(`?date=${date.toISOString().split('T')[0]}`);
 
