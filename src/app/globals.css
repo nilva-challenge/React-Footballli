@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Webkit browsers (Chrome and Safari) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px; /* Adjust this value to make the scrollbar thinner or thicker */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cacaca; /* Color of the thumb */
+}
+
+/* For non-Webkit browsers (Firefox) */
+.scrollbar-thin {
+  scrollbar-width: thin; /* Use "auto" for the browser default */
+  scrollbar-color: #cacaca transparent; /* Color of the thumb and track */
+}
