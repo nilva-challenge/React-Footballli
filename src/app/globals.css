@@ -2,19 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* For Webkit browsers (Chrome and Safari) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px; /* Adjust this value to make the scrollbar thinner or thicker */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cacaca; /* Color of the thumb */
 }
 
-body {
+/* For non-Webkit browsers (Firefox) */
+.scrollbar-thin {
+  scrollbar-width: thin; /* Use "auto" for the browser default */
+  scrollbar-color: #cacaca transparent; /* Color of the thumb and track */
 }

@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+"use client";
+
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "react-redux";
+
+import TopHeader from "./components/headers/top-header/TopHeader";
+import Footer from "./components/footer/Footer";
+import store from "./store/store";
+import { iranSans } from "./layout.config";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Footballli",
-  description: "Iranian soccer leagues football mobile web app",
-};
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -15,8 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" dir="rtl">
+      <body className={iranSans.className}>
+        <div className="max-w-xl min-h-screen flex flex-col">
+          <TopHeader />
+          <div className="bg-slate-100 grow">
+            <QueryClientProvider client={queryClient}>
+              <Provider store={store}>{children}</Provider>
+            </QueryClientProvider>
+          </div>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
