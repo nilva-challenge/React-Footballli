@@ -1,5 +1,4 @@
-const Header = ({ Icon, title }) => {
-  console.log(title);
+const Header = ({ title, Icon }) => {
   return (
     <header className='flex items-center w-full justify-between px-4'>
       <p className='font-bold text-xl'>{title}</p>
