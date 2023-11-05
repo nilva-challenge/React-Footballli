@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Score = ({ league }) => {
-  const [showMatch, setShowMatch] = useState(false);
+  const [showMatch, setShowMatch] = useState(true);
   const { matchs } = league;
 
   return (
