@@ -7,6 +7,7 @@ import { LuClock7 as clockIcon } from "react-icons/lu";
 import { LiaSearchSolid as searchIcon } from "react-icons/lia";
 import MatchCalender from "./components/MatchCalendar";
 import MatchScores from "./components/MatchScores";
+import FooterMenu from "./components/FooterMenu";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Input type={"search"} Icon={searchIcon} placeholder={"جستجو"} />
       <MatchCalender calender='امروز' />
       <MatchScores />
+      <FooterMenu />
     </div>
   );
 };
