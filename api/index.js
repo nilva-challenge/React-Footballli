@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { Users } from "./users.js";
+import { leaguesData } from "./data.js";
 
 const app = express();
 
@@ -8,7 +8,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   const { q } = req.query;
-  const keys = ["first_name", "last_name", "email"];
+  const keys = ["leagueName"];
 
   const search = (data) => {
     return data.filter((item) =>
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     );
   };
 
-  res.json(search(Users).splice(0, 10));
+  res.json(search(leaguesData).splice(0, 10));
 });
 
 app.listen(5000, () => {
