@@ -7,7 +7,7 @@ const Score = ({ league }) => {
   return (
     <div>
       <section
-        className='flex items-center justify-between p-2 rounded-md  overflow-hidden '
+        className='flex items-center justify-between p-2 rounded-md overflow-hidden '
         onClick={() => setShowMatch(!showMatch)}>
         <div className='flex items-center gap-3 '>
           <img src={league.leagueLogo} width={30} height={30} />

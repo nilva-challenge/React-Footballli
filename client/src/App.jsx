@@ -58,8 +58,8 @@ const App = () => {
           className='placeholder:px-2 w-full focus:outline-none px-3'
         />
       </div>
-      <MatchCalender calender='امروز' />
-      <div className='bg-white h-[500px] overflow-scroll min-w-full scrollbar-hidden px-3'>
+      <MatchCalender />
+      <div className='bg-white h-[500px] overflow-scroll min-w-full  scrollbar-hidden px-3'>
         {content}
         {isLoading && <p>Loading more posts .... </p>}
       </div>
