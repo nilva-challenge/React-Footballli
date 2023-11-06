@@ -1,12 +1,14 @@
 import HomeLayout from "@/ui/views/layouts/HomeLayout";
 import {ReactElement} from "react";
-import MatchesView from "@/ui/views/MatchesView";
 import FootballView from "@/ui/views/FootballView";
 import {HomeNavItems} from "@/constant/config";
 import ProfileView from "@/ui/views/ProfileView";
 import LeagueView from "@/ui/views/LeagueView";
 import ExploreView from "@/ui/views/ExploreView";
 import Container from "@/ui/views/container/container";
+import dynamic from "next/dynamic";
+
+const MatchesView = dynamic(() => import('./MatchesView'), { ssr: false })
 
 const HomeView: React.FC<{ tab: string }> = ({tab}) => {
 
