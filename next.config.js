@@ -3,7 +3,9 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
-
+  images: {
+    domains: ['sport-cdn.zarebin.ir','media-4.api-sports.io']
+  },
   reactStrictMode: true,
   swcMinify: true,
 

@@ -45,12 +45,12 @@ const DatePicker: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className='py-4'>
             <ul ref={ref} className='flex flex-row gap-12 overflow-y-auto scroll-smooth overflow-hidden'>
                 {
                     dateList?.map((name: string, index: number) => {
                         return (
-                            <li key={`item-${index}`} onClick={() => handleClickItem(index)} className='cursor-pointer'>
+                            <li key={`item-${index}`} onClick={() => handleClickItem(index)} className='cursor-pointer whitespace-nowrap'>
                                 <p className={`${selectedItem === index ? 'text-blue-500' : 'text-gray-700'}`}>{convertToPersianDate(name)}</p>
                             </li>
                         )

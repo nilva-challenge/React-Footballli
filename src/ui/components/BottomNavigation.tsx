@@ -14,7 +14,7 @@ const BottomNavigation: React.FC = () => {
 
     return (
         <Container
-            className="lg:hidden bg-white fixed z-30 -bottom-0.5 flex items-center justify-between shadow-bottomNavigation body-font bg-skin-fill w-full h-14 px-4 md:px-6 lg:px-8 text-skin-muted pb-0.5">
+            className=" bg-white fixed z-30 -bottom-0.5 flex items-center justify-between shadow-bottomNavigation body-font bg-skin-fill w-full h-14 px-4 md:px-6 lg:px-8 text-skin-muted pb-0.5">
             {
                 menuItems.map((item, index) => {
                     return (
