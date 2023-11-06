@@ -1,7 +1,9 @@
 import {Tab} from "@headlessui/react";
 import {League} from "@/types/LeagueType";
-import {formatDateDistance, getLeaguesWithFixturesOnSameDay} from "@/constant/utils";
+import {formatDateDistance} from "@/constant/utils";
 import LeagueItem from "@/ui/components/LeagueItem";
+import {useLeagueFixturesQuery} from "@/framwork/rest/getLeagueFixtures";
+import {useRouter} from "next/router";
 
 const mockApiData: League[] = [{
     "fixtures": [
@@ -311,13 +313,21 @@ const mockApiData: League[] = [{
 
 const MatchesView: React.FC = () => {
 
-    const data: Map<string, League[]> = getLeaguesWithFixturesOnSameDay(mockApiData)
+    const router = useRouter();
+
+    const date = router.query.date as string | undefined;
+
+    const {data: leaguesList, isLoading, error} = useLeagueFixturesQuery(date as string);
+
+    if (error) {
+        return <div>Error</div>;
+    }
 
     return (
         <>
             <Tab.Group>
                 <div className="grid grid-cols-5">
-                    {Array.from(data.keys()).map((item, index) => (
+                    {leaguesList?.map((league: League, index: number) => (
                         <Tab key={index}>
                             {({selected}) => (
                                 <button
@@ -326,28 +336,25 @@ const MatchesView: React.FC = () => {
                                             ? 'bg-blue-500 text-white'
                                             : 'bg-gray-200 text-gray-800'
                                     } p-2 rounded-md mt-4`}>
-                                    {formatDateDistance(item)}
+                                    {formatDateDistance(league.name)}
                                 </button>
                             )}
                         </Tab>
                     ))}
                 </div>
-                <Tab.Panels>
-                    {Array.from(data.values()).map((leagues, index) => (
-                        <Tab.Panel key={index}>
-                            <div className="p-4 bg-white border mt-4 rounded-md">
-                                {
-                                    leagues.map((league, index) => {
-                                        return (
-                                            <LeagueItem key={`league-${index}`} leagueName={league.name}
-                                                        fixtureList={league.fixtures}/>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </Tab.Panel>
-                    ))}
-                </Tab.Panels>
+                {
+                    leaguesList &&
+                  <Tab.Panels>
+                      {leaguesList?.map((league: League, index: number) => (
+                          <Tab.Panel key={index}>
+                              <div className="p-4 bg-white border mt-4 rounded-md">
+                                  <LeagueItem key={`league-${index}`} leagueName={league.name}
+                                              fixtureList={league.fixtures}/>
+                              </div>
+                          </Tab.Panel>
+                      ))}
+                  </Tab.Panels>
+                }
             </Tab.Group>
         </>
     );
