@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType} from 'next/types'
 import HomeView from "@/ui/views/HomeView";
+import {HomeNavItems} from "@/constant/config";
 
-const validTabs = ['matches', 'explore', 'football', 'leagues', 'profile'];
 
 const HomeTabs = ({tab}: InferGetStaticPropsType<typeof getStaticProps>) => {
-    if (!validTabs.includes(tab)) {
+    if (!Object.values(HomeNavItems).includes(tab)) {
         return <HomeView tab="matches"/>
     }
 
@@ -13,7 +13,7 @@ const HomeTabs = ({tab}: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export const getStaticPaths: GetStaticPaths = () => {
     return {
-        paths: validTabs.map(tab => ({params: {tab}})),
+        paths: Object.values(HomeNavItems).map(tab => ({params: {tab}})),
         fallback: false
     }
 }

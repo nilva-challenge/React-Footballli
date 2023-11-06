@@ -14,7 +14,7 @@ const HomeHeader: React.FC = () => {
                     <HiOutlineSearch/>
                 </div>
                 <input
-                    className="w-full bg-gray-300 p-2 pr-10 mt-2 focus:outline-none focus:none"
+                    className="w-full bg-gray-200 p-2 pr-10 mt-2 focus:outline-none focus:none"
                     type="text"
                     placeholder="جستجو..."
                 />
