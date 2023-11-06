@@ -1,31 +1,50 @@
-//hooks
-import { useState } from "react";
+//hooks and Custom hooks
+import { useState, useRef, useCallback, useEffect } from "react";
+import usePosts from "./hooks/usePosts";
 
 //components
 import Header from "./components/Header";
 import MatchCalender from "./components/MatchCalendar";
 import FooterMenu from "./components/FooterMenu";
+import MatchScores from "./components/MatchScores";
 
 //react-icons
 import { LuClock7 as clockIcon } from "react-icons/lu";
 import { LiaSearchSolid } from "react-icons/lia";
-import { useEffect } from "react";
-import axios from "axios";
-import MatchScores from "./components/MatchScores";
 
 const App = () => {
   const [query, setQuery] = useState("");
-  const [data, setData] = useState([]);
+  const [pageNum, setPageNum] = useState([]);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const res = await axios.get(`http://localhost:5000/?q=${query}`);
-      setData(res.data);
-    };
-    if (query.length >= 3 || query.length === 0) {
-      fetchUsers();
+  const { isError, isLoading, results, error } = usePosts(query, pageNum);
+
+  const intObserver = useRef();
+  const lastContentRef = useCallback(
+    (post) => {
+      if (isLoading) return;
+      if (intObserver.current) {
+        intObserver.current.disconnect();
+      }
+      intObserver.current = new IntersectionObserver((posts) => {
+        if ((posts[0].isIntersecting && pageNum) || query) {
+          console.log("we are near the last league");
+          setPageNum((prev) => prev + 1);
+        }
+      });
+      if (post) intObserver.current.observe(post);
+    },
+    [query, isLoading, pageNum]
+  );
+  const filteredLeague = results.filter((item) =>
+    item.leagueName.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  );
+
+  const content = filteredLeague.map((post, i) => {
+    if (results.length === i + 1) {
+      return <MatchScores data={post} ref={lastContentRef} />;
     }
-  }, [query]);
+    return <MatchScores data={post} />;
+  });
 
   return (
     <div className='flex flex-col max-w-[450px] min-w-[370px] h-[750px] rounded-3xl bg-gray-100 border-2  border-black items-center justify-center gap-3 mt-5 scrollbar-hidden relative'>
@@ -40,10 +59,14 @@ const App = () => {
         />
       </div>
       <MatchCalender calender='امروز' />
-      <MatchScores data={data} />
+      <div className='bg-white h-[500px] overflow-scroll min-w-full scrollbar-hidden px-3'>
+        {content}
+        {isLoading && <p>Loading more posts .... </p>}
+      </div>
       <FooterMenu />
     </div>
   );
 };
 
 export default App;
+

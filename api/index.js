@@ -9,14 +9,13 @@ app.use(cors());
 app.get("/", (req, res) => {
   const { q } = req.query;
   const keys = ["leagueName"];
-
   const search = (data) => {
     return data.filter((item) =>
       keys.some((key) => item[key].toLowerCase().includes(q.toLowerCase()))
     );
   };
 
-  res.json(search(leaguesData).splice(0, 10));
+  res.json(search(leaguesData).splice(0, 4));
 });
 
 app.listen(5000, () => {

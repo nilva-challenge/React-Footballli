@@ -4,13 +4,12 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const Score = ({ league }) => {
   const [showMatch, setShowMatch] = useState(true);
   const { matchs } = league;
-
   return (
     <div>
       <section
-        className='flex items-center justify-between p-2 rounded-md bg-white overflow-hidden'
+        className='flex items-center justify-between p-2 rounded-md  overflow-hidden '
         onClick={() => setShowMatch(!showMatch)}>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center gap-3 '>
           <img src={league.leagueLogo} width={30} height={30} />
           <p className='text-base  text-blue-800'>{league.leagueName}</p>
         </div>
