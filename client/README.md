@@ -1,6 +1,5 @@
 # React footbalii - nilva task
- we have two section in this project in two diffrent folder ![demo](https://github.com/AliNazari-dev/React-Footballli/assets/99126829/ef68a695-2c59-44f7-99c2-dddd653bdf7e)
-
+ we have two section in this project in two diffrent folder 
  1 - api
  2 - client
 
