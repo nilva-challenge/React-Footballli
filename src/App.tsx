@@ -10,11 +10,11 @@ import {
 import { en } from 'dictionary/en';
 
 const links: INavigationItem[] = [
-  { id: 0, title: en.profile, Icon: <ProfileIcon />, to: '' },
-  { id: 1, title: en.navigate, Icon: <NavigationIcon />, to: '' },
-  { id: 2, title: en.football, Icon: <FootballIcon />, to: '' },
-  { id: 3, title: en.leagues, Icon: <TrophyIcon />, to: '' },
-  { id: 4, title: en.matches, Icon: <FieldIcon />, to: '' },
+  { id: 0, title: en.profile, Icon: ProfileIcon, to: '' },
+  { id: 1, title: en.navigate, Icon: NavigationIcon, to: '' },
+  { id: 2, title: en.football, Icon: FootballIcon, to: '' },
+  { id: 3, title: en.leagues, Icon: TrophyIcon, to: '' },
+  { id: 4, title: en.matches, Icon: FieldIcon, to: '' },
 ];
 
 function App() {

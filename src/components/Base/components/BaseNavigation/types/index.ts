@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import { IIconProps } from 'assets/ts/types';
+import { FC } from 'react';
 
 export interface IBaseNavigationProps {
   links: INavigationItem[];
@@ -6,7 +7,7 @@ export interface IBaseNavigationProps {
 
 export interface INavigationItem {
   to: string;
-  Icon: ReactNode;
+  Icon: FC<IIconProps>;
   title: string;
   id: number;
 }

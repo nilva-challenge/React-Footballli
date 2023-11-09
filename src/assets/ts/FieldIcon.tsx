@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IIconProps } from './types';
 
-export const FieldIcon: FC<IIconProps> = ({ fill = 'fill-primary', height = 30, width = 30 }) => {
+export const FieldIcon: FC<IIconProps> = ({ fill = 'none', height = 30, width = 30 }) => {
   return (
     <svg
       width={width}
