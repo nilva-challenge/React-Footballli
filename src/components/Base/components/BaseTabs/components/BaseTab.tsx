@@ -1,15 +1,27 @@
 import { FC, memo } from 'react';
 import { ITab } from '../types';
+import { Link, useParams } from 'react-router-dom';
+import { routes } from 'routes';
+import clsx from 'clsx';
+import { getDateInISOFormat } from 'components/LeagueResults';
 
 const BaseTab: FC<ITab> = ({ label, to }) => {
+  const { date = getDateInISOFormat(new Date()) } = useParams<{ date: string }>();
+  const isActive = date === to;
+
   return (
     <li className="mr-2">
-      <a
-        href={to}
-        className="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+      <Link
+        to={`${routes.matches}/${to}`}
+        className={clsx(
+          'inline-block p-4 border-transparent rounded-t-lg whitespace-nowrap',
+          isActive
+            ? 'text-primary  border-b-2 border-primary'
+            : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300',
+        )}
       >
         {label}
-      </a>
+      </Link>
     </li>
   );
 };

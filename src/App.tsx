@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <div className="max-w-md m-auto pt-2 px-2">
         <Routes>
-          <Route path={`${routes.matches}/:time?`} element={<Home />} />
+          <Route path={`${routes.matches}/:date?`} element={<Home />} />
           <Route path="*" element={<Navigate to={routes.matches} replace />} />
         </Routes>
       </div>

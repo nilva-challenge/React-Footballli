@@ -1,12 +1,5 @@
 import { FieldIcon, FootballIcon, NavigationIcon, ProfileIcon, TrophyIcon } from 'assets/ts';
-import {
-  BaseNavigation,
-  BaseTabs,
-  INavigationItem,
-  ITab,
-  LeagueResults,
-  PageHeader,
-} from 'components';
+import { BaseNavigation, INavigationItem, LeagueResults, PageHeader } from 'components';
 import { en } from 'dictionary/en';
 import { routes } from 'routes';
 
@@ -18,23 +11,10 @@ const links: INavigationItem[] = [
   { id: 4, title: en.matches, Icon: FieldIcon, to: routes.matches },
 ];
 
-const tabs: ITab[] = [
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-  { id: 0, label: 'fdsf', to: '' },
-];
 export const Home = () => {
   return (
     <>
       <PageHeader />
-      <BaseTabs tabs={tabs} />
       <LeagueResults />
       <BaseNavigation links={links} />
     </>

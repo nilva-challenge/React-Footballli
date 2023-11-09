@@ -6,4 +6,7 @@ export const en = {
   football: 'فوتبال',
   leagues: 'لیگ‌ها',
   profile: 'پروفایل',
+  today: 'امروز',
+  tomorrow: 'فردا',
+  yesterday: 'دیروز',
 };
