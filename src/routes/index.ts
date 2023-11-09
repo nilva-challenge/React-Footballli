@@ -1,1 +1,1 @@
-export const routes = { matches: '/matches' };
+export const routes = { matches: '/matches', notFound: '/notFound' };

@@ -5,7 +5,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 const NavigationItem: FC<INavigationItem> = ({ Icon, title, to }) => {
   const { pathname } = useLocation();
-  const isActive = to.includes(pathname);
+  const isActive = pathname.includes(to);
 
   return (
     <Link to={to} className="inline-flex flex-col items-center justify-center px-1">
