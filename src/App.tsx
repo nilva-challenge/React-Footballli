@@ -1,7 +1,11 @@
-import { en } from 'dictionary/en';
+import { PageHeader } from 'components/PageHeader';
 
 function App() {
-  return <h1 className="text-3xl font-bold">{en.title}</h1>;
+  return (
+    <div className="max-w-md m-auto pt-2 px-2">
+      <PageHeader />
+    </div>
+  );
 }
 
 export default App;
