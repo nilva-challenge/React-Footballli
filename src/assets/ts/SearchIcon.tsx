@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IIconProps } from './model';
+import { IIconProps } from './types';
 
 export const SearchIcon: FC<IIconProps> = ({ fill, height = 20, width = 20 }) => {
   return (

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IIconProps } from './model';
+import { IIconProps } from './types';
 
 export const TimeIcon: FC<IIconProps> = ({ fill, height = 40, width = 40 }) => {
   return (
