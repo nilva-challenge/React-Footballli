@@ -1,18 +1,18 @@
 import { BaseAccordion, BaseSkeleton } from 'components/Base';
-import { useLeagueResults } from '../hooks';
+import { useLeagueResults, useSearch } from '../hooks';
 import { LeagueTitle } from './LeagueTitle';
 import { TeamMatches } from './TeamMatches';
-import { hasSearchValue } from '../utils';
 
 export const LeagueResult = () => {
-  const { data, isLoading, searchValue } = useLeagueResults();
+  const { data, isLoading } = useLeagueResults();
+  const { hasLeagueSearchValue } = useSearch();
 
   if (isLoading) return <BaseSkeleton count={5} />;
 
   return (
     <>
       {data.map(({ id, logo, name, fixtures }) => {
-        if (searchValue && !hasSearchValue({ fixtures, searchValue })) return null;
+        if (hasLeagueSearchValue(fixtures)) return null;
 
         return (
           <BaseAccordion key={id} title={<LeagueTitle logo={logo} title={name} />}>
