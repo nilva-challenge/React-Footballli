@@ -10,7 +10,7 @@ export const BaseAccordion: FC<IBaseAccordionProps> = ({ children, title }) => {
       <h2>
         <button
           onClick={() => setOpen((prevState) => !prevState)}
-          className="flex items-center justify-between w-full p-5 font-medium rounded-t-xl bg-white border-b"
+          className="flex items-center justify-between w-full py-3 px-4 font-medium rounded-t-xl bg-white border-b"
         >
           {title}
           <svg

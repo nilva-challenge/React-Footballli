@@ -16,7 +16,7 @@ const BaseTab: FC<ITab> = ({ label, to }) => {
         className={clsx(
           'inline-block p-4 whitespace-nowrap',
           isActive
-            ? 'text-primary border-b-4 rounded-sm border-primary'
+            ? 'text-black font-bold border-b-4 rounded-sm border-primary'
             : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300',
         )}
       >
