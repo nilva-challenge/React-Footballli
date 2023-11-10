@@ -27,7 +27,8 @@ const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_BASE_URL, ti
 
 export const http = {
   post: <T>(url: string, data?, config?) => axiosInstance.post<T>(url, data, config),
-  get: <T, D>(url: string, config?: AxiosRequestConfig<D>) => axiosInstance.get<T>(url, config),
+  get: <T, D = unknown>(url: string, config?: AxiosRequestConfig<D>) =>
+    axiosInstance.get<T>(url, config),
   put: <T>(url: string, data?, config?) => axiosInstance.put<T>(url, data, config),
   delete: <T>(url: string, data?) => axiosInstance.delete<T>(url, data),
 };
