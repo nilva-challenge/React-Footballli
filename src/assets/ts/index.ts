@@ -5,3 +5,4 @@ export * from './NavigationIcon';
 export * from './FootballIcon';
 export * from './ProfileIcon';
 export * from './TrophyIcon';
+export * from './ChevronIcon';
