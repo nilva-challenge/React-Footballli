@@ -1810,6 +1810,25 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tanstack/eslint-plugin-query@^5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/eslint-plugin-query/-/eslint-plugin-query-5.6.0.tgz#e1e0e9edf33a50e39a68e83262ec95685bda75c9"
+  integrity sha512-A0D8fXIh6fuHcT7e+VaL+QnlLhY9V5QmiaLOTLOIcyVKCpWVZLSHrLP6ghZV6CB+JLalHWCAUF0QW0UaEyyz7g==
+  dependencies:
+    "@typescript-eslint/utils" "^5.54.0"
+
+"@tanstack/query-core@5.8.1":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.8.1.tgz#5215a028370d9b2f32e83787a0ea119e2f977996"
+  integrity sha512-Y0enatz2zQXBAsd7XmajlCs+WaitdR7dIFkqz9Xd7HL4KV04JOigWVreYseTmNH7YFSBSC/BJ9uuNp1MAf+GfA==
+
+"@tanstack/react-query@^5.8.1":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.8.1.tgz#22a122016e23a39acd90341954a895980ec21ade"
+  integrity sha512-YMagxS8iNPOLg0pK6WOjdSDlAvWKOf69udLOwQrBVmkC2SRLNLko7elo5Ro3ptlJkXvTVHidxC/h5KGi5bH1XQ==
+  dependencies:
+    "@tanstack/query-core" "5.8.1"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -2274,7 +2293,7 @@
     semver "^7.5.4"
     ts-api-utils "^1.0.1"
 
-"@typescript-eslint/utils@5.62.0", "@typescript-eslint/utils@^5.58.0":
+"@typescript-eslint/utils@5.62.0", "@typescript-eslint/utils@^5.54.0", "@typescript-eslint/utils@^5.58.0":
   version "5.62.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.62.0.tgz#141e809c71636e4a75daa39faed2fb5f4b10df86"
   integrity sha512-n8oxjeb5aIbPFEtmQxQYOLI0i9n5ySBEY/ZEHHZqKQSFnxio1rv6dthascc9dLuwrL0RC5mPCxB7vnAVGAYWAQ==
