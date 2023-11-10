@@ -1,5 +1,6 @@
 import { ITab } from 'components/Base';
 import { en } from 'dictionary/en';
+import { IFixture } from '../services';
 
 export const getNextNDate = (n: number): Date => {
   const today = new Date();
@@ -64,3 +65,16 @@ export const getWeekDatesTabs = (): ITab[] => {
     to: getDateInISOFormat(weekDate),
   }));
 };
+
+export const hasSearchValue = ({
+  fixtures,
+  searchValue,
+}: {
+  fixtures: IFixture[];
+  searchValue: string;
+}) =>
+  fixtures.some((fixture) => {
+    const { name: homeName } = fixture.home;
+    const { name: awayName } = fixture.away;
+    return homeName.includes(searchValue) || awayName.includes(searchValue);
+  });

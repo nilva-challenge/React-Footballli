@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IBaseInput } from './types';
 
-export const BaseInput: FC<IBaseInput> = ({ Icon = null, ...props }) => {
+export const BaseInput: FC<IBaseInput> = ({ Icon = null, register = {}, ...props }) => {
   return (
     <>
       <div className="relative">
@@ -13,6 +13,7 @@ export const BaseInput: FC<IBaseInput> = ({ Icon = null, ...props }) => {
         <input
           className="block w-full p-3 pr-10 text-sm bg-gray-100 rounded-lg text-gray-500"
           {...props}
+          {...register}
         />
       </div>
     </>

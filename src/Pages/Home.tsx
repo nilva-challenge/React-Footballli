@@ -1,6 +1,7 @@
 import { FieldIcon, FootballIcon, NavigationIcon, ProfileIcon, TrophyIcon } from 'assets/ts';
 import { BaseNavigation, INavigationItem, LeagueResults, PageHeader } from 'components';
 import { en } from 'dictionary/en';
+import { FormProvider, useForm } from 'react-hook-form';
 import { routes } from 'routes';
 
 const links: INavigationItem[] = [
@@ -12,11 +13,13 @@ const links: INavigationItem[] = [
 ];
 
 export const Home = () => {
+  const methods = useForm();
+
   return (
-    <>
+    <FormProvider {...methods}>
       <PageHeader />
       <LeagueResults />
       <BaseNavigation links={links} />
-    </>
+    </FormProvider>
   );
 };
