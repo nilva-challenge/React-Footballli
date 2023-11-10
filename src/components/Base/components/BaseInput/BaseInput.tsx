@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IBaseInput } from './model';
+import { IBaseInput } from './types';
 
 export const BaseInput: FC<IBaseInput> = ({ Icon = null, ...props }) => {
   return (
