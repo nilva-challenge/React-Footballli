@@ -1,6 +1,7 @@
 import Layout from "../components/Layout.tsx";
 import useHome from "./hooks/useHome.ts";
 import createHomeTableColumns from "../lib/utilities/getHomeTableColumns.ts";
+import SearchBar from "../components/SearchBar.tsx";
 
 // All columns are used here is created by TableColumnFactory class.
 const COLUMNS = createHomeTableColumns();
@@ -14,7 +15,7 @@ export default function Home() {
 
   return (
     <Layout>
-      فثسف
+      <SearchBar />
       {/*<LoadingDialog open={!isSuccess} />*/}
       {/*<VirtualizedTable useWindowScroll columns={COLUMNS} rows={rows} />*/}
       {/*{!rows.length && isSuccess && <InformationNotAvailable />}*/}
