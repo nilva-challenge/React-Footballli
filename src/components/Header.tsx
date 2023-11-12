@@ -1,14 +1,11 @@
-import { AppBar, Stack, TextField, textFieldClasses, Toolbar, Typography } from "@mui/material";
-import { SearchRounded } from "@mui/icons-material";
-import { BORDER_RADIUS } from "../lib/style.const.ts";
-import { useAppDispatch } from "../app/hooks.ts";
-import { useSelector } from "react-redux";
-import { RootState } from "../app/store.ts";
-import { queryChanged } from "../features/appSlice.ts";
-import { ChangeEvent, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Link from "@mui/material/Link";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import {AppBar, Stack, Toolbar, Typography} from "@mui/material";
+import {useAppDispatch} from "../app/hooks.ts";
+import {useSelector} from "react-redux";
+import {RootState} from "../app/store.ts";
+import {queryChanged} from "../features/appSlice.ts";
+import {ChangeEvent, useRef} from "react";
+import {useLocation, useNavigate} from "react-router-dom";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 /**
  * This component is used in a layout component
@@ -31,41 +28,20 @@ export default function Header() {
   }
 
   return (
-    <AppBar sx={{ backgroundColor: "#232735" }}>
+    <AppBar color={"inherit"} elevation={0}>
       <Toolbar sx={{ width: "100%" }}>
         <Stack
+          mt={2}
+          mb={2}
           direction={"row"}
           alignItems={"center"}
-          gap={5}
           width={"inherit"}
+          justifyContent={"space-between"}
         >
-          <Link underline={"none"} color={"inherit"} href={"/"}>
-
-          </Link>
-          <TextField
-            autoFocus={!!(pathname === "/" && query)}
-            value={query}
-            onChange={handleQueryChanged}
-            sx={{
-              backgroundColor: "rgba(255,255,255,0.31)",
-              color: "#ffffff",
-              borderRadius: BORDER_RADIUS,
-              [`&.${textFieldClasses.root}`]: {},
-              "input::placeholder": {
-                color: "#ffffff",
-              },
-              input: {
-                color: "#ffffff",
-              },
-            }}
-            fullWidth
-            size={"small"}
-            InputProps={{
-              ref: textField,
-              startAdornment: <SearchRounded sx={{ color: "#ffffff" }} />,
-            }}
-          />
-          <AccessTimeIcon/>
+          <Typography variant={"h5"} fontWeight={"bold"}>
+            نتایج زنده
+          </Typography>
+          <AccessTimeIcon sx={{ transform: "rotate(240deg)", fontSize: 40 }} />
         </Stack>
       </Toolbar>
     </AppBar>
