@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "./src/pages/Home";
+import App from "./src/App.tsx";
 import Assets from "./src/pages/Assets/Assets";
 
 /**
@@ -7,7 +7,7 @@ import Assets from "./src/pages/Assets/Assets";
  */
 const AppRoutes = () => (
   <Routes>
-    <Route path={"/"} element={<Home />} />
+    <Route path={"/"} element={<App />} />
     <Route path={"/assets/:id"} element={<Assets />} />
     <Route path={"*"} element={<Navigate to={"/"} />} />
   </Routes>
