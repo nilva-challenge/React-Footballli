@@ -8,6 +8,7 @@ import { queryChanged } from "../features/appSlice.ts";
 import { ChangeEvent, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 /**
  * This component is used in a layout component
@@ -39,9 +40,7 @@ export default function Header() {
           width={"inherit"}
         >
           <Link underline={"none"} color={"inherit"} href={"/"}>
-            <Typography variant={"body2"} width={100}>
-              لیست دارایی‌ها
-            </Typography>
+
           </Link>
           <TextField
             autoFocus={!!(pathname === "/" && query)}
@@ -61,12 +60,12 @@ export default function Header() {
             }}
             fullWidth
             size={"small"}
-            placeholder={"جستجوی نام نماد، نام شرکت"}
             InputProps={{
               ref: textField,
               startAdornment: <SearchRounded sx={{ color: "#ffffff" }} />,
             }}
           />
+          <AccessTimeIcon/>
         </Stack>
       </Toolbar>
     </AppBar>
