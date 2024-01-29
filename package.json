@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "jalali-moment": "^3.3.11",
+    "moment": "^2.30.1",
+    "moment-jalaali": "^0.10.0",
+    "react-moment": "^1.1.3"
+  }
+}

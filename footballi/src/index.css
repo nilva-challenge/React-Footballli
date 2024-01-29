@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url("/assets/fonts/vazir-regular.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: "MyFont", sans-serif;
+}
