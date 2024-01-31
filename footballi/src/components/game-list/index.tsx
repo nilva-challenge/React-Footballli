@@ -8,8 +8,6 @@ const GameList = () => {
 
   const { loading, data, error } = useFetchGames(date as string);
 
-  if (data && !loading) console.log(data, error, date);
-
   return <div></div>;
 };
 

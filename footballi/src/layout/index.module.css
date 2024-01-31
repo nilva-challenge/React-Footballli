@@ -5,19 +5,20 @@
 }
 
 .header {
-  padding: 24px 24px 0;
+  padding: 24px 0px 0;
   background-color: #fff;
 }
 
 .headerTitle {
   display: flex;
+  padding: 0 24px;
   justify-content: space-between;
 }
 
 .inputContainer {
+  margin: 24px;
   padding: 10px;
   display: flex;
-  margin: 24px 0;
   border-radius: 8px;
   align-items: center;
   background-color: #f5f5f5;
@@ -28,4 +29,28 @@
   outline: none;
   margin-right: 8px;
   background-color: transparent;
+}
+
+.calendar {
+  gap: 20px;
+  display: flex;
+  overflow: scroll;
+  margin-right: 24px;
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  justify-content: flex-start;
+}
+
+.calendar::-webkit-scrollbar {
+  display: none;
+}
+
+.day {
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.selectedDate {
+  border-bottom: 3px solid rgb(21, 200, 117);
 }

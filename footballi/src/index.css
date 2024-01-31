@@ -9,3 +9,9 @@
   direction: rtl;
   font-family: "MyFont", sans-serif;
 }
+
+body {
+  margin: auto;
+  max-width: 400px;
+  overflow: hidden;
+}
