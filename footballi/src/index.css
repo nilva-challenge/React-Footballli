@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url("/assets/fonts/vazir-regular.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: "MyFont", sans-serif;
+}
+
+body {
+  margin: auto;
+  max-width: 400px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
