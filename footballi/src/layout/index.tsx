@@ -1,26 +1,11 @@
-import Calendar from "./calendar";
+import Header from "./header";
+import { ReactNode } from "react";
 import style from "./layout.module.css";
-import React, { ReactNode } from "react";
-import { CiSearch } from "react-icons/ci";
-import { FaRegClock } from "react-icons/fa";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className={style.header}>
-        <div className={style.headerTitle}>
-          <h2>نتایج زنده</h2>
-          <FaRegClock size={40} />
-        </div>
-
-        <div className={style.inputContainer}>
-          <CiSearch />
-          <input placeholder="جستوجو..." />
-        </div>
-
-        <Calendar />
-      </div>
-
+      <Header />
       <div className={style.container}>{children}</div>
     </>
   );
