@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import { fetchGames } from "../services/api";
 
+export type DataType = {
+  loading: boolean;
+  error: string;
+  data: any;
+};
+
 export const useFetchGames = (date: string) => {
-  const [fetchDataState, setFetchDataState] = useState({
+  const [fetchDataState, setFetchDataState] = useState<DataType>({
     loading: true,
-    error: null,
-    data: null,
+    error: "",
+    data: [],
   });
 
   useEffect(() => {
@@ -13,10 +19,10 @@ export const useFetchGames = (date: string) => {
 
     fetchGames(date)
       .then((data) => {
-        setFetchDataState({ loading: false, data, error: null });
+        setFetchDataState({ loading: false, data, error: "" });
       })
       .catch((error) => {
-        setFetchDataState({ loading: false, data: null, error: error.message });
+        setFetchDataState({ loading: false, data: [], error: error.message });
       });
   }, [date]);
 

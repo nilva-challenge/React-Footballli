@@ -1,8 +1,8 @@
 import Moment from "react-moment";
 import moment from "jalali-moment";
-import style from "./index.module.css";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import style from "./layout.module.css";
 import { GamesContext } from "../components/contexts/gameContext";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 const convertToPersian = (date: Moment) => moment(date).locale("fa").format("D MMMM");
 
@@ -37,8 +37,8 @@ const Calendar = () => {
     if (calendarRef.current) {
       const dayWidth = (calendarRef.current.querySelector("." + style.day) as HTMLDivElement).offsetWidth;
 
-      const todayIndex = daysInMonth.indexOf(today);
-      const scrollPosition = todayIndex * dayWidth - calendarRef.current.offsetWidth / 2 + dayWidth / 2;
+      const selectedDayIndex = daysInMonth.indexOf(today);
+      const scrollPosition = selectedDayIndex * dayWidth - calendarRef.current.offsetWidth / 2 + dayWidth / 2;
       calendarRef.current.scrollLeft = -scrollPosition * 2.4;
     }
   }, [today]);

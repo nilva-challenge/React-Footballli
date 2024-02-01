@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.team {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.team p {
+  width: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.time {
+  margin: 0 20px;
+}

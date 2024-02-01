@@ -1,8 +1,8 @@
-import style from "./index.module.css";
+import Calendar from "./calendar";
+import style from "./layout.module.css";
 import React, { ReactNode } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaRegClock } from "react-icons/fa";
-import Calendar from "./calendar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
