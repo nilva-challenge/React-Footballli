@@ -71,7 +71,10 @@ const CustomTabs: React.FC<CustomTabsProps> = ({ tabs, tabClick }) => {
           );
         })}
       </div>
-      <div className="w-100 h-100 p-3" style={{ backgroundColor: "#f0f0f0" }}>
+      <div
+        className="w-100 h-100 p-3"
+        style={{ backgroundColor: "#f0f0f0", overflowY: "auto" }}
+      >
         {activeTab && tabKeys && tabKeys[activeTab]}
       </div>
     </div>

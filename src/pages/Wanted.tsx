@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomTabs from "../components/CustomTabs";
 import MatchesTab from "../components/MatchesTab";
+import CustomInput from "../components/CustonInput";
 
 const Wanted: React.FC = () => {
+  const [searchValue, setSearch] = useState<string>("");
+
+  const handleSearch = (value: string) => {
+    setSearch(value);
+  };
   return (
     <>
       <div className="d-flex justify-content-between align-items-center p-3">
@@ -18,18 +24,15 @@ const Wanted: React.FC = () => {
       </div>
 
       <div className="w-100 px-3">
-        <input
-          className="w-100 p-2 custom-input"
-          placeholder="جستجو کنید ..."
-        />
+        <CustomInput onSearch={handleSearch} />
       </div>
 
       <CustomTabs
         tabs={[
           {
-            title: "tab1",
-            innerComponent: <MatchesTab />,
-            key: "tab1",
+            title: "همه",
+            innerComponent: <MatchesTab search={searchValue as string} />,
+            key: "all",
           },
           {
             title: "tafwfwfweb2",
