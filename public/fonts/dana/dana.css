@@ -1,0 +1,69 @@
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 10;
+    src: url(/fonts/dana/woff2/dana-fanum-thin.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-thin.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 200;
+    src: url(/fonts/dana/woff2/dana-fanum-extralight.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-extralight.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/dana/woff2/dana-fanum-light.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-light.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 500;
+    src: url(/fonts/dana/woff2/dana-fanum-medium.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-medium.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 600;
+    src: url(/fonts/dana/woff2/dana-fanum-demibold.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-demibold.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 750;
+    src:url(/fonts/dana/woff2/dana-fanum-ultrabold.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-ultrabold.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 800;
+    src: url(/fonts/dana/woff2/dana-fanum-extrabold.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-extrabold.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/dana/woff2/dana-fanum-black.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-black.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/dana/woff2/dana-fanum-bold.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/dana/woff2/dana-fanum-regular.woff2) format("woff2"),url(/fonts/dana/woff/dana-fanum-regular.woff) format("woff")
+}
