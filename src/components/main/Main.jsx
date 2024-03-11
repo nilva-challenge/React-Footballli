@@ -2,7 +2,7 @@ import React ,{useContext} from "react";
 import { GamesContext, SearchContext } from "../../App";
 import { Collapse ,Divider } from "antd";
 import moment from "jalali-moment"
-
+import Skeleton from 'antd/lib/skeleton';
 import styles from "./main.module.css";
 
 const { Panel } = Collapse;
@@ -18,22 +18,32 @@ moment.locale('fa', { useGregorianParser: true });
     }
 
     const data = useContext(GamesContext)
+  
     const {search ,setSearch} = useContext(SearchContext)
 
     const filterData = data?.all?.filter((item) => item?.name.includes(search))
-
+    const skeletonNumbers = [1 ,2 ,3 ,4 ,5 ,6]
     return ( 
         <div className={styles.container}>
+            
             {
+                !data ?
+                    skeletonNumbers.map(i => (
+                        <Skeleton.Input key={i} size="large" active className={styles.skeleton} />
+                    ))
+                :
                 filterData?.map((item) => {
                     return(
                         <Collapse key={item.api_id} className={styles.accordion}>
-                            <Panel  header={
+                            <Panel  
+                            header={
                                 <div  className={styles.accordionTitle}  >
                                     <img src={item?.logo} alt="league logo" />
                                     <p> {item?.name} </p>
                                 </div>
-                            } key="1">
+                            } 
+                            key="1"
+                            >
                                 {
                                     item?.fixtures?.map(game => {
                                         return(

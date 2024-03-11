@@ -8,19 +8,28 @@
   font-family: IRANSansFarsi !important;
 }
 .appContainer {
-  background-color: #e6e6e6;
+  background-color: #f6f6f6;
   padding: 0;
   margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#root {
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   /* display: flex; */
   place-items: center;
+  overflow: hidden;
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
-
+.ant-collapse-expand-icon {
+  margin-top: 5px;
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

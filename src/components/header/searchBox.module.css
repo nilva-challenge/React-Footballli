@@ -1,10 +1,23 @@
 .searchContainer {
-    width: 90%;
+    /* width: 100%; */
     direction: rtl;
     border-radius: 8px;
     text-align: right;
 }
 
+.searchContainer span {
+background-color: #f6f6f6;
+}
+.searchContainer input {
+    background-color: #f6f6f6;
+    }
+
 .searchInput{
-    background-color: #e6e6e6;
+    
+    border: none;
+}
+
+.searchIcon {
+    color: #ccc;
+    rotate: 90deg;
 }

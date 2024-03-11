@@ -13,6 +13,7 @@
   }
 
 .btn {
+
     margin-top: 2rem;
     border: none;
     background-color: #fff;
@@ -21,9 +22,38 @@
     transition: all .2s ease;
 }
 
-.btn:hover{
+/* .btn:hover{
     color: #000;
     border-bottom: 2px solid green;
+} */
+
+.activeBtn {
+
+    align-items: center;
+    color: #000;
+    margin-top: 2rem;
+    border: none;
+    background-color: #fff;
+    width: 80px;
+    transition: all .2s ease;
+    position: relative;
 }
+.active {
+ width: 38px;
+ height: 4px;
+ background-color: green;
+ border-radius: 10px 10px 0 0;
+ text-align: center;
+ position: absolute;
+ right: 25%;
+}
+
+.deActive {
+    width: 40px;
+    height: 2px;
+    border-radius: 10px 10px 0 0;
+   }
+
+
 
 

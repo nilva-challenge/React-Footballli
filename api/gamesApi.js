@@ -10,8 +10,8 @@ const api = () => {
     )
 }
 
-export const getGamesInfo = async (date) => {
-    const {data ,status} = await api().get(`/api/football/fixtures/?date=${date}`)
+export const getGamesInfo = async (url) => {
+    const {data ,status} = await api().get(`${url}`)
     if(status === 200 || status === 201) return data
     return {}
 }

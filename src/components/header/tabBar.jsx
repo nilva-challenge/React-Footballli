@@ -1,5 +1,4 @@
-import React, { useContext, useRef } from "react";
-import { Button } from "antd";
+import React, { useContext, useState } from "react";
 import styles from "./tabBar.module.css";
 import moment from "jalali-moment";
 import { DateContext } from "../../App";
@@ -15,7 +14,6 @@ const TabBar = () => {
         date.setDate(date.getDate() + days);
         return date;
     }
-    const today = new Date().setDate(new Date().getDate());
     const yesterday = new Date().setDate(new Date().getDate() - 1);
     const thirtyDaysLater = new Date().setDate(new Date().getDate() + 10);
 
@@ -36,14 +34,31 @@ const TabBar = () => {
         setDate(date)
     }
 
+    const [active , setActive] = useState(1)
+
+    const DateBtn = ({date ,index ,active}) => {
+         return(
+            <button className={ active === index ? styles.activeBtn : styles.btn} onClick={() => {
+                if(active !== index) {
+
+                    selectDayHandler(new Date(date).toISOString().split("T")[0])
+                    setActive(index)
+                }
+                }} 
+                
+                >
+                {index === 0 ? "دیروز"  : index === 1 ? "امروز" : index === 2 ? 'فردا' :  moment(new Date(date).toISOString().split("T")[0]).format("YYYY/MM/DD")  }
+                <div className={ active === index ? styles.active: styles.deActive}/>
+            </button>
+         )
+    }
+
     return ( 
         <div className={styles.container}>
             {
                 dates.map((date ,index) => {
                     return(
-                        <button key={index} className={styles.btn} onClick={() => selectDayHandler(new Date(date).toISOString().split("T")[0])} >
-                            {index === 0 ? "دیروز"  : index === 1 ? "امروز" : index === 2 ? 'فردا' :  moment(new Date(date).toISOString().split("T")[0]).format("YYYY/MM/DD")  }
-                        </button>
+                        <DateBtn active={active} key={index} date={date} index={index}/>
                     )
                 })
             }

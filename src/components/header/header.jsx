@@ -12,11 +12,14 @@ const Header = () => {
 
     return ( 
         <div className={styles.mainContainer} >
+            <div className={styles.searchAndHeaderContainer}>
+
             <div className={styles.headerContainer} >
                 <ClockCircleOutlined style={{ fontSize: '150%'}} />
                 <h3> نتایج زنده </h3>
             </div>
             <SearchBox search = {search} setSearch={setSearch} />
+            </div>
             <TabBar  />
         </div>
      );
